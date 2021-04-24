@@ -1,0 +1,52 @@
+<!-- Llamamos al menu con <app-menu> -->
+<app-menu></app-menu>
+<!-- Apartados de inicio de sesión y crear cuenta de usuario para poder elegir -->
+<div class="container d-flex justify-content-center">
+  <div class="card">
+    <div class="card-header">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Iniciar Sesión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/registro">Crear Cuenta</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Formulario de crear cuenta de usuario -->
+    <div class="card-body">
+      <form #f="ngForm" (ngSubmit)="onRegister()" novalidate>
+        <div class="form-row mb-4">
+          <div class="col-6">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" class="form-control" [(ngModel)]="nombre" required>
+          </div>
+          <div class="col-6">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" name="apellidos" id="apellidos" class="form-control" [(ngModel)]="apellidos" required>
+          </div>
+        </div>
+        <div class="form-row mb-4">
+          <div class="col-6">
+            <label for="nombreUsuario">Nombre de Usuario</label>
+            <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" [(ngModel)]="nombreUsuario" required>
+          </div>
+          <div class="col-6">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" required>
+          </div>
+        </div>
+        <div class="form-row mb-4">
+          <div class="col-12">
+            <label for="email">Correo Electrónico</label>
+            <input type="text" name="email" id="email" class="form-control" [(ngModel)]="email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+            <i class="fas fa-sign-in-alt"></i> Crear Cuenta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
