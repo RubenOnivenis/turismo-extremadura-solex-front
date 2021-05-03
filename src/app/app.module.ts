@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { interceptorProvider } from './interceptors/prod-interceptor.service';
+import { interceptorProvider } from './components/interceptors/prod-interceptor.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -11,10 +11,13 @@ import { FormsModule } from '@angular/forms';
 // external
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { LoginComponent } from './auth/login.component';
-import { RegistroComponent } from './auth/registro.component';
-import { MenuComponent } from './menu/menu.component';
-import { IndexComponent } from './index/index.component';
+import { LoginComponent } from './components/auth/login.component';
+import { RegistroComponent } from './components/auth/registro.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { AlojamientosComponent } from './components/alojamientos/alojamientos.component';
+import { RutasComponent } from './components/rutas/rutas.component';
 
 
 
@@ -23,8 +26,11 @@ import { IndexComponent } from './index/index.component';
     AppComponent,
     LoginComponent,
     RegistroComponent,
+    NavbarComponent,
     MenuComponent,
-    IndexComponent
+    FooterComponent,
+    AlojamientosComponent,
+    RutasComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenService } from '../service/token.service';
-import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
 import { NuevoUsuario } from '../models/nuevo-usuario';
 import { ToastrService } from 'ngx-toastr';
+import { TokenService } from 'src/app/services/token.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-registro',

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenService } from '../service/token.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
-  selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.css']
 })
-export class IndexComponent implements OnInit {
+export class MenuComponent implements OnInit {
 
   nombreUsuario: string;
 

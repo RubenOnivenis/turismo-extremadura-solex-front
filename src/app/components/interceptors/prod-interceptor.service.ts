@@ -1,10 +1,10 @@
-import { AuthService } from './../service/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { JwtDTO } from './../models/jwt-dto';
 import { catchError, concatMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HTTP_INTERCEPTORS, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { TokenService } from '../service/token.service';
+import { TokenService } from 'src/app/services/token.service';
 
 const AUTHORIZATION = 'Authorization';
 

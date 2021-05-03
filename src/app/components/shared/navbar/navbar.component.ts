@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenService } from '../service/token.service';
+import { TokenService } from 'src/app/services/token.service';
+
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class MenuComponent implements OnInit {
+export class NavbarComponent implements OnInit {
 
   // Variables necesarias ambas a false
   isLogged = false;

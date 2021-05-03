@@ -1,20 +1,21 @@
-import { LoginGuard } from './guards/login.guard';
+import { LoginGuard } from './components/guards/login.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { IndexComponent } from './index/index.component';
-import { LoginComponent } from './auth/login.component';
-import { RegistroComponent } from './auth/registro.component';
-import { ProdGuardService } from './guards/prod-guard.service';
-
-
+import { MenuComponent } from './components/menu/menu.component';
+import { LoginComponent } from './components/auth/login.component';
+import { RegistroComponent } from './components/auth/registro.component';
+import { AlojamientosComponent } from './components/alojamientos/alojamientos.component';
+import { RutasComponent } from './components/rutas/rutas.component';
 
 const routes: Routes = [
   // Ruta principal del index
-  { path: '', component: IndexComponent },
+  { path: '', component: MenuComponent },
   // Ruta del login
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
   // Ruta del registro de usuarios
   { path: 'registro', component: RegistroComponent, canActivate: [LoginGuard] },
+  { path: 'alojamientos', component: AlojamientosComponent},
+  { path: 'rutas', component: RutasComponent},
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
