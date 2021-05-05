@@ -42,25 +42,25 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item mr-5">
-        <a class="nav-link letra_negra" routerLink="/alojamientos" >Alojamientos</a>
+        <a class="nav-link negro" routerLink="/alojamientos" >Alojamientos</a>
       </li>
       <li class="nav-item mr-5">
-        <a class="nav-link letra_negra" routerLink="/rutas">Rutas</a>
+        <a class="nav-link negro" routerLink="/rutas">Rutas</a>
       </li>
       <li class="nav-item mr-5">
-        <a class="nav-link letra_negra" routerLink="/">Foro</a>
+        <a class="nav-link negro" routerLink="/">Foro</a>
       </li>
       <li class="nav-item mr-5">
-        <a class="nav-link letra_negra" routerLink="/">Galería</a>
+        <a class="nav-link negro" routerLink="/">Galería</a>
       </li>
       <li class="nav-item mr-5">
-        <a class="nav-link letra_negra" routerLink="/">Perfil</a>
+        <a class="nav-link negro" routerLink="/">Perfil</a>
       </li>
     </ul>
     <!-- Iniciar sesión o cerrar sesión dependiendo de si el usuario está logeado o  no -->
     <form class="form-inline my-2 my-lg-0">
       <!-- Botón que aparece en el caso de que el usuario no esté logeado para que este pueda iniciar sesión -->
-      <button *ngIf="!isLogged" class="btn btn-outline-success my-2 my-sm-0" routerLink="/login" type="submit">
+      <button *ngIf="!isLogged" class="btn btn-outline-dark my-2 my-sm-0" routerLink="/login" type="submit">
         <i class="fas fa-sign-in-alt"></i> 
         Iniciar Sesión
       </button>
