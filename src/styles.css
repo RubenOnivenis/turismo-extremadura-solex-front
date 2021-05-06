@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-.fondo_verde{
-    background-color: #29e054;
+.titulo{
+    font-size: x-large;
+}
+.navegacion{
+    background-color: #00AB39;
+    font-size: large;
 }
 .negro{
     color:black;

@@ -18,6 +18,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AlojamientosComponent } from './components/alojamientos/alojamientos.component';
 import { RutasComponent } from './components/rutas/rutas.component';
+import { LocalizacionesComponent } from './components/localizaciones/localizaciones.component';
 
 
 
@@ -30,7 +31,8 @@ import { RutasComponent } from './components/rutas/rutas.component';
     MenuComponent,
     FooterComponent,
     AlojamientosComponent,
-    RutasComponent
+    RutasComponent,
+    LocalizacionesComponent
   ],
   imports: [
     BrowserModule,

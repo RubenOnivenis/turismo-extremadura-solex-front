@@ -6,6 +6,7 @@ import { LoginComponent } from './components/auth/login.component';
 import { RegistroComponent } from './components/auth/registro.component';
 import { AlojamientosComponent } from './components/alojamientos/alojamientos.component';
 import { RutasComponent } from './components/rutas/rutas.component';
+import { LocalizacionesComponent } from './components/localizaciones/localizaciones.component';
 
 const routes: Routes = [
   // Ruta principal del index
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
   // Ruta del registro de usuarios
   { path: 'registro', component: RegistroComponent, canActivate: [LoginGuard] },
+  { path: 'localizaciones', component: LocalizacionesComponent},
   { path: 'alojamientos', component: AlojamientosComponent},
   { path: 'rutas', component: RutasComponent},
   { path: '**', redirectTo: '', pathMatch: 'full' }
