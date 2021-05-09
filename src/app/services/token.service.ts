@@ -69,6 +69,6 @@ export class TokenService {
   // Función de cerrar sesión
   public logOut(): void {
     window.localStorage.clear();
-    this.router.navigate(['/login']);
+    location.reload();
   }
 }

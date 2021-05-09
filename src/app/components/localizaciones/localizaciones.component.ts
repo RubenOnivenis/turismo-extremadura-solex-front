@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { LocalizacionesService } from 'src/app/services/localizaciones.service';
 
 @Component({
   selector: 'app-localizaciones',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocalizacionesComponent implements OnInit {
 
-  constructor() { }
+  localizacionesEncontradas: any = [];
 
-  ngOnInit() {
+  constructor(private _localizacionesService:LocalizacionesService, private activatedRoute: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe((resp: any)=>{
+      this._localizacionesService.buscarLocalizaciones(resp.nombre)
+        .subscribe((localizaciones: any) => {
+          this.localizacionesEncontradas = localizaciones;
+        });
+    })
   }
 
 }
