@@ -9,10 +9,20 @@
 .negro{
     color:black;
 }
+
+.negro:hover{
+    color:black;
+}
+
 .footer{
     background-color: rgb(36, 34, 34);
     color: white;
 }
+
 .blanco{
+    color:white;
+}
+
+.blanco:hover{
     color:white;
 }

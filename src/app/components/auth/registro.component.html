@@ -4,10 +4,10 @@
     <div class="card-header">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/login">Iniciar Sesión</a>
+          <a class="nav-link negro" routerLink="/login">Iniciar Sesión</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/registro">Crear Cuenta</a>
+          <a class="nav-link active negro" routerLink="/registro">Crear Cuenta</a>
         </li>
       </ul>
     </div>
@@ -39,7 +39,7 @@
           <input type="text" name="email" id="email" class="form-control" [(ngModel)]="email" required>
         </div>
         <div class="form-group">
-          <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+          <button class="btn btn-outline-dark btn-block" [disabled]="!f.valid">
             <i class="fas fa-sign-in-alt"></i> Crear Cuenta</button>
         </div>
       </form>
