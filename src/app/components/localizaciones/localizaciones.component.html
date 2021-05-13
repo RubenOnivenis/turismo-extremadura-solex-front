@@ -1,9 +1,11 @@
+<!--Buscador principal-->
 <div class="container">
 	<div class="row">
         <div class="col-6 mx-auto" id="localizaciones">
     		<h2 class="text-uppercase">Encuentra lo que necesistes</h2>
-            <form id="buscador" class="form-inline" onsubmit="return false">
+            <form id="buscador" class="form-inline">
                 <div class="input-group col-12">
+                    <!--Formulario del Buscador-->
                     <input type="text" class="form-control input-lg" placeholder="Buscar" (keyup.enter)="buscarProducto(buscarTexto.value)" #buscarTexto/>
                     <span class="input-group-btn">
                         <button class="btn btn-info btn-lg" type="button" (click)="buscar(buscarTexto.value)">

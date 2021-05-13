@@ -12,6 +12,7 @@ export class MenuComponent implements OnInit {
 
   constructor(private tokenService: TokenService) { }
 
+  //Coger el token del usuario
   ngOnInit() {
     this.nombreUsuario = this.tokenService.getUserName();
   }

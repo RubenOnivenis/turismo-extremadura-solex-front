@@ -2,10 +2,12 @@
 .titulo{
     font-size: x-large;
 }
+
 .navegacion{
     background-color: #00AB39;
     font-size: large;
 }
+
 .negro{
     color:black;
 }
@@ -25,4 +27,9 @@
 
 .blanco:hover{
     color:white;
+}
+
+.carousel-inner{
+    max-height: 450px; 
+    overflow: hidden;
 }

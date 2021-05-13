@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   // Variables necesarias ambas a false
   isLogged = false;
   isAdmin = false;
+  nombreUsuario: string;
 
   // Inyectamos en el constructor el servicio de Token
   constructor(private tokenService: TokenService) { }
@@ -21,6 +22,8 @@ export class NavbarComponent implements OnInit {
     this.isLogged = this.tokenService.isLogged();
     // Se iguala la variable isAdmin al token de login del administrador
     this.isAdmin = this.tokenService.isAdmin();
+    //Coger el token del usuario
+    this.nombreUsuario = this.tokenService.getUserName();
   }
 
   //Función para cerrar sesión

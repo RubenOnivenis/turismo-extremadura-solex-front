@@ -13,22 +13,30 @@ const TOKEN_KEY = 'AuthToken';
 })
 export class LocalizacionesComponent implements OnInit {
 
+  //Variables para guardar los datos traidos de la bbdd
   localizaciones: any[] = [];
 
-  localizacionesEncontradas: any = [];
+  localizacionesEncontradas: any[] = [];
 
   nombre : any;
 
+  // Variables necesarias ambas a false
+  isLogged = false;
   isAdmin = false;
 
-  constructor(private _localizacionesService:LocalizacionesService, private activatedRoute: ActivatedRoute, private toastr: ToastrService,
+  constructor(private _localizacionesService:LocalizacionesService, private toastr: ToastrService,
     private tokenService: TokenService) { }
 
   ngOnInit(): void {
-    this.cargar();
+    // Se iguala la variable isLogged al token de login del usuario
+    this.isLogged = this.tokenService.isLogged();
+    // Se iguala la variable isAdmin al token de login del administrador
     this.isAdmin = this.tokenService.isAdmin();
+    //Al inicio de la página se ejecuta la funcion
+    this.cargar();
   }
 
+  //Funcion para guardar los datos de las localizaciones en un array
   cargar(){
     this._localizacionesService.getLocalizaciones()
       .subscribe((localizaciones: any) => {
@@ -37,11 +45,12 @@ export class LocalizacionesComponent implements OnInit {
       });
   }
 
+  //Funcion para buscar lo que escribas en el formulario de búsqueda
   buscar(){
     this._localizacionesService.buscarLocalizaciones(this.nombre)
       .subscribe((localizacionesEncontradas: any) => {
-        this.localizacionesEncontradas = localizacionesEncontradas;
-        console.log(localizacionesEncontradas);
+        this.localizaciones = localizacionesEncontradas;
+        console.log(this.localizaciones);
       });
   }
 
