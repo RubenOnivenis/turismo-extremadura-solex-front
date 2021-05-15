@@ -19,6 +19,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { AlojamientosComponent } from './components/alojamientos/alojamientos.component';
 import { RutasComponent } from './components/rutas/rutas.component';
 import { LocalizacionesComponent } from './components/localizaciones/localizaciones.component';
+import { NoImagePipePipe } from './pipes/no-image-pipe.pipe';
 
 
 
@@ -32,7 +33,8 @@ import { LocalizacionesComponent } from './components/localizaciones/localizacio
     FooterComponent,
     AlojamientosComponent,
     RutasComponent,
-    LocalizacionesComponent
+    LocalizacionesComponent,
+    NoImagePipePipe
   ],
   imports: [
     BrowserModule,
