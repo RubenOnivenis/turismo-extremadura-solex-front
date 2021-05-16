@@ -9,7 +9,7 @@ import { Localizacion } from 'src/app/services/localizaciones.service';
 })
 export class AlojamientosComponent implements OnInit {
 
-  @Input() alojamientos!:alojamientosDatos;
+  @Input() alojamiento!:alojamientosDatos;
   @Input() localizaciones!:Localizacion;
   alojamientosArray: any [] = [];
   numCaracteres:number;
@@ -24,11 +24,12 @@ export class AlojamientosComponent implements OnInit {
     this._alojamientosService.getAlojamientos()
       .subscribe( (item:any) => {
         this.alojamientosArray = item;
+        console.log(this.alojamientosArray);
       } )
   }
 
   public puntos_suspensivos():string{
-    if(this.alojamientos.descripcion.length > this.numCaracteres) return "...";
+    if(this.alojamiento.descripcion.length > this.numCaracteres) return "...";
     return "";
   }
 

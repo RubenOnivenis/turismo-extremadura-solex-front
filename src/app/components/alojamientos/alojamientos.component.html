@@ -1,15 +1,15 @@
 <div>
     <h2 class="animated-fast" style="text-align: center;">ALOJAMIENTOS</h2>
     <hr />
-    <div class="card-columns" *ngIf="alojamientos">
+    <div class="card-columns">
         <div class="card bg-light mb-3 p-md-0" *ngFor="let alojamiento of alojamientosArray">
             <div> 
                 <div class="row">
-                    <img class="card-img-top col-md-8 mt-3 offset-md-2" [src]="alojamientos.imagen | noImagePipe">
+                    <img class="card-img-top col-md-8 mt-3 offset-md-2" [src]="alojamiento.imagen | noImagePipe">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{alojamientos.nombre}}</h5>
-                    <p class="card-text">{{alojamientos.descr | slice:0:this.NUM_CARACTERES}}{{puntos_suspensivos()}}</p>
+                    <h5 class="card-title">{{alojamiento.nombre}}</h5>
+                    <p class="card-text">{{alojamiento.descripcion}}</p>
                 </div>
             </div>
         </div>

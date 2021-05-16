@@ -14,7 +14,7 @@ export interface Localizacion{
 })
 export class LocalizacionesService {
 
-  localizacionesURL = 'http://localhost:8080/api';
+  localizacionesURL = 'http://localhost:8081/api';
 
   constructor(private http: HttpClient) {}
 
@@ -23,6 +23,6 @@ export class LocalizacionesService {
   }
 
   buscarLocalizaciones(nombre:string){
-    return this.http.get(this.localizacionesURL + `/nombre/${nombre}`);
+    return this.http.get(this.localizacionesURL + `/localizaciones/nombre/${nombre}`);
   }
 }

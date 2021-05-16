@@ -6,7 +6,7 @@
             <form id="buscador" class="form-inline">
                 <div class="input-group col-12">
                     <!--Formulario del Buscador-->
-                    <input type="text" class="form-control input-lg" placeholder="Buscar" (keyup.enter)="buscarProducto(buscarTexto.value)" #buscarTexto/>
+                    <input type="text" class="form-control input-lg" placeholder="Buscar" (keyup.enter)="buscar(buscarTexto.value)" #buscarTexto/>
                     <span class="input-group-btn">
                         <button class="btn btn-info btn-lg" type="button" (click)="buscar(buscarTexto.value)">
                             <i class="fa fa-search" aria-hidden="true"></i>
@@ -17,6 +17,8 @@
         </div>
 	</div>
 </div>
-<!--<div class="card-columns mt-5">
-    <app-localizacion-tarjeta *ngFor="let foo of localizacionesEncontradas; let i = index" [localizaciones]="foo" [id]="foo.id"></app-localizacion-tarjeta>
-</div>-->
+<div class="card-columns mt-5">
+    <div *ngFor="let foo of localizacionesEncontradas">
+        <p>{{foo.nombre}}</p>
+    </div>
+</div>

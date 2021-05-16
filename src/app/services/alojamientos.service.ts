@@ -15,7 +15,7 @@ export interface alojamientosDatos{
 })
 export class AlojamientosService {
 
-  API_URI = 'http://localhost:8080/api';
+  API_URI = 'http://localhost:8081/api';
 
   constructor(
     private http: HttpClient
