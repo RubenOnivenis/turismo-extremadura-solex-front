@@ -20,6 +20,7 @@ import { AlojamientosComponent } from './components/alojamientos/alojamientos.co
 import { RutasComponent } from './components/rutas/rutas.component';
 import { LocalizacionesComponent } from './components/localizaciones/localizaciones.component';
 import { NoImagePipePipe } from './pipes/no-image-pipe.pipe';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 
@@ -34,7 +35,8 @@ import { NoImagePipePipe } from './pipes/no-image-pipe.pipe';
     AlojamientosComponent,
     RutasComponent,
     LocalizacionesComponent,
-    NoImagePipePipe
+    NoImagePipePipe,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
