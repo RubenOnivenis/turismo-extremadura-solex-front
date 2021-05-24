@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-export interface Localizacion{
+export interface localizacionesDatos{
   id?: number,
   nombre: string,
   provincia: string,

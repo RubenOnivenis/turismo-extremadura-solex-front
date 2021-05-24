@@ -17,7 +17,7 @@ export interface usuariosDatos{
 })
 export class UsuariosService {
 
-  API_URI = 'http://localhost:8080/api';
+  API_URI = 'http://localhost:8081/api';
 
   constructor(
     private http: HttpClient
@@ -27,8 +27,8 @@ export class UsuariosService {
     return this.http.get(`${this.API_URI}/usuarios`);
   }
 
-  getUsuario(id: number){
-    return this.http.get(`${this.API_URI}/usuario/${id}`);
+  getUsuario(nombre_usuario: string){
+    return this.http.get(`${this.API_URI}/usuario/${nombre_usuario}`);
   }
 
   updateUsuario(id: number, usuario: usuariosDatos){

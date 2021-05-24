@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { interceptorProvider } from './components/interceptors/prod-interceptor.service';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // external
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +21,10 @@ import { RutasComponent } from './components/rutas/rutas.component';
 import { LocalizacionesComponent } from './components/localizaciones/localizaciones.component';
 import { NoImagePipePipe } from './pipes/no-image-pipe.pipe';
 import { PerfilComponent } from './perfil/perfil.component';
+import { TemaComponent } from './components/tema/tema.component';
+import { NuevoTemaComponent } from './components/nuevo-tema/nuevo-tema.component';
+import { ForoComponent } from './components/foro/foro.component';
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
 
 
 
@@ -36,7 +40,11 @@ import { PerfilComponent } from './perfil/perfil.component';
     RutasComponent,
     LocalizacionesComponent,
     NoImagePipePipe,
-    PerfilComponent
+    PerfilComponent,
+    TemaComponent,
+    NuevoTemaComponent,
+    ForoComponent,
+    ComentariosComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent]

@@ -1,0 +1,8 @@
+<button *ngIf="isLogged" class="btn btn-outline-dark my-2 my-sm-0" routerLink="/nuevo-post" type="submit">
+    Nuevo Post
+</button>
+<div class="row">
+    <div *ngFor="let tema of temas" class="col-6">
+        <app-tema [tema]="tema"></app-tema>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<h1 class="mt-4">Nuevo Tema</h1>
+<form [formGroup]="forma" (ngSubmit)="anadirTema()">
+    <div class="form-group">
+        <label for="nombre">Nombre del Tema</label>
+        <input ngmodel="nombre" name="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre del Tema">
+    </div>
+    <div class="form-group">
+        <label for="descr">Descripción</label>
+        <input ngmodel="descr" name="descr" type="text" class="form-control" id="descr" placeholder="Descripción del Tema" required="required">
+    </div>
+    <input class="btn btn-light btn-sm" type="submit" value="Crear"/>
+</form>

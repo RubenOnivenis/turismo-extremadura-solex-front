@@ -41,7 +41,7 @@ export class RegistroComponent implements OnInit {
   // Función para registrar al usuario
   onRegister(): void {
     // Inicializamos el nuevo usuario le pasamos las variables para crear el usuario, nombre, nombreUsuario, email y password
-    this.nuevoUsuario = new NuevoUsuario(this.nombre, this.nombreUsuario, this.email, this.password, this.apellidos, this.fch_nacimiento, this.imagen_perfil, this.telefono);
+    this.nuevoUsuario = new NuevoUsuario(this.nombre, this.nombreUsuario, this.email, this.password, this.apellidos, this.fch_nacimiento, this.telefono);
     // Una vez que lo tenemos se lo pasamos al authService
     // Se realiza un callback, en el caso de que fallara sucedería el err, si todo va bien sucedería el data
     this.authService.nuevo(this.nuevoUsuario).subscribe(

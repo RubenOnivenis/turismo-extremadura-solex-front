@@ -7,6 +7,9 @@ import { RegistroComponent } from './components/auth/registro.component';
 import { AlojamientosComponent } from './components/alojamientos/alojamientos.component';
 import { RutasComponent } from './components/rutas/rutas.component';
 import { LocalizacionesComponent } from './components/localizaciones/localizaciones.component';
+import { NuevoTemaComponent } from './components/nuevo-tema/nuevo-tema.component';
+import { ForoComponent } from './components/foro/foro.component';
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
@@ -21,6 +24,9 @@ const routes: Routes = [
   { path: 'alojamientos', component: AlojamientosComponent},
   { path: 'rutas', component: RutasComponent},
   { path: 'perfil', component: PerfilComponent},
+  { path: 'foro', component: ForoComponent},
+  { path: 'nuevo-post', component: NuevoTemaComponent},
+  { path: 'tema/:id_tema', component: ComentariosComponent},
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

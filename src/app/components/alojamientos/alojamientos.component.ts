@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { alojamientosDatos, AlojamientosService } from 'src/app/services/alojamientos.service';
-import { Localizacion } from 'src/app/services/localizaciones.service';
+import { localizacionesDatos } from 'src/app/services/localizaciones.service';
 
 @Component({
   selector: 'app-alojamientos',
@@ -10,7 +10,7 @@ import { Localizacion } from 'src/app/services/localizaciones.service';
 export class AlojamientosComponent implements OnInit {
 
   @Input() alojamiento!:alojamientosDatos;
-  @Input() localizaciones!:Localizacion;
+  @Input() localizaciones!:localizacionesDatos;
   alojamientosArray: any [] = [];
   numCaracteres:number;
 

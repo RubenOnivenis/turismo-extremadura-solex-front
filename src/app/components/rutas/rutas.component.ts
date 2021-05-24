@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Localizacion } from 'src/app/services/localizaciones.service';
+import { localizacionesDatos } from 'src/app/services/localizaciones.service';
 import { rutasDatos, RutasService } from 'src/app/services/rutas.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { rutasDatos, RutasService } from 'src/app/services/rutas.service';
 export class RutasComponent implements OnInit {
 
   @Input() rutas!:rutasDatos;
-  @Input() localizaciones!:Localizacion;
+  @Input() localizaciones!:localizacionesDatos;
   rutasArray: any [] = [];
   numCaracteres:number;
 
