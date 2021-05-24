@@ -2,27 +2,15 @@
     <div class="main-body" >
       <div class="row gutters-sm">
         <!--RECUADRO DE FOTO Y NOMBRE-->
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <div class="card-body perfilImagen">
-              <div class="d-flex flex-column align-items-center text-center">
-                <img [src]="usuario.imagen_usuario" class="rounded-circle" width="150">
-                <div class="mt-3">
-                  <h4 *ngIf="usuario"></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-8">
+        <div class="col-md-8 offset-md-2">
           <div class="card mb-3 perfil">
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-3">
                   <h6 class="mb-0"><b>Nombre de usuario:</b></h6>
-
                 </div>
                 <div class="col-sm-9">
+                  {{usuario.nombre_usuario}}
                 </div>
               </div>
               <hr>

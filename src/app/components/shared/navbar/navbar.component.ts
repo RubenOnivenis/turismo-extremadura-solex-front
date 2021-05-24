@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TokenService } from 'src/app/services/token.service';
 
 
@@ -15,7 +16,10 @@ export class NavbarComponent implements OnInit {
   nombreUsuario: string;
 
   // Inyectamos en el constructor el servicio de Token
-  constructor(private tokenService: TokenService) { }
+  constructor(
+    private tokenService: TokenService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     // Se iguala la variable isLogged al token de login del usuario
@@ -29,6 +33,7 @@ export class NavbarComponent implements OnInit {
   //Función para cerrar sesión
   onLogOut(): void {
     this.tokenService.logOut();
+    this.router.navigate(['/login']);
   }
 
 }
