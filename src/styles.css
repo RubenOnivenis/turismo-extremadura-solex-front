@@ -33,3 +33,13 @@
     max-height: 450px; 
     overflow: hidden;
 }
+
+.SombraCaja{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.modal-footer{
+    background-color: #343A40;
+}
+.modal-header{
+    background-color: #00AB39;
+}
