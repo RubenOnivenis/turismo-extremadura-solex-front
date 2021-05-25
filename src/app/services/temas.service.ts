@@ -22,8 +22,7 @@ export interface comentariosDatos{
 })
 export class TemasService {
 
-  API_URI= 'http://localhost:8081/api';
-  API_URI_LOG= 'http://localhost:8080/api';
+  API_URI = 'http://localhost:8081/api';
 
   constructor(
     private http: HttpClient
@@ -46,11 +45,11 @@ export class TemasService {
   }
 
   anadirTema(tema: temasDatos){
-    return this.http.post(this.API_URI_LOG + '/temas_foro', tema);
+    return this.http.post(this.API_URI + '/temas_foro', tema);
   }
 
   comentar(comentario: comentariosDatos){
-    return this.http.post(this.API_URI_LOG + '/comentario_foro/', comentario);
+    return this.http.post(this.API_URI + '/comentario_foro/', comentario);
   }
   
 }
