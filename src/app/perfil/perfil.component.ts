@@ -16,7 +16,6 @@ export class PerfilComponent implements OnInit {
   usuario:any = {};
 
   constructor(
-    private activatedRoute: ActivatedRoute,
     private _usuariosService: UsuariosService,
     private tokenService: TokenService
   ) {}

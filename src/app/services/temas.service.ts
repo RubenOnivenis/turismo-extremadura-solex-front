@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
 export interface temasDatos{
   id_tema?:number,
   nombreTema:string,
-  id_usuario?:number,
-  fch_hora_tema:Date,
-  comentario_tema	:string
+  idUsuario:number,
+  fchHoraTema?:Date,
+  comentarioTema	:string
 }
 
 export interface comentariosDatos{

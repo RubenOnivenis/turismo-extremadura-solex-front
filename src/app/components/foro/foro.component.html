@@ -1,8 +1,23 @@
-<button *ngIf="isLogged" class="btn btn-outline-dark my-2 my-sm-0" routerLink="/nuevo-post" type="submit">
-    Nuevo Post
-</button>
-<div class="row">
-    <div *ngFor="let tema of temas" class="col-6">
-        <app-tema [tema]="tema"></app-tema>
+<div class="text-center">
+    <h4 class="mb-0">Foro SOLEX</h4>
+    <p class="text-muted">Consulta temas creados por otros usuarios o crea los tuyos propios</p>
+</div>
+<div class="container">
+    <div class="main-body p-0">
+        <div class="inner-sidebar">
+            <div class="justify-content-center">
+                <button *ngIf="isLogged" class="btn btn-block btn-outline-dark my-2 my-sm-0" routerLink="/nuevo-post" type="button">
+                    Nuevo Tema
+                </button>
+            </div>
+        </div>
+        <div>
+            <!--LISTADO DE TEMAS-->
+            <div class="p-2 p-sm-3">
+                <div class="card mb-2" *ngFor="let tema of temas">
+                    <app-tema [tema]="tema"></app-tema>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
