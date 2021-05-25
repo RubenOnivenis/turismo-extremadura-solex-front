@@ -25,6 +25,9 @@ import { TemaComponent } from './components/tema/tema.component';
 import { NuevoTemaComponent } from './components/nuevo-tema/nuevo-tema.component';
 import { ForoComponent } from './components/foro/foro.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
+import { CookiesComponent } from './components/shared/cookies/cookies.component';
+import { RouterModule } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -44,7 +47,8 @@ import { ComentariosComponent } from './components/comentarios/comentarios.compo
     TemaComponent,
     NuevoTemaComponent,
     ForoComponent,
-    ComentariosComponent
+    ComentariosComponent,
+    CookiesComponent
   ],
   imports: [
     BrowserModule,
@@ -53,9 +57,17 @@ import { ComentariosComponent } from './components/comentarios/comentarios.compo
     ToastrModule.forRoot(),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserModule,
+    RouterModule
   ],
-  providers: [interceptorProvider],
+  providers: [
+    interceptorProvider,
+    CookieService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

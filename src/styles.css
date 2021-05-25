@@ -43,3 +43,23 @@
 .modal-header{
     background-color: #00AB39;
 }
+/*COOKIES*/
+.cuadro_cookies{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    position: fixed;
+    color: black;
+    top: 120px;
+    left: 30%;
+    width: 40%;
+    z-index: 100000;
+    border: 6px #343A40 solid;
+    text-align: justify;
+    background-color: white;
+}
+.cookies{
+    height: 100%;
+    top: 0px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.459);
+    position: fixed;
+}
