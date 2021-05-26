@@ -23,7 +23,11 @@ export class NuevoTemaComponent implements OnInit {
   usuario:any = {};
 
   constructor(
-    private temasService: TemasService, private formBuilder:FormBuilder, private tokenService: TokenService, private _usuariosService: UsuariosService,
+    private temasService: TemasService, 
+    private formBuilder:FormBuilder, 
+    private tokenService: TokenService, 
+    private _usuariosService: UsuariosService,
+    private activatedRoute:ActivatedRoute
   ) { 
     this.crearFormulario();
   }
@@ -41,7 +45,6 @@ export class NuevoTemaComponent implements OnInit {
     this._usuariosService.getUsuario(this.nombreUsuario)
       .subscribe(respuesta => {
         this.usuario = respuesta;
-        console.log(this.usuario);
       },
       (err) => {
         err="ERROR";
@@ -60,11 +63,13 @@ export class NuevoTemaComponent implements OnInit {
   anadirTema(){
     this.rellenarTema();
     this.temasService.anadirTema(this.tema)
-      .subscribe(usuario => {
+      .subscribe(respuesta => {
+        console.log(respuesta)
       });
   }
 
   rellenarTema(){
+    this.getUsuario();
     this.tema={
       nombreTema:this.forma.value.nombre,
       comentarioTema:this.forma.value.descr,
