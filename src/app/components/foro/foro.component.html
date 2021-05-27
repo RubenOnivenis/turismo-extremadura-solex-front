@@ -15,7 +15,16 @@
             <!--LISTADO DE TEMAS-->
             <div class="p-2 p-sm-3">
                 <div class="card mb-2" *ngFor="let tema of temas">
-                    <app-tema [tema]="tema"></app-tema>
+                    <div class="card-body p-2">
+                        <div>
+                            <div>
+                                <h6 class="text-body">{{tema.nombreTema}}</h6>
+                                <p class="text-secondary">{{tema.comentarioTema}}</p>
+                                <p class="text-muted"><span class="text-secondary font-weight-bold">{{tema.fchHoraTema}}</span></p>
+                            </div>
+                            <button type="button" class="btn" [routerLink]="['/comentarios', tema.id_tema]">Ver Tema</button>
+                        </div>
+                      </div>
                 </div>
             </div>
         </div>

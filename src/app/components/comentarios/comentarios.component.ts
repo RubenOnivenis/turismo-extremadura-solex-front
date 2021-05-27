@@ -9,20 +9,25 @@ import { comentariosDatos, temasDatos, TemasService } from 'src/app/services/tem
 })
 export class ComentariosComponent implements OnInit {
 
+  @Input() tema1!:temasDatos;
+
   tema: any = {};
 
   comentarios: any[] = [];
   comentario!:comentariosDatos;
 
-  constructor(private temaService:TemasService, private activateRoute: ActivatedRoute) { }
+  constructor(
+    private temaService:TemasService, 
+    private activateRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(){
-    this.cargarTema;
-    this.cargarComentarios;
+    this.cargarTema();
+    //this.cargarComentarios();
   }
 
   cargarTema(){
-    this.temaService.cargarTema(this.activateRoute.snapshot.params.id_tema)
+    this.temaService.cargarTema(this.activateRoute.snapshot.params.id)
       .subscribe(tema => {
         this.tema = tema;
         console.log(this.tema);

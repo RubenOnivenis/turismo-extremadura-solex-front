@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'perfil', component: PerfilComponent},
   { path: 'foro', component: ForoComponent},
   { path: 'nuevo-post', component: NuevoTemaComponent},
-  { path: 'tema/:id_tema', component: ComentariosComponent},
+  { path: 'comentarios/:id_tema', component: ComentariosComponent},
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

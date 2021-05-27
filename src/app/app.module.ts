@@ -21,7 +21,6 @@ import { RutasComponent } from './components/rutas/rutas.component';
 import { LocalizacionesComponent } from './components/localizaciones/localizaciones.component';
 import { NoImagePipePipe } from './pipes/no-image-pipe.pipe';
 import { PerfilComponent } from './components/perfil/perfil.component';
-import { TemaComponent } from './components/tema/tema.component';
 import { NuevoTemaComponent } from './components/nuevo-tema/nuevo-tema.component';
 import { ForoComponent } from './components/foro/foro.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
@@ -44,7 +43,6 @@ import { CookieService } from 'ngx-cookie-service';
     LocalizacionesComponent,
     NoImagePipePipe,
     PerfilComponent,
-    TemaComponent,
     NuevoTemaComponent,
     ForoComponent,
     ComentariosComponent,
