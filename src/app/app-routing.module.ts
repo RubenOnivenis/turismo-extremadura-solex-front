@@ -10,7 +10,7 @@ import { LocalizacionesComponent } from './components/localizaciones/localizacio
 import { NuevoTemaComponent } from './components/nuevo-tema/nuevo-tema.component';
 import { ForoComponent } from './components/foro/foro.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
-import { PerfilComponent } from './perfil/perfil.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 const routes: Routes = [
   // Ruta principal del index

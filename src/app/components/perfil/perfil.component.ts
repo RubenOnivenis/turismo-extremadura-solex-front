@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { TokenService } from 'src/app/services/token.service';
-import { UsuariosService } from '../services/usuarios.service';
+import { UsuariosService } from '../../services/usuarios.service';
 
 @Component({
   selector: 'app-perfil',
