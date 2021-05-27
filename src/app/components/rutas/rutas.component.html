@@ -4,9 +4,7 @@
     <div class="card-columns">
         <div class="card bg-light mb-3 p-md-0" *ngFor="let ruta of rutasArray">
             <div> 
-                <div class="row">
-                    <img class="card-img-top col-md-8 mt-3 offset-md-2" [src]="ruta.imagen | noImagePipe">
-                </div>
+                <img class="card-img-top mt-3 p-3" width="480px" height="320px" [src]="ruta.imagen | noImagePipe">
                 <div class="card-body">
                     <h5 class="card-title">{{ruta.nombre}}</h5>
                     <p class="card-text">{{ruta.descripcion}}</p>
