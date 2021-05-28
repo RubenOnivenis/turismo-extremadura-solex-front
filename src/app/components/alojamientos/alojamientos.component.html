@@ -1,15 +1,10 @@
-<div>
-    <h2 class="animated-fast" style="text-align: center;">ALOJAMIENTOS</h2>
-    <hr />
-    <div class="card-columns">
-        <div class="card bg-light mb-3 p-md-0" *ngFor="let alojamiento of alojamientosArray">
-            <div> 
-                <img class="card-img-top mt-3 p-3" width="480px" height="320px" [src]="alojamiento.imagen | noImagePipe">
-                <div class="card-body">
-                    <h5 class="card-title">{{alojamiento.nombre}}</h5>
-                    <p class="card-text">{{alojamiento.descripcion}}</p>
-                </div>
-            </div>
+<div class="card bg-light mb-3 p-md-0" *ngIf="alojamiento">
+    <div> 
+        <img class="card-img-top mt-3 p-3" width="480px" height="320px" [src]="alojamiento.imagen | noImagePipe">
+        <div class="card-body">
+            <h5 class="card-title">{{alojamiento.nombre}}</h5>
+            <p class="card-text">{{alojamiento.descripcion | slice:0:this.NUM_CARACTERES}}{{puntos_suspensivos()}}</p>
         </div>
     </div>
 </div>
+  

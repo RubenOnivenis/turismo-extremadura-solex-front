@@ -11,25 +11,21 @@ export class AlojamientosComponent implements OnInit {
 
   @Input() alojamiento!:alojamientosDatos;
   @Input() localizaciones!:localizacionesDatos;
-  alojamientosArray: any [] = [];
-  numCaracteres:number;
+  
+  NUM_CARACTERES:number;
 
   constructor(
-    private _alojamientosService:AlojamientosService
+    
   ) { 
-    this.numCaracteres = 120;
+    this.NUM_CARACTERES = 120;
   }
 
   ngOnInit() {
-    this._alojamientosService.getAlojamientos()
-      .subscribe( (item:any) => {
-        this.alojamientosArray = item;
-        console.log(this.alojamientosArray);
-      } )
+    
   }
 
   public puntos_suspensivos():string{
-    if(this.alojamiento.descripcion.length > this.numCaracteres) return "...";
+    if(this.alojamiento.descripcion.length > this.NUM_CARACTERES) return "...";
     return "";
   }
 

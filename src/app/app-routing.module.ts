@@ -11,6 +11,8 @@ import { NuevoTemaComponent } from './components/nuevo-tema/nuevo-tema.component
 import { ForoComponent } from './components/foro/foro.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { AlojamientosListaComponent } from './Components/alojamientos-lista/alojamientos-lista.component';
+import { RutasListaComponent } from './Components/rutas-lista/rutas-lista.component';
 
 const routes: Routes = [
   // Ruta principal del index
@@ -21,8 +23,10 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent, canActivate: [LoginGuard] },
   // Rutas del navbar
   { path: 'localizaciones', component: LocalizacionesComponent},
-  { path: 'alojamientos', component: AlojamientosComponent},
-  { path: 'rutas', component: RutasComponent},
+  //{ path: 'alojamientos', component: AlojamientosComponent},
+  { path: 'alojamientos-lista', component: AlojamientosListaComponent},
+  //{ path: 'rutas', component: RutasComponent},
+  { path: 'rutas-lista', component: RutasListaComponent},
   { path: 'perfil', component: PerfilComponent},
   { path: 'foro', component: ForoComponent},
   { path: 'nuevo-post', component: NuevoTemaComponent},

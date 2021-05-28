@@ -9,26 +9,23 @@ import { rutasDatos, RutasService } from 'src/app/services/rutas.service';
 })
 export class RutasComponent implements OnInit {
 
-  @Input() rutas!:rutasDatos;
+  @Input() ruta!:rutasDatos;
   @Input() localizaciones!:localizacionesDatos;
-  rutasArray: any [] = [];
-  numCaracteres:number;
+
+  NUM_CARACTERES:number;
 
   constructor(
-    private _rutasService:RutasService
+    
   ) { 
-    this.numCaracteres = 120;
+    this.NUM_CARACTERES = 120;
   }
 
   ngOnInit() {
-    this._rutasService.getRutas()
-      .subscribe( (item:any) => {
-        this.rutasArray = item;
-      } )
+    
   }
 
   public puntos_suspensivos():string{
-    if(this.rutas.descripcion.length > this.numCaracteres) return "...";
+    if(this.ruta.descripcion.length > this.NUM_CARACTERES) return "...";
     return "";
   }
 

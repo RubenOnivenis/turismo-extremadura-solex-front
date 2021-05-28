@@ -1,15 +1,10 @@
-<div>
-    <h2 class="animated-fast" style="text-align: center;">RUTAS</h2>
-    <hr />
-    <div class="card-columns">
-        <div class="card bg-light mb-3 p-md-0" *ngFor="let ruta of rutasArray">
-            <div> 
-                <img class="card-img-top mt-3 p-3" width="480px" height="320px" [src]="ruta.imagen | noImagePipe">
-                <div class="card-body">
-                    <h5 class="card-title">{{ruta.nombre}}</h5>
-                    <p class="card-text">{{ruta.descripcion}}</p>
-                </div>
-            </div>
+<div class="card bg-light mb-3 p-md-0" *ngIf="ruta">
+    <div> 
+        <img class="card-img-top mt-3 p-3" width="480px" height="320px" [src]="ruta.imagen | noImagePipe">
+        <div class="card-body">
+            <h5 class="card-title">{{ruta.nombre}}</h5>
+            <p class="card-text">{{ruta.descripcion | slice:0:this.NUM_CARACTERES}}{{puntos_suspensivos()}}</p>
         </div>
     </div>
 </div>
+ 
