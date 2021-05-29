@@ -18,34 +18,40 @@
 	</div>
 </div>
 <!-- Localizaciones del buscador -->
-<div class="card-columns">
-    <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizacionesEncontradas">
-        <div> 
-            <div class="row">
-                <img class="card-img-top col-md-8 mt-3 offset-md-2" [src]="localizacion.imagen | noImagePipe">
+<div *ngIf="ver">
+    <h2>Poblaciones encontradas</h2>
+    <div class="card-columns">
+        <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizacionesEncontradas">
+            <div> 
+                <div class="row">
+                    <img class="card-img-top col-md-8 mt-3 offset-md-2" [src]="localizacion.imagen | noImagePipe">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>
+                </div>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">{{localizacion.nombre}}</h5>
-            </div>
+            <a class="btn btn-dark btn-block informacionBoton" href="{{localizaciones.url}}" style="cursor: pointer;" target="_blank">
+                Información
+            </a>
         </div>
-        <a class="btn btn-dark btn-block informacionBoton" href="{{localizaciones.url}}" style="cursor: pointer;" target="_blank">Información>
-            Información
-        </a>
     </div>
 </div>
 <!-- Lista de localizaciones -->
-<div class="card-columns">
-    <div class="card bg-light mb-3 p-md-0" *ngFor="let localizaciones of localizaciones">
-        <div> 
-            <div class="row">
-                <img class="card-img-top col-md-8 mt-3 offset-md-2" [src]="localizaciones.imagen | noImagePipe">
+<div *ngIf="!ver">
+    <h2>Estas son algunas de las poblaciones extremeñas</h2>
+    <div class="card-columns">
+        <div class="card bg-light mb-3 p-md-0" *ngFor="let localizaciones of localizaciones">
+            <div> 
+                <div class="row">
+                    <img class="card-img-top col-md-8 mt-3 offset-md-2" [src]="localizaciones.imagen | noImagePipe">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{localizaciones.nombre}} | {{localizaciones.comarca}}</h5>
+                </div>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">{{localizaciones.nombre}}</h5>
-            </div>
+            <a class="btn btn-dark btn-block" href="{{localizaciones.url}}" style="cursor: pointer;" target="_blank">
+                Información
+            </a>
         </div>
-        <a class="btn btn-dark btn-block" href="{{localizaciones.url}}" style="cursor: pointer;" target="_blank">Información>
-            Información
-        </a>
     </div>
 </div>

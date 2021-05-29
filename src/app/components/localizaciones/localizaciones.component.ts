@@ -18,6 +18,8 @@ export class LocalizacionesComponent implements OnInit {
 
   localizacionesEncontradas: any = [];
 
+  ver: boolean = false;
+
   constructor(private activatedRoute:ActivatedRoute,private _localizacionesService:LocalizacionesService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
@@ -41,6 +43,7 @@ export class LocalizacionesComponent implements OnInit {
           this.localizacionesEncontradas = localizaciones;
         });
     })
+    this.ver=true;
   }
 
 }
