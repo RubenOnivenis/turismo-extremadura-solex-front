@@ -6,7 +6,8 @@ export interface localizacionesDatos{
   nombre: string,
   provincia: string,
   comarca: string,
-  imagen:string
+  imagen:string,
+  url:string
 }
 
 @Injectable({

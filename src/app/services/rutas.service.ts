@@ -7,7 +7,8 @@ export interface rutasDatos{
   imagen:string,
   nombre:string,
   nombreLocalizacion:string,
-  descripcion:string
+  descripcion:string,
+  url:string
 }
 
 @Injectable({
