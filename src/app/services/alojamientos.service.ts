@@ -21,8 +21,12 @@ export class AlojamientosService {
     private http: HttpClient
   ) { }
 
-getAlojamientos(){
-  return this.http.get(`${this.API_URI}/alojamientos`);
-}
+  getAlojamientos(){
+    return this.http.get(`${this.API_URI}/alojamientos`);
+  }
+
+  getAlojamiento(id_alojamiento: number){
+    return this.http.get(`${this.API_URI}/alojamiento/${id_alojamiento}`);
+  }
 
 }
