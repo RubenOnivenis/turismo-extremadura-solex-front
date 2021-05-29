@@ -30,7 +30,6 @@ export class LocalizacionesComponent implements OnInit {
     this._localizacionesService.getLocalizaciones()
       .subscribe((localizaciones: any) => {
         this.localizaciones = localizaciones;
-        console.log(localizaciones);
       });
   }
 
@@ -40,7 +39,6 @@ export class LocalizacionesComponent implements OnInit {
       this._localizacionesService.buscarLocalizaciones(nombre)
         .subscribe((localizaciones: any) => {
           this.localizacionesEncontradas = localizaciones;
-          console.log(this.localizacionesEncontradas);
         });
     })
   }
