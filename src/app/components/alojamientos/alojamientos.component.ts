@@ -25,10 +25,6 @@ export class AlojamientosComponent implements OnInit {
     
   }
 
-  public verAlojamiento(){
-    this.router.navigate(['/alojamiento', this.alojamiento.id_alojamiento]);
-  }
-
   public puntos_suspensivos():string{
     if(this.alojamiento.descripcion.length > this.NUM_CARACTERES) return "...";
     return "";

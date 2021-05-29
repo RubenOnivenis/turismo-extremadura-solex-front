@@ -13,7 +13,6 @@ import { ComentariosComponent } from './components/comentarios/comentarios.compo
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { AlojamientosListaComponent } from './Components/alojamientos-lista/alojamientos-lista.component';
 import { RutasListaComponent } from './Components/rutas-lista/rutas-lista.component';
-import { AlojamientoComponent } from './components/alojamiento/alojamiento.component';
 
 const routes: Routes = [
   // Ruta principal del index
@@ -27,7 +26,6 @@ const routes: Routes = [
   //{ path: 'alojamientos', component: AlojamientosComponent},
   { path: 'alojamientos-lista', component: AlojamientosListaComponent},
   //{ path: 'rutas', component: RutasComponent},
-  { path: 'alojamiento', component: AlojamientoComponent },
   { path: 'rutas-lista', component: RutasListaComponent},
   { path: 'perfil', component: PerfilComponent},
   { path: 'foro', component: ForoComponent},
