@@ -64,7 +64,7 @@
             <!-- Botón del modal -->
             <!-- MODIFICAR USUARIO -->
             <div>
-              <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#modificar">
+              <button type="button" class="btn btn-outline-dark SombraCaja" data-toggle="modal" data-target="#modificar">
                 Modificar datos
               </button>
               <div class="modal fade" id="modificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -77,81 +77,74 @@
                       </button>
                     </div>
                       <!-- FORMULARIO PARA MODIFICAR EL USUARIO -->
-                      <form id="modificarUsuario" autocomplete="off" (keyup.enter)="modificar()" [formGroup]="forma.modificar" *ngIf="usuario">
+                      <form id="modificarUsuario" autocomplete="off" (keyup.enter)="modificar()" (ngSubmit)="modificar()" [formGroup]="forma_modificar">
                         <div class="m-3">
                           <div class="row">
                             <!-- Email -->
                             <div class="form-group col-md-6 col-12">
                               <label for="email">E-mail</label>
                               <input type="email" 
+                                    [ngModel]="usuario.email"
                                     class="form-control" 
                                     placeholder="E-mail"
                                     formControlName="email"
-                                    [class.is-invalid]="!valido('email')"
                                     >
-                              <small class="form-text text-danger" *ngIf="!valido('email')">El e-mail no es válido</small>
-                            </div>
-                             <!--Nombre de usuario-->
-                            <div class="form-group col-md-6 col-12">
-                              <label for="nombre_usuario">Nombre de usuario</label>
-                              <input class="form-control"
-                                      type="text"
-                                      placeholder="Nombre de usuario"
-                                      formControlName="nombre_usuario"
-                                      [class.is-invalid]="!valido('nombre_usuario')">
-                              <small class="form-text text-danger" *ngIf="!valido('nombre_usuario')">Debe tener al menos 5 carácteres</small>
+                              
                             </div>
                             <!--Nombre-->
                             <div class="form-group col-md-6 col-12">
                               <label for="nombre">Nombre</label>
                               <input class="form-control"
+                                    [ngModel]="usuario.nombre"
                                     type="text"
                                     placeholder="Nombre"
                                     formControlName="nombre"
-                                    [class.is-invalid]="!valido('nombre')">
-                              <small class="form-text text-danger" *ngIf="!valido('nombre')">Debe tener al menos 3 carácteres</small>
+                                   >
+                             
                             </div>
                             <!--Apellidos-->
                             <div class="form-group col-md-6 col-12">
                               <label for="apellidos">Apellidos</label>
                               <input class="form-control"
+                                    [ngModel]="usuario.apellidos"
                                     type="text"
                                     placeholder="Apellidos"
                                     formControlName="apellidos"
-                                    [class.is-invalid]="!valido('apellidos')">
-                              <small class="form-text text-danger" *ngIf="!valido('apellidos')">Debe tener al menos 5 carácteres</small>
+                                    >
+                             
                             </div>
                             <!--Fecha de nacimiento-->
                             <div class="form-group col-md-6 col-12">
                               <label for="fch_nacimiento">Fecha de nacimiento</label>
                               <input type="text"
+                                      [ngModel]="usuario.fch_nacimiento"
                                       class="form-control"
                                       placeholder="Fecha de nacimiento"
                                       formControlName="fch_nacimiento"
                                       >
-                              <!--<small class="form-text text-danger" *ngIf="!valido('telefono')">El teléfono no es válido</small>-->
                             </div>
                             <!--Teléfono-->
                             <div class="form-group col-md-6 col-12">
                               <label for="telefono">Teléfono</label>
                               <input type="text"
+                                      [ngModel]="usuario.telefono"
                                       class="form-control"
                                       placeholder="Teléfono"
                                       formControlName="telefono"
-                                      [class.is-invalid]="!valido('telefono')">
-                              <small class="form-text text-danger" *ngIf="!valido('telefono')">El teléfono no es válido</small>
+                                     >
+                             
                             </div>
                           </div>
                         </div>
                       </form>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-outline-light" (click)="modificar()">Guardar cambios</button>
+                        <button type="submit" class="btn btn-outline-light">Guardar cambios</button>
                       </div>
                   </div>
                 </div>
               </div>
-              <!-- Modal para cambiar la contraseña -->
+              <!-- Modal para cambiar la contraseña 
               <button type="button" class=" ml-md-3 ml-2 btn btn-outline-dark SombraCaja" data-toggle="modal" data-target="#cambiar_pass">
                 Cambiar contraseña
               </button>
@@ -164,31 +157,34 @@
                         <span aria-hidden="true" class="cerrarModal">&times;</span>
                       </button>
                     </div>
-                    <form autocomplete="off">
+                    <form autocomplete="off" (keyup.enter)="modificarPass()" (ngSubmit)="modificarPass()" [formGroup]="forma_modificar_pass">
                       <div class="p-2">
                         <div class="form-group offset-md-3 col-md-6 col-12">
                             <label for="disabledSelect">Contraseña antigua</label>
                             <input type="password" 
                                 class="form-control" 
                                 placeholder="Contraseña nueva"
+                                formControlName="pass_antigua"
                                 >
-                            <!--<small class="form-text text-danger" *ngIf="!valido('pass_antigua')">Debe rellenarse el campo</small>-->
+                           
                         </div>
                         <div class="form-group offset-md-3 col-md-6 col-12">
                             <label for="disabledSelect">Contraseña nueva</label>
                             <input type="password" 
                                 class="form-control" 
                                 placeholder="Contraseña nueva"
+                                formControlName="pass_nueva"
                                 >
-                            <!--<small class="form-text text-danger" *ngIf="!valido('pass_nueva')">Debe tener más de 5 carácteres</small>-->
+                           
                         </div>
                         <div class="form-group offset-md-3 col-md-6 col-12">
                             <label for="disabledSelect">Repetir contraseña nueva</label>
                             <input type="password" 
                                 class="form-control" 
                                 placeholder="Repetir contraseña"
+                                formControlName="pass_nueva_2"
                                 >
-                            <!--<small class="form-text text-danger" *ngIf="!pass2Valido">Las contraseñas deben ser iguales</small>-->
+                            
                         </div>
                       </div>
                       <div class="modal-footer">
@@ -198,7 +194,7 @@
                     </form>
                 </div>
               </div>
-            </div>
+            </div>-->
           </div>
         </div>
       </div>

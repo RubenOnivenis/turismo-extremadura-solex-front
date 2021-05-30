@@ -13,7 +13,9 @@ export class PerfilComponent implements OnInit {
   isLogged = false;
   isAdmin = false;
   nombreUsuario: string;
+
   forma_modificar!: FormGroup;
+  forma_modificar_pass!: FormGroup;
 
   usuario:any = {};
   usuarioEnviar:any = {};
@@ -61,11 +63,10 @@ export class PerfilComponent implements OnInit {
 
   modificar(){
     this.recursivaModificar(this.forma_modificar);
-    if(this.forma_modificar.valid){
-      this.rellenarUsuarios();
-      this.modificarUsuario();
-      location.reload();
-    } 
+    this.rellenarUsuarios();
+    this.modificarUsuario();
+    location.reload();
+    
   }
 
   recursivaModificar(item: FormGroup): any{
@@ -85,7 +86,35 @@ export class PerfilComponent implements OnInit {
   }
 
   modificarUsuario(){
-    this._usuariosService.updateUsuario(this.usuarioEnviar, this.activatedRoute.snapshot.params.id)
+    this._usuariosService.updateUsuario(this.nombreUsuario, this.usuarioEnviar)
+      .subscribe(respuesta =>{
+      },
+        (err) => {
+          err="ERROR";
+          console.log(err);
+        } 
+      )
+  }
+
+  modificar_pass(){
+    this.recursivaModificar(this.forma_modificar_pass);
+    this.rellenarPass();
+    this.modificarPass();
+    location.reload();
+  }
+
+  formulario_modificar_pass(){
+    this.forma_modificar_pass = this.formBuilder.group({
+      password:['', Validators.required],                                
+    })
+  }
+
+  rellenarPass(){
+    this.usuarioEnviar.password = this.forma_modificar_pass.value.password;
+  }
+
+  modificarPass(){
+    this._usuariosService.updatePassUsuario(this.activatedRoute.snapshot.params.id, this.usuarioEnviar)
       .subscribe(respuesta =>{
       },
         (err) => {

@@ -23,9 +23,7 @@
     <div class="card-columns">
         <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizacionesEncontradas">
             <div> 
-                <div class="row">
-                    <img class="card-img-top col-md-8 mt-3 offset-md-2" [src]="localizacion.imagen | noImagePipe">
-                </div>
+                <img class="card-img-top mt-3 p-3"  width="480px" height="320px" [src]="localizacion.imagen | noImagePipe">
                 <div class="card-body">
                     <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>
                 </div>
@@ -40,16 +38,14 @@
 <div *ngIf="!ver">
     <h2>Estas son algunas de las poblaciones extremeñas</h2>
     <div class="card-columns">
-        <div class="card bg-light mb-3 p-md-0" *ngFor="let localizaciones of localizaciones">
+        <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizaciones">
             <div> 
-                <div class="row">
-                    <img class="card-img-top col-md-8 mt-3 offset-md-2" [src]="localizaciones.imagen | noImagePipe">
-                </div>
+                <img class="card-img-top mt-3 p-3"  width="480px" height="320px" [src]="localizacion.imagen | noImagePipe">
                 <div class="card-body">
-                    <h5 class="card-title">{{localizaciones.nombre}} | {{localizaciones.comarca}}</h5>
+                    <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>
                 </div>
             </div>
-            <a class="btn btn-dark btn-block" href="{{localizaciones.url}}" style="cursor: pointer;" target="_blank">
+            <a class="btn btn-dark btn-block informacionBoton" href="{{localizaciones.url}}" style="cursor: pointer;" target="_blank">
                 Información
             </a>
         </div>

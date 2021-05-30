@@ -31,8 +31,8 @@ export class UsuariosService {
     return this.http.get(`${this.API_URI}/usuario/${nombre_usuario}`);
   }
 
-  updateUsuario(id: number, usuario: usuariosDatos){
-    return this.http.put(`${this.API_URI}/usuarios/${id}`, usuario);
+  updateUsuario(nombre_usuario: string, usuario: usuariosDatos){
+    return this.http.put(`${this.API_URI}/usuarios/${nombre_usuario}`, usuario);
   }
 
   updatePassUsuario(id: number, usuario: usuariosDatos){

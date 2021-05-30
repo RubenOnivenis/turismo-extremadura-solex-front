@@ -32,6 +32,7 @@ export class LocalizacionesComponent implements OnInit {
     this._localizacionesService.getLocalizaciones()
       .subscribe((localizaciones: any) => {
         this.localizaciones = localizaciones;
+        console.log(this.localizaciones);
       });
   }
 
