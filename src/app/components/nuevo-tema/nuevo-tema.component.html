@@ -1,5 +1,5 @@
 <!--FORMULARIO DEL NUEVO TEMA-->
-<form [formGroup]="forma" (ngSubmit)="anadirTema()">
+<form [formGroup]="forma" (keyup.enter)="anadirTema()">
     <div class="text-center">
         <h4 class="mb-0">Crea un Tema para nuestro Foro</h4>
     </div>
@@ -14,6 +14,6 @@
         </div>
     </div>
     <div>
-        <input class="btn btn-light btn-block" type="submit" value="Crear"/>
+        <input class="btn btn-light btn-block" type="submit" value="Crear" (click)="anadirTema()"/>
     </div>
 </form>

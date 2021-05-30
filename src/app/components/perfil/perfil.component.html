@@ -10,7 +10,7 @@
                   <h6 class="mb-0"><b>Nombre de usuario:</b></h6>
                 </div>
                 <div class="col-sm-9">
-                  {{usuario.nombreUsuario}}
+                  {{usuario.nombreUsuario}} | <span *ngIf="isAdmin" class="text-danger">Administrador</span>
                 </div>
               </div>
               <hr>
@@ -77,7 +77,7 @@
                       </button>
                     </div>
                       <!-- FORMULARIO PARA MODIFICAR EL USUARIO -->
-                      <form id="modificarUsuario" autocomplete="off" (keyup.enter)="modificar()" (ngSubmit)="modificar()" [formGroup]="forma_modificar">
+                      <form id="modificarUsuario" autocomplete="off" (keyup.enter)="modificar()" [formGroup]="forma_modificar">
                         <div class="m-3">
                           <div class="row">
                             <!-- Email -->
@@ -139,7 +139,7 @@
                       </form>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-outline-light">Guardar cambios</button>
+                        <button type="submit" class="btn btn-outline-light" (click)="modificar()">Guardar cambios</button>
                       </div>
                   </div>
                 </div>
