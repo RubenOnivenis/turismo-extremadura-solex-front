@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { LoginUsuario } from '../components/models/login-usuario';
 import { JwtDTO } from '../components/models/jwt-dto';
 import { environment } from './../../environments/environment';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +34,16 @@ export class AuthService {
 
   public refresh(dto: JwtDTO): Observable<JwtDTO> {
     return this.httpClient.post<JwtDTO>(this.authURL + 'refresh', dto);
+  }
+
+  passwordsIguales(password:string, passwordRepetir:string){
+    return (formGroup:FormGroup) =>{
+      const pass1control = formGroup.controls[password];
+      const pass2control = formGroup.controls[passwordRepetir];
+      if (pass1control.value === pass2control.value)
+        pass2control.setErrors(null);
+      else
+        pass2control.setErrors({noEsIgual:true});
+    }
   }
 }
