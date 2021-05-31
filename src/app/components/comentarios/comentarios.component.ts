@@ -9,8 +9,6 @@ import { comentariosDatos, temasDatos, TemasService } from 'src/app/services/tem
 })
 export class ComentariosComponent implements OnInit {
 
-  @Input() tema1!:temasDatos;
-
   tema: any = {};
 
   comentarios: any[] = [];

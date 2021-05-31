@@ -2,29 +2,30 @@
     <h4 class="mb-0">Foro SOLEX</h4>
     <p class="text-muted">Consulta temas creados por otros usuarios o crea los tuyos propios</p>
 </div>
-<div class="container">
-    <div class="main-body p-0">
-        <div class="inner-sidebar">
-            <div class="justify-content-center">
-                <button *ngIf="isLogged" class="btn btn-block btn-outline-dark my-2 my-sm-0" routerLink="/nuevo-post" type="button">
-                    Nuevo Tema
-                </button>
-            </div>
+<div class="container-fluid mt-100">
+    <div class="row">
+        <div class="col-md-12">
+            <button *ngIf="isLogged" class="btn btn-block btn-outline-dark" routerLink="/nuevo-post" type="button">
+                Nuevo Tema
+            </button>
         </div>
-        <div>
-            <!--LISTADO DE TEMAS-->
-            <div class="p-2 p-sm-3">
-                <div class="card mb-2" *ngFor="let tema of temas">
-                    <div class="card-body p-2">
-                        <div>
-                            <div>
-                                <h6 class="text-body">{{tema.nombreTema}}</h6>
-                                <p class="text-secondary">{{tema.comentarioTema}}</p>
-                                <p class="text-muted"><span class="text-secondary font-weight-bold">{{tema.fchHoraTema}}</span></p>
-                            </div>
-                            <button type="button" class="btn" [routerLink]="['/comentarios', tema.id_tema]">Ver Tema</button>
+        <div class="col-md-12">
+            <div class="card my-4" *ngFor="let tema of temas">
+                <div class="card-header">
+                    <div class="media flex-wrap w-100 align-items-center"> 
+                        <div class="ml-2">{{tema.nombre_usuario}}
+                            <div class="text-muted small">{{tema.fch_hora_tema}}</div>
                         </div>
-                      </div>
+                    </div>
+                </div>
+                <div class="card-body ml-5">
+                    <h3>{{tema.nombre_tema}}</h3>
+                    <p>{{tema.comentario_tema}}</p>
+                </div>
+                <div class="card-footer px-0 pt-0 pb-3">
+                    <div class="px-4 pt-3"> 
+                        <button type="button" class="btn btn-outline-dark float-right" [routerLink]="['/comentarios', tema.id_tema]">Ver Tema</button> 
+                    </div>
                 </div>
             </div>
         </div>

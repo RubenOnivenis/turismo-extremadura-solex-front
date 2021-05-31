@@ -86,7 +86,8 @@ export class NuevoTemaComponent implements OnInit {
     this.tema={
       nombreTema:this.forma.value.nombre,
       comentarioTema:this.forma.value.descr,
-      idUsuario:this.usuario.id
+      idUsuario:this.usuario.id,
+      fchHoraTema:new Date
     }
   }
 

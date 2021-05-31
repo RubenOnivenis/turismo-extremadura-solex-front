@@ -5,8 +5,9 @@ export interface temasDatos{
   id_tema?:number,
   nombreTema:string,
   idUsuario:number,
-  fchHoraTema?:Date,
-  comentarioTema	:string
+  fchHoraTema:Date,
+  comentarioTema:string,
+  nombre_usuario?:string,
 }
 
 export interface comentariosDatos{
@@ -29,11 +30,11 @@ export class TemasService {
   ) { }
 
   cargarTemas(){
-    return this.http.get<any>(this.API_URI + `/temas_foro/`);
+    return this.http.get<any>(this.API_URI + `/foro_temas_datos/`);
   }
 
   cargarTema(id_tema: number){
-    return this.http.get(this.API_URI + `/temas_foro/${id_tema}`);
+    return this.http.get(this.API_URI + `/foro_temas_datos/${id_tema}`);
   }
 
   cargarComentarios(id_tema: Number){
