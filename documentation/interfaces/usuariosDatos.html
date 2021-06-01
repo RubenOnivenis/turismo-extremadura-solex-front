@@ -43,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>alojamientosDatos</li>
+  <li>usuariosDatos</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,7 +61,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/services/alojamientos.service.ts</code>
+            <code>src/app/services/usuarios.service.ts</code>
         </p>
 
 
@@ -79,27 +79,30 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#descripcion">descripcion</a>
+                                        <a href="#apellidos">apellidos</a>
+                                </li>
+                                <li>
+                                        <a href="#email">email</a>
+                                </li>
+                                <li>
+                                        <a href="#fch_nacimiento">fch_nacimiento</a>
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#id_alojamiento">id_alojamiento</a>
-                                </li>
-                                <li>
-                                            <span class="modifier">Optional</span>
-                                        <a href="#id_localizacion">id_localizacion</a>
-                                </li>
-                                <li>
-                                        <a href="#imagen">imagen</a>
+                                        <a href="#id">id</a>
                                 </li>
                                 <li>
                                         <a href="#nombre">nombre</a>
                                 </li>
                                 <li>
-                                        <a href="#nombreLocalizacion">nombreLocalizacion</a>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#nombre_usuario">nombre_usuario</a>
                                 </li>
                                 <li>
-                                        <a href="#url">url</a>
+                                        <a href="#password">password</a>
+                                </li>
+                                <li>
+                                        <a href="#telefono">telefono</a>
                                 </li>
                             </ul>
                         </td>
@@ -116,13 +119,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="descripcion"></a>
-                                        <span class="name"><b>descripcion</b><a href="#descripcion"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="apellidos"></a>
+                                        <span class="name"><b>apellidos</b><a href="#apellidos"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>descripcion:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>apellidos:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -145,81 +148,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="id_alojamiento"></a>
-                                        <span class="name"><b>id_alojamiento</b><a href="#id_alojamiento"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="email"></a>
+                                        <span class="name"><b>email</b><a href="#email"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>id_alojamiento:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="id_localizacion"></a>
-                                        <span class="name"><b>id_localizacion</b><a href="#id_localizacion"><span class="icon ion-ios-link"></span></a></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>id_localizacion:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="imagen"></a>
-                                        <span class="name"><b>imagen</b><a href="#imagen"><span class="icon ion-ios-link"></span></a></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>imagen:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>email:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -232,6 +167,69 @@
                                         </td>
                                     </tr>
 
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="fch_nacimiento"></a>
+                                        <span class="name"><b>fch_nacimiento</b><a href="#fch_nacimiento"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>fch_nacimiento:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="id"></a>
+                                        <span class="name"><b>id</b><a href="#id"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>id:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
 
 
 
@@ -271,13 +269,47 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="nombreLocalizacion"></a>
-                                        <span class="name"><b>nombreLocalizacion</b><a href="#nombreLocalizacion"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="nombre_usuario"></a>
+                                        <span class="name"><b>nombre_usuario</b><a href="#nombre_usuario"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>nombreLocalizacion:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>nombre_usuario:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="password"></a>
+                                        <span class="name"><b>password</b><a href="#password"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>password:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -300,13 +332,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="url"></a>
-                                        <span class="name"><b>url</b><a href="#url"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="telefono"></a>
+                                        <span class="name"><b>telefono</b><a href="#telefono"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>url:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>telefono:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -333,20 +365,21 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 
-export interface alojamientosDatos{
-  id_alojamiento?:number,
-  id_localizacion?:number,
-  imagen:string,
+export interface usuariosDatos{
+  id?:number,
+  nombre_usuario?:string,
   nombre:string,
-  nombreLocalizacion:string,
-  descripcion:string,
-  url:string
+  apellidos:string,
+  fch_nacimiento:Date,
+  email:string,
+  password:string,
+  telefono:string
 }
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
-export class AlojamientosService {
+export class UsuariosService {
 
   API_URI &#x3D; &#x27;http://localhost:8081/api&#x27;;
 
@@ -354,12 +387,20 @@ export class AlojamientosService {
     private http: HttpClient
   ) { }
 
-  getAlojamientos(){
-    return this.http.get(&#x60;${this.API_URI}/alojamientos&#x60;);
+  getUsuarios(){
+    return this.http.get(&#x60;${this.API_URI}/usuarios&#x60;);
   }
 
-  getAlojamiento(id_alojamiento: number){
-    return this.http.get(&#x60;${this.API_URI}/alojamiento/${id_alojamiento}&#x60;);
+  getUsuario(nombre_usuario: string){
+    return this.http.get(&#x60;${this.API_URI}/usuario/${nombre_usuario}&#x60;);
+  }
+
+  updateUsuario(nombre_usuario: string, usuario: usuariosDatos){
+    return this.http.put(&#x60;${this.API_URI}/usuarios/${nombre_usuario}&#x60;, usuario);
+  }
+
+  updatePassUsuario(id: number, usuario: usuariosDatos){
+    return this.http.put(&#x60;${this.API_URI}/usuarios/pass/${id}&#x60;, usuario);
   }
 
 }
@@ -390,7 +431,7 @@ export class AlojamientosService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'alojamientosDatos.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'usuariosDatos.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

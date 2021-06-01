@@ -43,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>alojamientosDatos</li>
+  <li>rutasDatos</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,7 +61,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/services/alojamientos.service.ts</code>
+            <code>src/app/services/rutas.service.ts</code>
         </p>
 
 
@@ -83,11 +83,11 @@
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#id_alojamiento">id_alojamiento</a>
+                                        <a href="#id_localizacion">id_localizacion</a>
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#id_localizacion">id_localizacion</a>
+                                        <a href="#id_ruta">id_ruta</a>
                                 </li>
                                 <li>
                                         <a href="#imagen">imagen</a>
@@ -145,13 +145,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="id_alojamiento"></a>
-                                        <span class="name"><b>id_alojamiento</b><a href="#id_alojamiento"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="id_localizacion"></a>
+                                        <span class="name"><b>id_localizacion</b><a href="#id_localizacion"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>id_alojamiento:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                        <code>id_localizacion:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -179,13 +179,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="id_localizacion"></a>
-                                        <span class="name"><b>id_localizacion</b><a href="#id_localizacion"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="id_ruta"></a>
+                                        <span class="name"><b>id_ruta</b><a href="#id_ruta"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>id_localizacion:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                        <code>id_ruta:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -333,8 +333,8 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 
-export interface alojamientosDatos{
-  id_alojamiento?:number,
+export interface rutasDatos{
+  id_ruta?:number,
   id_localizacion?:number,
   imagen:string,
   nombre:string,
@@ -346,7 +346,7 @@ export interface alojamientosDatos{
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
-export class AlojamientosService {
+export class RutasService {
 
   API_URI &#x3D; &#x27;http://localhost:8081/api&#x27;;
 
@@ -354,13 +354,9 @@ export class AlojamientosService {
     private http: HttpClient
   ) { }
 
-  getAlojamientos(){
-    return this.http.get(&#x60;${this.API_URI}/alojamientos&#x60;);
-  }
-
-  getAlojamiento(id_alojamiento: number){
-    return this.http.get(&#x60;${this.API_URI}/alojamiento/${id_alojamiento}&#x60;);
-  }
+getRutas(){
+  return this.http.get(&#x60;${this.API_URI}/rutas&#x60;);
+}
 
 }
 </code></pre>
@@ -390,7 +386,7 @@ export class AlojamientosService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'alojamientosDatos.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'rutasDatos.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

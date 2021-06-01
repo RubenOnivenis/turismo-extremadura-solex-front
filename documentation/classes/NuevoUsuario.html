@@ -89,9 +89,6 @@
                                 <a href="#fch_nacimiento">fch_nacimiento</a>
                             </li>
                             <li>
-                                <a href="#imagen_perfil">imagen_perfil</a>
-                            </li>
-                            <li>
                                 <a href="#nombre">nombre</a>
                             </li>
                             <li>
@@ -122,12 +119,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(nombre: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, nombreUsuario: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, apellidos: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, fch_nacimiento: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, imagen_perfil: Blob, telefono: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>constructor(nombre: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, nombreUsuario: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, apellidos: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, fch_nacimiento: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, telefono: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/components/models/nuevo-usuario.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/components/models/nuevo-usuario.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -209,18 +206,6 @@
                                                   
                                                         <td>
                                                                         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>imagen_perfil</td>
-                                                  
-                                                        <td>
-                                                                    <code>Blob</code>
                                                         </td>
                                                   
                                                     <td>
@@ -339,33 +324,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="imagen_perfil"></a>
-                        <span class="name">
-                            <b>
-                            imagen_perfil</b>
-                            <a href="#imagen_perfil"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>Blob</code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/components/models/nuevo-usuario.ts:9</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="nombre"></a>
                         <span class="name">
                             <b>
@@ -463,7 +421,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/components/models/nuevo-usuario.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/components/models/nuevo-usuario.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -489,16 +447,15 @@
     password: string;
     apellidos: string;
     fch_nacimiento: Date;
-    imagen_perfil: Blob;
     telefono: string;
-    constructor(nombre: string, nombreUsuario: string, email: string, password: string,  apellidos: string, fch_nacimiento: Date, imagen_perfil: Blob, telefono: string,) {
+    
+    constructor(nombre: string, nombreUsuario: string, email: string, password: string,  apellidos: string, fch_nacimiento: Date, telefono: string,) {
         this.nombre &#x3D; nombre;
         this.nombreUsuario &#x3D; nombreUsuario;
         this.email &#x3D; email;
         this.password &#x3D; password;
         this.apellidos&#x3D; apellidos;
         this.fch_nacimiento&#x3D; fch_nacimiento;
-        this.imagen_perfil&#x3D; imagen_perfil;
         this.telefono&#x3D; telefono;
     }
 }

@@ -38,7 +38,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>AlojamientosService</li>
+  <li>TemasService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -56,7 +56,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/services/alojamientos.service.ts</code>
+            <code>src/app/services/temas.service.ts</code>
         </p>
 
 
@@ -90,10 +90,22 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getAlojamiento">getAlojamiento</a>
+                                <a href="#anadirTema">anadirTema</a>
                             </li>
                             <li>
-                                <a href="#getAlojamientos">getAlojamientos</a>
+                                <a href="#cargarComentarios">cargarComentarios</a>
+                            </li>
+                            <li>
+                                <a href="#cargarTema">cargarTema</a>
+                            </li>
+                            <li>
+                                <a href="#cargarTemas">cargarTemas</a>
+                            </li>
+                            <li>
+                                <a href="#comentar">comentar</a>
+                            </li>
+                            <li>
+                                <a href="#guardar">guardar</a>
                             </li>
                         </ul>
                     </td>
@@ -118,7 +130,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/alojamientos.service.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/services/temas.service.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -165,26 +177,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getAlojamiento"></a>
+                    <a name="anadirTema"></a>
                     <span class="name">
                         <b>
-                            getAlojamiento
+                            anadirTema
                         </b>
-                        <a href="#getAlojamiento"><span class="icon ion-ios-link"></span></a>
+                        <a href="#anadirTema"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getAlojamiento(id_alojamiento: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>anadirTema(tema: <a href="../interfaces/temasDatos.html">temasDatos</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/services/alojamientos.service.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/services/temas.service.ts:48</a></div>
                 </td>
             </tr>
 
@@ -204,7 +216,147 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id_alojamiento</td>
+                                    <td>tema</td>
+                                    <td>
+                                                <code><a href="../interfaces/temasDatos.html" target="_self" >temasDatos</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarComentarios"></a>
+                    <span class="name">
+                        <b>
+                            cargarComentarios
+                        </b>
+                        <a href="#cargarComentarios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarComentarios(id_tema: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/services/temas.service.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id_tema</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank" >Number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarTema"></a>
+                    <span class="name">
+                        <b>
+                            cargarTema
+                        </b>
+                        <a href="#cargarTema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarTema(id_tema: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/services/temas.service.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id_tema</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                     </td>
@@ -235,26 +387,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getAlojamientos"></a>
+                    <a name="cargarTemas"></a>
                     <span class="name">
                         <b>
-                            getAlojamientos
+                            cargarTemas
                         </b>
-                        <a href="#getAlojamientos"><span class="icon ion-ios-link"></span></a>
+                        <a href="#cargarTemas"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getAlojamientos()</code>
+<code>cargarTemas()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/services/alojamientos.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/services/temas.service.ts:32</a></div>
                 </td>
             </tr>
 
@@ -264,6 +416,115 @@
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="comentar"></a>
+                    <span class="name">
+                        <b>
+                            comentar
+                        </b>
+                        <a href="#comentar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>comentar(comentario: <a href="../interfaces/comentariosDatos.html">comentariosDatos</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/services/temas.service.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>comentario</td>
+                                    <td>
+                                                <code><a href="../interfaces/comentariosDatos.html" target="_self" >comentariosDatos</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="guardar"></a>
+                    <span class="name">
+                        <b>
+                            guardar
+                        </b>
+                        <a href="#guardar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>guardar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/services/temas.service.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                 </td>
@@ -301,7 +562,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/alojamientos.service.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/services/temas.service.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -317,20 +578,27 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 
-export interface alojamientosDatos{
-  id_alojamiento?:number,
-  id_localizacion?:number,
-  imagen:string,
-  nombre:string,
-  nombreLocalizacion:string,
-  descripcion:string,
-  url:string
+export interface temasDatos{
+  id_tema?:number,
+  nombreTema:string,
+  idUsuario:number,
+  fchHoraTema:Date,
+  comentarioTema:string,
+  nombre_usuario?:string,
+}
+
+export interface comentariosDatos{
+  id_comentario_foro?:number,
+  comentario:string,
+  id_usuario?:number,
+  id_tema?:number,
+  fch_hora_comentario:Date
 }
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
-export class AlojamientosService {
+export class TemasService {
 
   API_URI &#x3D; &#x27;http://localhost:8081/api&#x27;;
 
@@ -338,14 +606,30 @@ export class AlojamientosService {
     private http: HttpClient
   ) { }
 
-  getAlojamientos(){
-    return this.http.get(&#x60;${this.API_URI}/alojamientos&#x60;);
+  cargarTemas(){
+    return this.http.get&lt;any&gt;(this.API_URI + &#x60;/foro_temas_datos/&#x60;);
   }
 
-  getAlojamiento(id_alojamiento: number){
-    return this.http.get(&#x60;${this.API_URI}/alojamiento/${id_alojamiento}&#x60;);
+  cargarTema(id_tema: number){
+    return this.http.get(this.API_URI + &#x60;/foro_temas_datos/${id_tema}&#x60;);
   }
 
+  cargarComentarios(id_tema: Number){
+    return this.http.get&lt;any&gt;(this.API_URI + &#x60;/comentarios_foro/${id_tema}&#x60;);
+  }
+
+  guardar(){
+    
+  }
+
+  anadirTema(tema: temasDatos){
+    return this.http.post(this.API_URI + &#x27;/temas_foro&#x27;, tema);
+  }
+
+  comentar(comentario: comentariosDatos){
+    return this.http.post(this.API_URI + &#x27;/comentario_foro/&#x27;, comentario);
+  }
+  
 }
 </code></pre>
     </div>
@@ -380,7 +664,7 @@ export class AlojamientosService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'AlojamientosService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'TemasService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

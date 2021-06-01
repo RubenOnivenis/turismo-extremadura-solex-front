@@ -38,7 +38,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>AlojamientosService</li>
+  <li>RutasService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -56,7 +56,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/services/alojamientos.service.ts</code>
+            <code>src/app/services/rutas.service.ts</code>
         </p>
 
 
@@ -90,10 +90,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getAlojamiento">getAlojamiento</a>
-                            </li>
-                            <li>
-                                <a href="#getAlojamientos">getAlojamientos</a>
+                                <a href="#getRutas">getRutas</a>
                             </li>
                         </ul>
                     </td>
@@ -118,7 +115,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/alojamientos.service.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/rutas.service.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -165,88 +162,18 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getAlojamiento"></a>
+                    <a name="getRutas"></a>
                     <span class="name">
                         <b>
-                            getAlojamiento
+                            getRutas
                         </b>
-                        <a href="#getAlojamiento"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getRutas"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getAlojamiento(id_alojamiento: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/services/alojamientos.service.ts:29</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id_alojamiento</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getAlojamientos"></a>
-                    <span class="name">
-                        <b>
-                            getAlojamientos
-                        </b>
-                        <a href="#getAlojamientos"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getAlojamientos()</code>
+<code>getRutas()</code>
                 </td>
             </tr>
 
@@ -254,7 +181,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/services/alojamientos.service.ts:25</a></div>
+                            class="link-to-prism">src/app/services/rutas.service.ts:25</a></div>
                 </td>
             </tr>
 
@@ -301,7 +228,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/alojamientos.service.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/rutas.service.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -317,8 +244,8 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 
-export interface alojamientosDatos{
-  id_alojamiento?:number,
+export interface rutasDatos{
+  id_ruta?:number,
   id_localizacion?:number,
   imagen:string,
   nombre:string,
@@ -330,7 +257,7 @@ export interface alojamientosDatos{
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
-export class AlojamientosService {
+export class RutasService {
 
   API_URI &#x3D; &#x27;http://localhost:8081/api&#x27;;
 
@@ -338,13 +265,9 @@ export class AlojamientosService {
     private http: HttpClient
   ) { }
 
-  getAlojamientos(){
-    return this.http.get(&#x60;${this.API_URI}/alojamientos&#x60;);
-  }
-
-  getAlojamiento(id_alojamiento: number){
-    return this.http.get(&#x60;${this.API_URI}/alojamiento/${id_alojamiento}&#x60;);
-  }
+getRutas(){
+  return this.http.get(&#x60;${this.API_URI}/rutas&#x60;);
+}
 
 }
 </code></pre>
@@ -380,7 +303,7 @@ export class AlojamientosService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'AlojamientosService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'RutasService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

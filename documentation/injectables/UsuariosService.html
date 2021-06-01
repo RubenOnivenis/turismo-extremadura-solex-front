@@ -38,7 +38,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>AlojamientosService</li>
+  <li>UsuariosService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -56,7 +56,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/services/alojamientos.service.ts</code>
+            <code>src/app/services/usuarios.service.ts</code>
         </p>
 
 
@@ -90,10 +90,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getAlojamiento">getAlojamiento</a>
+                                <a href="#getUsuario">getUsuario</a>
                             </li>
                             <li>
-                                <a href="#getAlojamientos">getAlojamientos</a>
+                                <a href="#getUsuarios">getUsuarios</a>
+                            </li>
+                            <li>
+                                <a href="#updatePassUsuario">updatePassUsuario</a>
+                            </li>
+                            <li>
+                                <a href="#updateUsuario">updateUsuario</a>
                             </li>
                         </ul>
                     </td>
@@ -118,7 +124,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/alojamientos.service.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/services/usuarios.service.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -165,26 +171,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getAlojamiento"></a>
+                    <a name="getUsuario"></a>
                     <span class="name">
                         <b>
-                            getAlojamiento
+                            getUsuario
                         </b>
-                        <a href="#getAlojamiento"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getUsuario"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getAlojamiento(id_alojamiento: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>getUsuario(nombre_usuario: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/services/alojamientos.service.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/services/usuarios.service.ts:30</a></div>
                 </td>
             </tr>
 
@@ -204,9 +210,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id_alojamiento</td>
+                                    <td>nombre_usuario</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -235,26 +241,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getAlojamientos"></a>
+                    <a name="getUsuarios"></a>
                     <span class="name">
                         <b>
-                            getAlojamientos
+                            getUsuarios
                         </b>
-                        <a href="#getAlojamientos"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getUsuarios"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getAlojamientos()</code>
+<code>getUsuarios()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/services/alojamientos.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/services/usuarios.service.ts:26</a></div>
                 </td>
             </tr>
 
@@ -265,6 +271,170 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePassUsuario"></a>
+                    <span class="name">
+                        <b>
+                            updatePassUsuario
+                        </b>
+                        <a href="#updatePassUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updatePassUsuario(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, usuario: <a href="../interfaces/usuariosDatos.html">usuariosDatos</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/services/usuarios.service.ts:38</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>usuario</td>
+                                    <td>
+                                                <code><a href="../interfaces/usuariosDatos.html" target="_self" >usuariosDatos</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateUsuario"></a>
+                    <span class="name">
+                        <b>
+                            updateUsuario
+                        </b>
+                        <a href="#updateUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateUsuario(nombre_usuario: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, usuario: <a href="../interfaces/usuariosDatos.html">usuariosDatos</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/services/usuarios.service.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>nombre_usuario</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>usuario</td>
+                                    <td>
+                                                <code><a href="../interfaces/usuariosDatos.html" target="_self" >usuariosDatos</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -301,7 +471,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/alojamientos.service.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/services/usuarios.service.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -317,20 +487,21 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 
-export interface alojamientosDatos{
-  id_alojamiento?:number,
-  id_localizacion?:number,
-  imagen:string,
+export interface usuariosDatos{
+  id?:number,
+  nombre_usuario?:string,
   nombre:string,
-  nombreLocalizacion:string,
-  descripcion:string,
-  url:string
+  apellidos:string,
+  fch_nacimiento:Date,
+  email:string,
+  password:string,
+  telefono:string
 }
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
-export class AlojamientosService {
+export class UsuariosService {
 
   API_URI &#x3D; &#x27;http://localhost:8081/api&#x27;;
 
@@ -338,12 +509,20 @@ export class AlojamientosService {
     private http: HttpClient
   ) { }
 
-  getAlojamientos(){
-    return this.http.get(&#x60;${this.API_URI}/alojamientos&#x60;);
+  getUsuarios(){
+    return this.http.get(&#x60;${this.API_URI}/usuarios&#x60;);
   }
 
-  getAlojamiento(id_alojamiento: number){
-    return this.http.get(&#x60;${this.API_URI}/alojamiento/${id_alojamiento}&#x60;);
+  getUsuario(nombre_usuario: string){
+    return this.http.get(&#x60;${this.API_URI}/usuario/${nombre_usuario}&#x60;);
+  }
+
+  updateUsuario(nombre_usuario: string, usuario: usuariosDatos){
+    return this.http.put(&#x60;${this.API_URI}/usuarios/${nombre_usuario}&#x60;, usuario);
+  }
+
+  updatePassUsuario(id: number, usuario: usuariosDatos){
+    return this.http.put(&#x60;${this.API_URI}/usuarios/pass/${id}&#x60;, usuario);
   }
 
 }
@@ -380,7 +559,7 @@ export class AlojamientosService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'AlojamientosService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'UsuariosService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -71,7 +71,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { LoginGuard } from &#x27;./components/guards/login.guard&#x27;;
-import { NgModule } from &#x27;@angular/core&#x27;;
+import { Component, NgModule } from &#x27;@angular/core&#x27;;
 import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
 import { MenuComponent } from &#x27;./components/menu/menu.component&#x27;;
 import { LoginComponent } from &#x27;./components/auth/login.component&#x27;;
@@ -79,6 +79,12 @@ import { RegistroComponent } from &#x27;./components/auth/registro.component&#x2
 import { AlojamientosComponent } from &#x27;./components/alojamientos/alojamientos.component&#x27;;
 import { RutasComponent } from &#x27;./components/rutas/rutas.component&#x27;;
 import { LocalizacionesComponent } from &#x27;./components/localizaciones/localizaciones.component&#x27;;
+import { NuevoTemaComponent } from &#x27;./components/nuevo-tema/nuevo-tema.component&#x27;;
+import { ForoComponent } from &#x27;./components/foro/foro.component&#x27;;
+import { ComentariosComponent } from &#x27;./components/comentarios/comentarios.component&#x27;;
+import { PerfilComponent } from &#x27;./components/perfil/perfil.component&#x27;;
+import { AlojamientosListaComponent } from &#x27;./Components/alojamientos-lista/alojamientos-lista.component&#x27;;
+import { RutasListaComponent } from &#x27;./Components/rutas-lista/rutas-lista.component&#x27;;
 
 const routes: Routes &#x3D; [
   // Ruta principal del index
@@ -87,9 +93,16 @@ const routes: Routes &#x3D; [
   { path: &#x27;login&#x27;, component: LoginComponent, canActivate: [LoginGuard] },
   // Ruta del registro de usuarios
   { path: &#x27;registro&#x27;, component: RegistroComponent, canActivate: [LoginGuard] },
+  // Rutas del navbar
   { path: &#x27;localizaciones&#x27;, component: LocalizacionesComponent},
-  { path: &#x27;alojamientos&#x27;, component: AlojamientosComponent},
-  { path: &#x27;rutas&#x27;, component: RutasComponent},
+  //{ path: &#x27;alojamientos&#x27;, component: AlojamientosComponent},
+  { path: &#x27;alojamientos-lista&#x27;, component: AlojamientosListaComponent},
+  //{ path: &#x27;rutas&#x27;, component: RutasComponent},
+  { path: &#x27;rutas-lista&#x27;, component: RutasListaComponent},
+  { path: &#x27;perfil&#x27;, component: PerfilComponent},
+  { path: &#x27;foro&#x27;, component: ForoComponent},
+  { path: &#x27;nuevo-post&#x27;, component: NuevoTemaComponent},
+  { path: &#x27;comentarios/:id_tema&#x27;, component: ComentariosComponent},
   { path: &#x27;**&#x27;, redirectTo: &#x27;&#x27;, pathMatch: &#x27;full&#x27; }
 ];
 
