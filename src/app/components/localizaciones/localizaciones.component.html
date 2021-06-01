@@ -19,18 +19,23 @@
 </div>
 <!-- Localizaciones del buscador -->
 <div *ngIf="ver">
-    <h2>Poblaciones encontradas</h2>
-    <div class="card-columns">
-        <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizacionesEncontradas">
-            <div> 
-                <img class="card-img-top mt-3 p-3"  width="480px" height="320px" [src]="localizacion.imagen | noImagePipe">
-                <div class="card-body">
-                    <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>
+    <div *ngIf="localizacionesEncontradas == 0">
+        <h2>No se han encontrado Poblaciones</h2>
+    </div>
+    <div *ngIf="localizacionesEncontradas != 0">
+        <h2>Poblaciones encontradas</h2>
+        <div class="card-columns">
+            <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizacionesEncontradas">
+                <div> 
+                    <img class="card-img-top mt-3 p-3"  width="480px" height="320px" [src]="localizacion.imagen | noImagePipe">
+                    <div class="card-body">
+                        <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>
+                    </div>
                 </div>
+                <a class="btn btn-dark btn-block informacionBoton" href="{{localizaciones.url}}" style="cursor: pointer;" target="_blank">
+                    Información
+                </a>
             </div>
-            <a class="btn btn-dark btn-block informacionBoton" href="{{localizaciones.url}}" style="cursor: pointer;" target="_blank">
-                Información
-            </a>
         </div>
     </div>
 </div>

@@ -37,25 +37,37 @@
   <!-- Menú de navegación de la página web, aqui están todas las rutas de este -->
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mx-auto">
-      <li class="nav-item mx-5">
+      <li class="nav-item mx-5" *ngIf="!isAdmin">
         <a class="nav-link negro" routerLink="/" >Inicio</a>
       </li>
-      <li class="nav-item mx-5">
+      <li class="nav-item mx-5" *ngIf="!isAdmin">
         <a class="nav-link negro" routerLink="/localizaciones" >Poblaciones</a>
       </li>
-      <li class="nav-item mx-5">
+      <li class="nav-item mx-5" *ngIf="isAdmin">
+        <a class="nav-link negro" routerLink="/localizaciones" >Gestionar Poblaciones</a>
+      </li>
+      <li class="nav-item mx-5" *ngIf="!isAdmin">
         <a class="nav-link negro" routerLink="/alojamientos-lista" >Alojamientos</a>
       </li>
-      <li class="nav-item mx-5">
+      <li class="nav-item mx-5" *ngIf="isAdmin">
+        <a class="nav-link negro" routerLink="/alojamientos-lista" >Gestionar Alojamientos</a>
+      </li>
+      <li class="nav-item mx-5" *ngIf="!isAdmin">
         <a class="nav-link negro" routerLink="/rutas-lista">Rutas</a>
       </li>
-      <li class="nav-item mx-5">
+      <li class="nav-item mx-5" *ngIf="isAdmin">
+        <a class="nav-link negro" routerLink="/rutas-lista" >Gestionar Rutas</a>
+      </li>
+      <li class="nav-item mx-5" *ngIf="!isAdmin">
         <a class="nav-link negro" routerLink="/foro">Foro</a>
+      </li>
+      <li class="nav-item mx-5" *ngIf="isAdmin">
+        <a class="nav-link negro" routerLink="/foro" >Gestionar Foro</a>
       </li>
       <!--<li class="nav-item mx-5">
         <a class="nav-link negro" routerLink="/">Galería</a>
       </li>-->
-      <li class="nav-item mx-5" *ngIf="isLogged || isAdmin">
+      <li class="nav-item mx-5" *ngIf="isLogged">
         <a class="nav-link negro" routerLink="/perfil">Perfil</a>
       </li>
     </ul>
