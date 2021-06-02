@@ -37,8 +37,12 @@ export class TemasService {
     return this.http.get(this.API_URI + `/foro_temas_datos/${id_tema}`);
   }
 
-  cargarComentarios(id_tema: Number){
-    return this.http.get<any>(this.API_URI + `/comentarios_foro/${id_tema}`);
+  cargarComentarios(){
+    return this.http.get<any>(this.API_URI + `/comentarios_foro_datos/`);
+  }
+
+  cargarComentario(id_tema: Number){
+    return this.http.get<any>(this.API_URI + `/comentarios_foro_datos/${id_tema}`);
   }
 
   guardar(){

@@ -12,10 +12,14 @@
               <div class="card-body ml-5">
                   <h3>{{tema.nombre_tema}}</h3>
                   <p>{{tema.comentario_tema}}</p>
+                  <h3>Comentarios</h3>
+                  <div class="px-4 pt-3" *ngFor="let comentario of comentarios"> 
+                    {{comentario.comentario}}<br/>
+                    {{comentario.nombreUsuario}}<br/>
+                    {{comentario.fchHoraComentario}}<br/>
+                  </div>
               </div>
               <div class="card-footer px-0 pt-0 pb-3">
-                  <div class="px-4 pt-3"> 
-                  </div>
               </div>
           </div>
       </div>

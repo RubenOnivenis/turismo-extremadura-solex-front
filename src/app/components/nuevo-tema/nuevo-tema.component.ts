@@ -84,8 +84,8 @@ export class NuevoTemaComponent implements OnInit {
   rellenarTema(){
     this.getUsuario();
     this.tema={
-      nombreTema:this.forma.value.nombre,
-      comentarioTema:this.forma.value.descr,
+      nombreTema:this.forma.value.nombreTema,
+      comentarioTema:this.forma.value.comentarioTema,
       idUsuario:this.usuario.id,
       fchHoraTema:new Date
     }

@@ -26,7 +26,7 @@ export class ForoComponent implements OnInit {
     this.temasService.cargarTemas()
       .subscribe(resp =>{
         this.temas=resp;
-        console.log(this.temas);
+        
       });
   }
 
