@@ -19,15 +19,17 @@ export class ComentariosComponent implements OnInit {
   comentario!:comentariosDatos;
 
   constructor(
-    private _temaService:TemasService, 
-    private _usuarioService:UsuariosService,
+    // Servicio de los temas
+    private _temaService:TemasService,
     private activateRoute: ActivatedRoute
   ) { }
 
+  // Inicio de la página
   ngOnInit(){
+    // La página inicia mostrando los temas
     this.cargarTema();
+    // La página inicia mostrando los comentarios de cada tema
     this.cargarComentario();
-    //this.cargarComentarios();
   }
 
   // Mostrar un solo tema
@@ -35,26 +37,14 @@ export class ComentariosComponent implements OnInit {
     this._temaService.cargarTema(this.activateRoute.snapshot.params.id_tema)
       .subscribe(respuesta => {
         this.tema = respuesta;
-        //console.log(this.tema);
       });
   }
 
-  // Mostrar todos los comentarios
- /* cargarComentarios(){
-    this._temaService.cargarComentarios()
-      .subscribe(respuesta => {
-        this.comentarios = respuesta;
-        console.log(this.comentarios);
-      });
-  }*/
-
   // Mostrar comentarios según el tema
   cargarComentario(){
-    //this.cargarTema();
     this._temaService.cargarComentario(this.activateRoute.snapshot.params.id_tema)
       .subscribe((respuesta : any)=> {
         this.comentarios = respuesta;
-        console.log(this.comentarios);
       });
   }
 

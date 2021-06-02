@@ -14,9 +14,11 @@
                   <p>{{tema.comentario_tema}}</p>
                   <h3>Comentarios</h3>
                   <div class="px-4 pt-3" *ngFor="let comentario of comentarios"> 
-                    {{comentario.comentario}}<br/>
-                    {{comentario.nombreUsuario}}<br/>
-                    {{comentario.fchHoraComentario}}<br/>
+                    <div>
+                      {{comentario.comentario}}<br/>
+                      {{comentario.nombreUsuario}}<br/>
+                      {{comentario.fchHoraComentario}}<br/>
+                    </div>
                   </div>
               </div>
               <div class="card-footer px-0 pt-0 pb-3">
