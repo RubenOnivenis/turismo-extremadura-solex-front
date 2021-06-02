@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { comentariosDatos, temasDatos, TemasService } from 'src/app/services/temas.service';
+import { TokenService } from 'src/app/services/token.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
@@ -18,14 +19,26 @@ export class ComentariosComponent implements OnInit {
   //comentarios: any[] = [];
   comentario!:comentariosDatos;
 
+  // Variables necesarias ambas a false
+  isLogged = false;
+  isAdmin = false;
+  nombreUsuario: string;
+
   constructor(
     // Servicio de los temas
     private _temaService:TemasService,
+    private tokenService:TokenService,
     private activateRoute: ActivatedRoute
   ) { }
 
   // Inicio de la página
   ngOnInit(){
+    // Se iguala la variable isLogged al token de login del usuario
+    this.isLogged = this.tokenService.isLogged();
+    // Se iguala la variable isAdmin al token de login del administrador
+    this.isAdmin = this.tokenService.isAdmin();
+    //Coger el token del usuario
+    this.nombreUsuario = this.tokenService.getUserName();
     // La página inicia mostrando los temas
     this.cargarTema();
     // La página inicia mostrando los comentarios de cada tema
@@ -48,15 +61,15 @@ export class ComentariosComponent implements OnInit {
       });
   }
 
-  guardar(){
-    this.rellenarComent();
+  dejarComentario(){
+    this.rellenarComentario();
     this._temaService.comentar(this.comentario)
       .subscribe(cliente => {
         this.cargarComentario();
       });
   }
 
-  rellenarComent() {
+  rellenarComentario() {
     
   }
 
