@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { LocalizacionesService } from 'src/app/services/localizaciones.service';
-import { TokenService } from 'src/app/services/token.service';
-
-const TOKEN_KEY = 'AuthToken';
 
 @Component({
   selector: 'app-localizaciones',
@@ -20,7 +17,7 @@ export class LocalizacionesComponent implements OnInit {
 
   ver: boolean = false;
 
-  constructor(private activatedRoute:ActivatedRoute,private _localizacionesService:LocalizacionesService, private toastr: ToastrService) { }
+  constructor(private activatedRoute:ActivatedRoute,private _localizacionesService:LocalizacionesService) { }
 
   ngOnInit(): void {
     //Al inicio de la página se ejecuta la funcion

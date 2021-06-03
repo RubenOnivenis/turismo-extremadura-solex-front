@@ -32,10 +32,12 @@ export class AuthService {
     return this.httpClient.post<JwtDTO>(this.authURL + 'login', loginUsuario);
   }
 
+  //Método para refrescar
   public refresh(dto: JwtDTO): Observable<JwtDTO> {
     return this.httpClient.post<JwtDTO>(this.authURL + 'refresh', dto);
   }
 
+  //Método para comprobar que las contraseñas introducidas son iguales
   passwordsIguales(password:string, passwordRepetir:string){
     return (formGroup:FormGroup) =>{
       const pass1control = formGroup.controls[password];

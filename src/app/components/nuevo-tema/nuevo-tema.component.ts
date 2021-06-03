@@ -22,13 +22,8 @@ export class NuevoTemaComponent implements OnInit {
 
   usuario:any = {};
 
-  constructor(
-    private temasService: TemasService, 
-    private formBuilder:FormBuilder, 
-    private tokenService: TokenService, 
-    private _usuariosService: UsuariosService,
-    private activatedRoute:ActivatedRoute
-  ) { 
+  constructor(private temasService: TemasService, private formBuilder:FormBuilder, 
+    private tokenService: TokenService, private _usuariosService: UsuariosService, private router: Router) { 
     this.crearFormulario();
   }
 
@@ -38,6 +33,7 @@ export class NuevoTemaComponent implements OnInit {
     this.isAdmin = this.tokenService.isAdmin();
     //Coger el token del usuario
     this.nombreUsuario = this.tokenService.getUserName();
+    //Coger el usuario completo
     this.getUsuario();
   }
   
@@ -45,7 +41,6 @@ export class NuevoTemaComponent implements OnInit {
     this._usuariosService.getUsuario(this.nombreUsuario)
       .subscribe(respuesta => {
         this.usuario = respuesta;
-        console.log(this.usuario);
       },
       (err) => {
         err="ERROR";
@@ -62,23 +57,11 @@ export class NuevoTemaComponent implements OnInit {
   }
 
   anadirTema(){
-    this.recursivaAnadir(this.forma);
     this.rellenarTema();
     this.temasService.anadirTema(this.tema)
       .subscribe(respuesta => {
-        console.log(respuesta)
-      },
-        (err) => {
-          err="ERROR";
-          console.log(err);
-        });
-  }
-
-  recursivaAnadir(item: FormGroup): any{
-    Object.values(item.controls).forEach(control =>{
-      if(control instanceof FormGroup) this.recursivaAnadir(control);
-      control.markAsTouched()});
-    return;
+      });
+    this.router.navigate(['/foro']);
   }
 
   rellenarTema(){

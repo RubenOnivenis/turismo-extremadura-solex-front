@@ -1,58 +1,56 @@
 <div class="container-fluid mt-100">
   <div class="row">
-      <div class="col-md-12">
-          <div class="card my-4">
-              <div class="card-header">
-                  <div class="media flex-wrap w-100 align-items-center"> 
-                      <div class="ml-2">{{tema.nombre_usuario}}
-                          <div class="text-muted small">{{tema.fch_hora_tema}}</div>
-                      </div>
-                  </div>
-              </div>
-              <div class="card-body ml-5">
-                  <h3>{{tema.nombre_tema}}</h3>
-                  <p>{{tema.comentario_tema}}</p>
-                  <h3>Comentarios</h3>
-                  <div class="px-4 pt-3" *ngFor="let comentario of comentarios"> 
-                    <div>
-                      {{comentario.comentario}}<br/>
-                      {{comentario.nombreUsuario}}<br/>
-                      {{comentario.fchHoraComentario}}<br/>
-                    </div>
-                  </div>
-                  <div>
-                    <button type="submit" class="btn btn-outline-dark offset-10" *ngIf="isLogged">Dejar un comentario</button>
-                  </div>
-              </div>
-              <div class="card-footer px-0 pt-0 pb-3">
-              </div>
+    <div class="col-md-12">
+      <div class="card my-4">
+        <div class="card-header">
+          <div class="ml-2 text-center">
+            <h3>{{tema.nombre_tema}}</h3>
+            <span class="text-muted small">{{tema.nombre_usuario}} / {{tema.fch_hora_tema}}</span>
           </div>
-      </div>
-  </div>
-</div>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Añade tu comentario</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
-        <div class="modal-body">
-            <form>
-                <div class="form-group">
-                    <label for="comentario">Comentario</label>
-                    <input ngmodel="comentario" name="comentario" type="text" class="form-control" id="comentario" placeholder="Comentario">
-                    <small id="comentario" class="form-text text-muted">Introduce el comentario</small>
-                </div>
-            </form>
+        <div class="card-body ml-5">
+            <p style="font-size: larger;">{{tema.comentario_tema}}</p>
+            <h5 class="mt-5">Comentarios</h5>
+            <div class="px-4 pt-3" *ngFor="let comentario of comentarios"> 
+              <span class="badge badge-secondary">{{comentario.nombreUsuario}}</span>
+              <span class="badge badge-secondary">{{comentario.fchHoraComentario}}</span>
+              <p>
+                {{comentario.comentario}}
+              </p>
+              <hr />
+            </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button (click)="guardar()" type="button" class="btn btn-primary">Guardar</button>
+        <div class="card-footer">
+          <button type="button" class="btn btn-outline-dark float-left" routerLink="/foro"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver al Foro</button>
+          <button type="button" class="btn btn-outline-dark float-right" *ngIf="isLogged">¡Deja tu comentario!</button>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Añade tu comentario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form>
+              <div class="form-group">
+                  <label for="comentario">Comentario</label>
+                  <input ngmodel="comentario" name="comentario" type="text" class="form-control" id="comentario" placeholder="Comentario">
+                  <small id="comentario" class="form-text text-muted">Introduce el comentario</small>
+              </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button (click)="guardar()" type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

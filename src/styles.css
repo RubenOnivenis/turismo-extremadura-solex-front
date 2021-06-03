@@ -43,6 +43,52 @@
 .modal-header{
     background-color: #00AB39;
 }
+
+.buscador{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.buscador input{
+    border: 0;
+    box-shadow: none;
+    font-size: la;
+}
+
+.buscador input:focus{
+    box-shadow: none;
+}
+
+.buscador button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: black;
+    padding: 0 10px 0 10px;
+    border: none
+}
+
+.buscador button:focus{
+    box-shadow: none;
+}
+
+.buscadorTema {
+    position:relative;
+    float:right;
+    top:0;
+    right:0;
+    z-index:300;
+}
+
+.buscarTema {
+    position:absolute;
+    z-index: 300;
+    right:0;
+}
+
 /*COOKIES*/
 .cuadro_cookies{
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);

@@ -1,16 +1,29 @@
 <!--FORMULARIO DEL NUEVO TEMA-->
-<form [formGroup]="forma" (keyup.enter)="anadirTema()">
+<form [formGroup]="forma" (ngSubmit)="anadirTema()">
     <div class="text-center">
         <h4 class="mb-0">Crea un Tema para nuestro Foro</h4>
     </div>
     <div>
         <div class="form-group">
-            <label for="threadTitle">Nombre del Tema</label>
-            <input ngmodel="nombre" name="nombreTema" type="text" class="form-control" id="nombreTema" placeholder="Introduce el nombre del nuevo Tema" required="required" autofocus="" />
+            <label for="nombreTema">Nombre del Tema</label>
+            <input name="nombreTema" 
+            type="text" 
+            class="form-control" 
+            id="nombreTema" 
+            placeholder="Introduce el nombre del nuevo Tema" 
+            required="required" 
+            autofocus="" 
+            formControlName="nombreTema"/>
         </div>
         <div class="form-group">
             <label for="descr">Descripción del Tema</label>
-            <textarea ngmodel="descr" name="comentarioTema" type="text" class="form-control" id="comentarioTema" placeholder="Descripción del Tema" required="required"></textarea>
+            <textarea name="comentarioTema" 
+            type="text" 
+            class="form-control" 
+            id="comentarioTema" 
+            placeholder="Descripción del Tema" 
+            required="required"
+            formControlName="comentarioTema"></textarea>
         </div>
     </div>
     <div>

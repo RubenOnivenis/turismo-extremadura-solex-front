@@ -42,6 +42,11 @@ export class TemasService {
     return this.http.get(this.API_URI + `/foro_temas_datos/${id_tema}`);
   }
 
+  //Función para enlazar con la búsqueda de temas
+  buscarTema(nombre: string) {
+    return this.http.get(this.API_URI + `/foro_temas_datos/nombre/${nombre}`);
+  }
+  
   // Función para mostrar todos los comentarios del foro
   cargarComentarios(){
     return this.http.get<any>(this.API_URI + `/comentarios_foro_datos/`);
@@ -50,10 +55,6 @@ export class TemasService {
   // Función para mostrar los comentarios de cada tema en el foro
   cargarComentario(id_comentario_foro: Number){
     return this.http.get<any>(this.API_URI + `/comentarios_foro_datos/${id_comentario_foro}`);
-  }
-
-  guardar(){
-    
   }
 
   // Función para añadir un tema
