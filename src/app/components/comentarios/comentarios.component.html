@@ -22,34 +22,40 @@
         </div>
         <div class="card-footer">
           <button type="button" class="btn btn-outline-dark float-left" routerLink="/foro"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver al Foro</button>
-          <button type="button" class="btn btn-outline-dark float-right" *ngIf="isLogged">¡Deja tu comentario!</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Añade tu comentario</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <form>
-              <div class="form-group">
-                  <label for="comentario">Comentario</label>
-                  <input ngmodel="comentario" name="comentario" type="text" class="form-control" id="comentario" placeholder="Comentario">
-                  <small id="comentario" class="form-text text-muted">Introduce el comentario</small>
+          <button type="button" class="btn btn-outline-dark float-right" *ngIf="isLogged"  data-toggle="modal" data-target="#comentario">¡Deja tu comentario!</button>
+          <div class="modal fade" id="comentario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Añade tu comentario</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="forma">
+                        <div class="form-group">
+                            <label for="comentario">Comentario</label>
+                            <input name="comentario" 
+                                   formControlName="comentario" 
+                                   type="text" 
+                                   class="form-control" 
+                                   id="comentario" 
+                                   placeholder="Comentario"
+                                   required="required"
+                                  >
+                            <small class="form-text text-muted">Introduce el comentario</small>
+                        </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-outline-light" (click)="dejarComentario()">Guardar</button>
+                  </div>
               </div>
-          </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button (click)="guardar()" type="button" class="btn btn-primary">Guardar</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { comentariosDatos, temasDatos, TemasService } from 'src/app/services/temas.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -13,10 +14,13 @@ export class ComentariosComponent implements OnInit {
 
   // Variable tema tipo any igual a un obj
   tema: any = {};
-  // Variable comentarios tipo any igual a un ob
+  // Variable comentarios tipo any igual a un obj
   comentarios: any = {};
 
-  //comentarios: any[] = [];
+  // Variable usario tipo any igual a un obj
+  usuario:any = {};
+
+  // 
   comentario!:comentariosDatos;
 
   // Variables necesarias ambas a false
@@ -24,11 +28,15 @@ export class ComentariosComponent implements OnInit {
   isAdmin = false;
   nombreUsuario: string;
 
+  // Variable forma de tipo FormGroup
+  forma!:FormGroup;
+
   constructor(
     // Servicio de los temas
     private _temaService:TemasService,
     private tokenService:TokenService,
-    private activateRoute: ActivatedRoute
+    private activateRoute: ActivatedRoute,
+    private _usuariosService: UsuariosService
   ) { }
 
   // Inicio de la página
@@ -43,6 +51,18 @@ export class ComentariosComponent implements OnInit {
     this.cargarTema();
     // La página inicia mostrando los comentarios de cada tema
     this.cargarComentario();
+  }
+
+  // Método para traer los datos del usuario
+  getUsuario(){
+    this._usuariosService.getUsuario(this.nombreUsuario)
+      .subscribe(respuesta => {
+        this.usuario = respuesta;
+      },
+      (err) => {
+        err="ERROR";
+        console.log(err);
+      })
   }
 
   // Mostrar un solo tema
@@ -61,16 +81,28 @@ export class ComentariosComponent implements OnInit {
       });
   }
 
+  // Función para añadir comentario
   dejarComentario(){
     this.rellenarComentario();
     this._temaService.comentar(this.comentario)
-      .subscribe(cliente => {
-        this.cargarComentario();
+      .subscribe(respuesta => {
+       
       });
   }
 
+  // Rellenar los datos del comentario con los valores del formulario
   rellenarComentario() {
-    
+    // Función que trae los datos del usuario
+    this.getUsuario();
+    // Función que trae los datos del tema
+    this.cargarTema();
+    // Obj del comentario rellenando los datos del comentario
+    this.comentario={
+      comentario:this.forma.value.comentario,
+      id_usuario:this.usuario.id,
+      id_tema:this.tema.id_tema,
+      fch_hora_comentario:new Date
+    }
   }
 
 }

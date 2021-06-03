@@ -22,8 +22,13 @@ export class NuevoTemaComponent implements OnInit {
 
   usuario:any = {};
 
-  constructor(private temasService: TemasService, private formBuilder:FormBuilder, 
-    private tokenService: TokenService, private _usuariosService: UsuariosService, private router: Router) { 
+  constructor(
+    private temasService: TemasService, 
+    private formBuilder:FormBuilder, 
+    private tokenService: TokenService, 
+    private _usuariosService: UsuariosService, 
+    private router: Router
+    ) { 
     this.crearFormulario();
   }
 
