@@ -82,6 +82,7 @@ export class ComentariosComponent implements OnInit {
     this._temaService.cargarComentario(this.activateRoute.snapshot.params.id_tema)
       .subscribe((respuesta : any)=> {
         this.comentarios = respuesta;
+        console.log(respuesta);
       });
   }
 
@@ -114,6 +115,13 @@ export class ComentariosComponent implements OnInit {
       id_tema:this.tema.id_tema,
       fch_hora_comentario:new Date
     }
+  }
+
+  borrarComentario(id_comentario_foro: number){
+    this._temaService.eliminarComentario(id_comentario_foro)
+      .subscribe(respuesta => {
+        this.cargarComentario();
+      })
   }
 
 }
