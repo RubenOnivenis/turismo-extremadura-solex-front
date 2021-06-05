@@ -42,6 +42,7 @@ export class NuevoTemaComponent implements OnInit {
     this.getUsuario();
   }
   
+  // Método para traer los datos del usuario
   getUsuario(){
     this._usuariosService.getUsuario(this.nombreUsuario)
       .subscribe(respuesta => {
@@ -53,6 +54,7 @@ export class NuevoTemaComponent implements OnInit {
       })
   }
 
+  // Instanciar el formulario del nuevo tema
   crearFormulario() {
     this.forma = this.formBuilder.group({
       nombreTema : [''],

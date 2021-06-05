@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { comentariosDatos, temasDatos, TemasService } from 'src/app/services/temas.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -14,8 +14,8 @@ export class ComentariosComponent implements OnInit {
 
   // Variable tema tipo any igual a un obj
   tema: any = {};
-  // Variable comentarios tipo any igual a un obj
-  comentarios: any = {};
+  // Variable comentarios tipo any igual a un array
+  comentarios: any = [];
 
   // Variable usario tipo any igual a un obj
   usuario:any = {};
@@ -36,8 +36,10 @@ export class ComentariosComponent implements OnInit {
     private _temaService:TemasService,
     private tokenService:TokenService,
     private activateRoute: ActivatedRoute,
-    private _usuariosService: UsuariosService
-  ) { }
+    private _usuariosService: UsuariosService,
+    private formBuilder:FormBuilder
+  ) { this.crearFormulario();
+  }
 
   // Inicio de la página
   ngOnInit(){
@@ -47,6 +49,8 @@ export class ComentariosComponent implements OnInit {
     this.isAdmin = this.tokenService.isAdmin();
     //Coger el token del usuario
     this.nombreUsuario = this.tokenService.getUserName();
+    //Coger el usuario completo
+    this.getUsuario();
     // La página inicia mostrando los temas
     this.cargarTema();
     // La página inicia mostrando los comentarios de cada tema
@@ -81,6 +85,13 @@ export class ComentariosComponent implements OnInit {
       });
   }
 
+  // Instanciar el formulario del comentario
+  crearFormulario() {
+    this.forma = this.formBuilder.group({
+      comentarioTema : ['']
+    });
+  }
+
   // Función para añadir comentario
   dejarComentario(){
     this.rellenarComentario();
@@ -98,7 +109,7 @@ export class ComentariosComponent implements OnInit {
     this.cargarTema();
     // Obj del comentario rellenando los datos del comentario
     this.comentario={
-      comentario:this.forma.value.comentario,
+      comentario:this.forma.value.comentarioTema,
       id_usuario:this.usuario.id,
       id_tema:this.tema.id_tema,
       fch_hora_comentario:new Date

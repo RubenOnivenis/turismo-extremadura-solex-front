@@ -13,7 +13,7 @@
             <h5 class="mt-5">Comentarios</h5>
             <div class="px-4 pt-3" *ngFor="let comentario of comentarios"> 
               <span class="badge badge-secondary">{{comentario.nombreUsuario}}</span>
-              <span class="badge badge-secondary">{{comentario.fchHoraComentario}}</span>
+              <span class="badge badge-secondary ml-2">{{comentario.fchHoraComentario}}</span>
               <p>
                 {{comentario.comentario}}
               </p>
@@ -23,39 +23,38 @@
         <div class="card-footer">
           <button type="button" class="btn btn-outline-dark float-left" routerLink="/foro"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver al Foro</button>
           <button type="button" class="btn btn-outline-dark float-right" *ngIf="isLogged"  data-toggle="modal" data-target="#comentario">¡Deja tu comentario!</button>
-          <div class="modal fade" id="comentario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Añade tu comentario</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                    <form [formGroup]="forma">
-                        <div class="form-group">
-                            <label for="comentario">Comentario</label>
-                            <input name="comentario" 
-                                   formControlName="comentario" 
-                                   type="text" 
-                                   class="form-control" 
-                                   id="comentario" 
-                                   placeholder="Comentario"
-                                   required="required"
-                                  >
-                            <small class="form-text text-muted">Introduce el comentario</small>
-                        </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-outline-light" (click)="dejarComentario()">Guardar</button>
-                  </div>
-              </div>
-            </div>
-          </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="comentario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Escribe aquí tu comentario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="forma" (ngSubmit)="dejarComentario()">
+          <div class="form-group">
+            <label for="comentario">Comentario</label>
+            <textarea name="comentarioTema" 
+            type="text" 
+            class="form-control" 
+            id="comentarioTema" 
+            placeholder="Añade tu mentario al Tema" 
+            required="required"
+            formControlName="comentarioTema"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-light" (click)="dejarComentario()">Guardar</button>
       </div>
     </div>
   </div>
