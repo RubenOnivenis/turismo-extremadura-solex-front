@@ -59,6 +59,7 @@ export class ComentariosComponent implements OnInit {
 
   // Método para traer los datos del usuario
   getUsuario(){
+    // Llamada a la consulta de la API que se encarga de traer los datos del usuario
     this._usuariosService.getUsuario(this.nombreUsuario)
       .subscribe(respuesta => {
         this.usuario = respuesta;
@@ -71,6 +72,7 @@ export class ComentariosComponent implements OnInit {
 
   // Mostrar un solo tema
   cargarTema(){
+    // Llamada a la consulta de la API que se encarga de traer el tema
     this._temaService.cargarTema(this.activateRoute.snapshot.params.id_tema)
       .subscribe(respuesta => {
         this.tema = respuesta;
@@ -79,6 +81,7 @@ export class ComentariosComponent implements OnInit {
 
   // Mostrar comentarios según el tema
   cargarComentario(){
+    // Llamada a la consulta de la API que se encarga de traer el comentario
     this._temaService.cargarComentario(this.activateRoute.snapshot.params.id_tema)
       .subscribe((respuesta : any)=> {
         this.comentarios = respuesta;
@@ -95,7 +98,9 @@ export class ComentariosComponent implements OnInit {
 
   // Función para añadir comentario
   dejarComentario(){
+    //Función que se encarga de rellenar los datos de los comentarios
     this.rellenarComentario();
+    // Traemos la llamada a la consulta de la API que se encarga de añadir un comentario
     this._temaService.comentar(this.comentario)
       .subscribe(respuesta => {
        
@@ -117,9 +122,12 @@ export class ComentariosComponent implements OnInit {
     }
   }
 
+  // Método para borrar un comentario
   borrarComentario(id_comentario_foro: number){
+    // Traemos la llamada a la consulta de la API que se encarga de eliminar el comentario
     this._temaService.eliminarComentario(id_comentario_foro)
       .subscribe(respuesta => {
+        // Función que trae el comentario
         this.cargarComentario();
       })
   }

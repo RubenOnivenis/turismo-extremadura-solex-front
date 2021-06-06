@@ -34,10 +34,10 @@ export class ForoComponent implements OnInit {
 
   //Cargar todos los temas del foro
   cargar(){
+    // Llamada a la consulta de la API que traemos todos los temas
     this.temasService.cargarTemas()
       .subscribe((temas: any) => {
         this.temas = temas;
-        console.log(this.temas)
       });
   }
 
