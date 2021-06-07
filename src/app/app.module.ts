@@ -59,13 +59,9 @@ import { NuevoComentarioComponent } from './components/nuevo-comentario/nuevo-co
     AppRoutingModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,
-    BrowserModule,
     RouterModule
   ],
   providers: [

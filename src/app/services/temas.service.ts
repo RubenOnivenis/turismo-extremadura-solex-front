@@ -69,7 +69,7 @@ export class TemasService {
 
   // Función para añadir comentarios a un tema
   comentar(comentario: comentariosDatos){
-    return this.http.post(this.API_URI + '/comentario_foro/', comentario);
+    return this.http.post(this.API_URI + '/comentario_foro', comentario);
   }
 
   eliminarComentario(id_comentario_foro: number){

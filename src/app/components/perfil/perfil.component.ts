@@ -10,8 +10,11 @@ import { UsuariosService } from '../../services/usuarios.service';
 })
 export class PerfilComponent implements OnInit {
 
+  // Variable para saber si el usuario esta loggeado a false
   isLogged = false;
+  // Variable para saber si el admin esta loggeado a false
   isAdmin = false;
+  // Variable del nombre del usuario tipo string
   nombreUsuario: string;
 
   forma_modificar!: FormGroup;
@@ -42,7 +45,6 @@ export class PerfilComponent implements OnInit {
     this._usuariosService.getUsuario(this.nombreUsuario)
       .subscribe(respuesta => {
         this.usuario = respuesta;
-        console.log(this.usuario);
       },
       (err) => {
         err="ERROR";
@@ -53,7 +55,7 @@ export class PerfilComponent implements OnInit {
   formulario_modificar(){
     this.forma_modificar = this.formBuilder.group({
       email:['', [Validators.required, Validators.email]],
-      nombre_usuario: ['', [Validators.required, Validators.minLength(5)]],
+      nombre_usuario: [''],
       nombre:['', [Validators.required, Validators.minLength(3)]],
       apellidos:['', [Validators.required, Validators.minLength(5)]],
       fch_nacimiento:[''],
@@ -122,5 +124,16 @@ export class PerfilComponent implements OnInit {
           console.log(err);
         } 
       )
+  }
+
+  valido(texto:string){
+    let elemento:any = this.forma_modificar.get(texto);
+    if(elemento==null){
+      elemento = {
+        valid:false,
+        untouched:false
+      }
+    }
+    return !(elemento.invalid && elemento.touched);
   }
 }

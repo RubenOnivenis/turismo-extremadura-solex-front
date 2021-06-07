@@ -88,8 +88,9 @@
                                     class="form-control" 
                                     placeholder="E-mail"
                                     formControlName="email"
+                                    [class.is-invalid]="!valido('email')"
                                     >
-                              
+                              <small class="form-text text-danger" *ngIf="!valido('email')">El e-mail no es válido</small>
                             </div>
                             <!--Nombre-->
                             <div class="form-group col-md-6 col-12">
@@ -99,8 +100,8 @@
                                     type="text"
                                     placeholder="Nombre"
                                     formControlName="nombre"
-                                   >
-                             
+                                    [class.is-invalid]="!valido('nombre')">
+                              <small class="form-text text-danger" *ngIf="!valido('nombre')">Debe tener al menos 3 carácteres</small>
                             </div>
                             <!--Apellidos-->
                             <div class="form-group col-md-6 col-12">
@@ -110,8 +111,8 @@
                                     type="text"
                                     placeholder="Apellidos"
                                     formControlName="apellidos"
-                                    >
-                             
+                                    [class.is-invalid]="!valido('apellidos')">
+                              <small class="form-text text-danger" *ngIf="!valido('apellidos')">Debe tener al menos 5 carácteres</small>
                             </div>
                             <!--Fecha de nacimiento-->
                             <div class="form-group col-md-6 col-12">
@@ -131,15 +132,22 @@
                                       class="form-control"
                                       placeholder="Teléfono"
                                       formControlName="telefono"
-                                     >
-                             
+                                      [class.is-invalid]="!valido('telefono')">
+                              <small class="form-text text-danger" *ngIf="!valido('telefono')">El teléfono no es válido</small>
                             </div>
                           </div>
                         </div>
                       </form>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-outline-light" (click)="modificar()">Guardar cambios</button>
+                        <button type="submit" class="btn btn-outline-light" disabled 
+                                *ngIf="!valido('email') || !valido('nombre') || !valido('apellidos') || !valido('telefono')">
+                                Guardar cambios
+                          </button>
+                        <button type="submit" class="btn btn-outline-light" (click)="modificar()" 
+                                *ngIf="valido('email') && valido('nombre') && valido('apellidos') && valido('telefono')">
+                                Guardar cambios
+                        </button>
                       </div>
                   </div>
                 </div>
