@@ -29,21 +29,22 @@
             </div>
           </div>
           <!--Desplegable con el formulario para comentar-->
-          <div class="collapse multi-collapse" id="dejarcomentario">
+          <div class="collapse multi-collapse" id="dejarcomentario" row>
             <form [formGroup]="forma" (ngSubmit)="dejarComentario()">
               <div class="form-group">
-                <div class="input-group">
-                  <textarea name="comentarioTema" 
-                      type="text" 
-                      class="form-control" 
-                      id="comentarioTema" 
-                      placeholder="Añade tu comentario al Tema" 
-                      required="required"
-                      formControlName="comentarioTema"
-                      maxlength="2000"
-                      rows="2"></textarea>
-                  <input class="btn btn-light input-group-btn" type="submit" value="Guardar"/>
-                </div>
+                <textarea name="comentarioTema" 
+                    type="text" 
+                    class="form-control col-12" 
+                    id="comentarioTema" 
+                    placeholder="Añade tu comentario al Tema" 
+                    required="required"
+                    formControlName="comentarioTema"
+                    maxlength="2000"
+                    rows="2"
+                    [class.is-invalid]="!valido('comentarioTema')"></textarea>
+                <small class="form-text text-danger col-12" *ngIf="!valido('comentarioTema')">Debe tener al menos 7 carácteres</small>
+                <input class="btn btn-light input-group-btn col-12" type="button" value="Guardar" disabled *ngIf="!valido('comentarioTema')"/>
+                <input class="btn btn-light input-group-btn col-12" type="submit" value="Guardar" *ngIf="valido('comentarioTema')"/>
               </div>
             </form>
           </div>
@@ -51,7 +52,9 @@
         <!--Botones para volver al foro o para activar el desplegable para comentar-->
         <div class="card-footer">
           <button type="button" class="btn btn-outline-dark float-left" routerLink="/foro"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver al Foro</button>
-          <button type="button" class="btn btn-outline-dark float-right" *ngIf="isLogged"  data-toggle="collapse" data-target="#dejarcomentario" aria-expanded="false" aria-controls="multiCollapseExample2">¡Deja tu comentario!</button>
+          <button type="button" class="btn btn-outline-dark float-right" *ngIf="isLogged"  data-toggle="collapse" data-target="#dejarcomentario" aria-expanded="false" aria-controls="multiCollapseExample2">
+            ¡Deja tu comentario!
+          </button>
         </div>
       </div>
     </div>

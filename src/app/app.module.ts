@@ -29,8 +29,6 @@ import { RouterModule } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { AlojamientosListaComponent } from './Components/alojamientos-lista/alojamientos-lista.component';
 import { RutasListaComponent } from './Components/rutas-lista/rutas-lista.component';
-import { NuevoComentarioComponent } from './components/nuevo-comentario/nuevo-comentario.component';
-
 
 
 @NgModule({
@@ -51,8 +49,7 @@ import { NuevoComentarioComponent } from './components/nuevo-comentario/nuevo-co
     ComentariosComponent,
     CookiesComponent,
     AlojamientosListaComponent,
-    RutasListaComponent,
-    NuevoComentarioComponent
+    RutasListaComponent
   ],
   imports: [
     BrowserModule,

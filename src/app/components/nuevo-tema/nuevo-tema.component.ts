@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { temasDatos, TemasService } from 'src/app/services/temas.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -57,9 +57,8 @@ export class NuevoTemaComponent implements OnInit {
   // Instanciar el formulario del nuevo tema
   crearFormulario() {
     this.forma = this.formBuilder.group({
-      nombreTema : [''],
-      idUsuario : [''],
-      comentarioTema : ['']
+      nombreTema : ['', [Validators.required, Validators.minLength(5)]],
+      comentarioTema : ['', [Validators.required, Validators.minLength(10)]],
     });
   }
 
@@ -79,6 +78,17 @@ export class NuevoTemaComponent implements OnInit {
       idUsuario:this.usuario.id,
       fchHoraTema:new Date
     }
+  }
+
+  valido(texto:string){
+    let elemento:any = this.forma.get(texto);
+    if(elemento==null){
+      elemento = {
+        valid:false,
+        untouched:false
+      }
+    }
+    return !(elemento.invalid && elemento.touched);
   }
 
 }

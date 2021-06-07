@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { comentariosDatos, temasDatos, TemasService } from 'src/app/services/temas.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -90,7 +90,7 @@ export class ComentariosComponent implements OnInit {
   // Instanciar el formulario del comentario
   crearFormulario() {
     this.forma = this.formBuilder.group({
-      comentarioTema : ['']
+      comentarioTema : ['', [Validators.required, Validators.minLength(7)]],
     });
   }
 
@@ -128,6 +128,18 @@ export class ComentariosComponent implements OnInit {
         // Función que trae el comentario
         this.cargarComentario();
       })
+  }
+
+  // 
+  valido(texto:string){
+    let elemento:any = this.forma.get(texto);
+    if(elemento==null){
+      elemento = {
+        valid:false,
+        untouched:false
+      }
+    }
+    return !(elemento.invalid && elemento.touched);
   }
 
 }
