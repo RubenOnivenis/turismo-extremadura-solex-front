@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { localizacionesDatos } from 'src/app/services/localizaciones.service';
-import { rutasDatos, RutasService } from 'src/app/services/rutas.service';
+import { rutasDatos } from 'src/app/services/rutas.service';
 
 @Component({
   selector: 'app-rutas',
@@ -8,15 +7,15 @@ import { rutasDatos, RutasService } from 'src/app/services/rutas.service';
   styleUrls: ['./rutas.component.css']
 })
 export class RutasComponent implements OnInit {
-
+  
+  //Comunica este componente con su interfaz
   @Input() ruta!:rutasDatos;
-  @Input() localizaciones!:localizacionesDatos;
 
+  //Variable con el numero de caracteres que se van a mostrar
   NUM_CARACTERES:number;
 
-  constructor(
-    
-  ) { 
+  constructor( ) { 
+    //Inicialización de la variable de los caracteres que se van a mostrar
     this.NUM_CARACTERES = 120;
   }
 
@@ -24,6 +23,7 @@ export class RutasComponent implements OnInit {
     
   }
 
+  //Función para añadir puntos suspensivos cuando la descripción es demasiado larga
   public puntos_suspensivos():string{
     if(this.ruta.descripcion.length > this.NUM_CARACTERES) return "...";
     return "";

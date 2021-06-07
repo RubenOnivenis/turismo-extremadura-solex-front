@@ -1,8 +1,11 @@
 <!--"ngFor" para mostrar todas las rutas con su contenido-->
 <div>
+    <!--Título de las rutas-->
     <h2 class="animated-fast" style="text-align: center;">RUTAS</h2>
     <hr />
+    <!--Columnas de "cards" donde se muestran todos las rutas-->
     <div class="card-columns">
+        <!--Llamada al componente donde se encuentran los datos de cada ruta-->
         <app-rutas *ngFor="let ruta of rutasArray; let i = index" [ruta]="ruta"></app-rutas>
     </div>
 </div>

@@ -8,13 +8,16 @@ import { RutasService } from 'src/app/services/rutas.service';
 })
 export class RutasListaComponent implements OnInit {
 
+  //Variable que se iguala a un obj
   rutasArray: any [] = [];
 
   constructor(
+    //Servicio de las rutas
     private _rutasService:RutasService
   ) { }
 
   ngOnInit() {
+    //Función para que traiga todos los datos de las rutas de la BBDD
     this._rutasService.getRutas()
       .subscribe((rutas: any)=>{
         this.rutasArray = rutas;

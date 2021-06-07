@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { alojamientosDatos, AlojamientosService } from 'src/app/services/alojamientos.service';
-import { localizacionesDatos } from 'src/app/services/localizaciones.service';
 
 @Component({
   selector: 'app-alojamientos',
@@ -10,14 +8,14 @@ import { localizacionesDatos } from 'src/app/services/localizaciones.service';
 })
 export class AlojamientosComponent implements OnInit {
 
+  //Comunica este componente con su interfaz
   @Input() alojamiento!:alojamientosDatos;
-  @Input() localizaciones!:localizacionesDatos;
   
+  //Variable con el numero de caracteres que se van a mostrar
   NUM_CARACTERES:number;
 
-  constructor(
-    private router: Router
-  ) { 
+  constructor() { 
+    //Inicialización de la variable de los caracteres que se van a mostrar
     this.NUM_CARACTERES = 120;
   }
 
@@ -25,6 +23,7 @@ export class AlojamientosComponent implements OnInit {
     
   }
 
+  //Función para añadir puntos suspensivos cuando la descripción es demasiado larga
   public puntos_suspensivos():string{
     if(this.alojamiento.descripcion.length > this.NUM_CARACTERES) return "...";
     return "";
