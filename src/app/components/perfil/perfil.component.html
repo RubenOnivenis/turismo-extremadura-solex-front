@@ -6,15 +6,18 @@
           <div class="card mb-3 SombraCaja">
             <div class="card-body">
               <div class="row">
+                <!-- Nombre del usuario que ha iniciado sesión -->
                 <div class="col-sm-3">
                   <h6 class="mb-0"><b>Nombre de usuario:</b></h6>
                 </div>
+                <!-- Mostramos el nombre del usuario en caso de que sea administrador saldrá al su derecha el símbolo de administrador -->
                 <div class="col-sm-9">
                   {{usuario.nombreUsuario}} <span *ngIf="isAdmin" class="badge badge-pill badge-danger">Administrador</span>
                 </div>
               </div>
               <hr>
               <div class="row">
+                <!-- Nombre personal del usuario -->
                 <div class="col-sm-3">
                   <h6 class="mb-0"><b>Nombre:</b></h6>
                 </div>
@@ -24,6 +27,7 @@
               </div>
               <hr>
               <div class="row">
+                <!-- Mostramos los apellidos del usuario -->
                 <div class="col-sm-3">
                   <h6 class="mb-0"><b>Apellidos:</b></h6>
                 </div>
@@ -33,6 +37,7 @@
               </div>
               <hr>
               <div class="row">
+                <!-- Mostramos email del usuario -->
                 <div class="col-sm-3">
                   <h6 class="mb-0"><b>E-mail:</b></h6>
                 </div>
@@ -40,7 +45,9 @@
                   {{usuario.email}}
                 </div>
               </div>
+              <!-- En caso de que el usuario tenga datos en la fecha de nacimiento se mostrará el hr -->
               <hr *ngIf="usuario.fch_nacimiento">
+              <!-- En caso de que el usuario tenga datos en la fecha de nacimiento se mostrará la fecha -->
               <div class="row" *ngIf="usuario.fch_nacimiento">
                 <div class="col-sm-3">
                   <h6 class="mb-0"><b>Fecha de nacimiento:</b></h6>
@@ -49,7 +56,9 @@
                   {{usuario.fch_nacimiento}}
                 </div>
               </div>
+              <!-- En caso de que el usuario tenga puesto su número de teléfono se mostrará el hr -->
               <hr *ngIf="usuario.telefono">
+               <!-- En caso de que el usuario tenga puesto su número de teléfono se mostrará la fecha -->
               <div class="row" *ngIf="usuario.telefono">
                 <div class="col-sm-3">
                   <h6 class="mb-0"><b>Teléfono:</b></h6>
@@ -64,6 +73,7 @@
             <!-- Botón del modal -->
             <!-- MODIFICAR USUARIO -->
             <div>
+              <!-- Botón que activa el modal de modificar datos del usuario -->
               <button type="button" class="btn btn-outline-dark SombraCaja" data-toggle="modal" data-target="#modificar">
                 Modificar datos
               </button>
@@ -71,6 +81,7 @@
                 <div class="modal-dialog" role="document" >
                   <div class="modal-content" id="modificarDatos">
                     <div class="modal-header">
+                      <!-- Título del modal -->
                       <h5 class="modal-title" id="exampleModal3Label">Modificar datos</h5>
                       <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" class="cerrarModal">&times;</span>
@@ -83,6 +94,7 @@
                             <!-- Email -->
                             <div class="form-group col-md-6 col-12">
                               <label for="email">E-mail</label>
+                              <!-- Input validado para que solo se pueda enviar el campo si esta bien escrito y si esta relleno -->
                               <input type="email" 
                                     [ngModel]="usuario.email"
                                     class="form-control" 
@@ -90,31 +102,36 @@
                                     formControlName="email"
                                     [class.is-invalid]="!valido('email')"
                                     >
+                              <!-- Aviso en caso de que no esté validado -->
                               <small class="form-text text-danger" *ngIf="!valido('email')">El e-mail no es válido</small>
                             </div>
-                            <!--Nombre-->
+                            <!-- Nombre -->
                             <div class="form-group col-md-6 col-12">
                               <label for="nombre">Nombre</label>
+                              <!-- Input validado para que solo se pueda enviar el campo si esta bien escrito y si esta relleno -->
                               <input class="form-control"
                                     [ngModel]="usuario.nombre"
                                     type="text"
                                     placeholder="Nombre"
                                     formControlName="nombre"
                                     [class.is-invalid]="!valido('nombre')">
+                              <!-- Aviso en caso de que no esté validado -->
                               <small class="form-text text-danger" *ngIf="!valido('nombre')">Debe tener al menos 3 carácteres</small>
                             </div>
-                            <!--Apellidos-->
+                            <!-- Apellidos -->
                             <div class="form-group col-md-6 col-12">
                               <label for="apellidos">Apellidos</label>
+                              <!-- Input validado para que solo se pueda enviar el campo si esta bien escrito y si esta relleno -->
                               <input class="form-control"
                                     [ngModel]="usuario.apellidos"
                                     type="text"
                                     placeholder="Apellidos"
                                     formControlName="apellidos"
                                     [class.is-invalid]="!valido('apellidos')">
+                              <!-- Aviso en caso de que no esté validado -->
                               <small class="form-text text-danger" *ngIf="!valido('apellidos')">Debe tener al menos 5 carácteres</small>
                             </div>
-                            <!--Fecha de nacimiento-->
+                            <!-- Fecha de nacimiento -->
                             <div class="form-group col-md-6 col-12">
                               <label for="fch_nacimiento">Fecha de nacimiento</label>
                               <input type="text"
@@ -124,26 +141,32 @@
                                       formControlName="fch_nacimiento"
                                       >
                             </div>
-                            <!--Teléfono-->
+                            <!-- Teléfono -->
                             <div class="form-group col-md-6 col-12">
                               <label for="telefono">Teléfono</label>
+                              <!-- Input validado para que solo se pueda enviar el campo si esta bien escrito y si esta relleno -->
                               <input type="text"
                                       [ngModel]="usuario.telefono"
                                       class="form-control"
                                       placeholder="Teléfono"
                                       formControlName="telefono"
                                       [class.is-invalid]="!valido('telefono')">
+                              <!-- Aviso en caso de que no esté validado -->
                               <small class="form-text text-danger" *ngIf="!valido('telefono')">El teléfono no es válido</small>
                             </div>
                           </div>
                         </div>
                       </form>
+                      <!-- Pie del modal -->
                       <div class="modal-footer">
+                        <!-- Botón para cancelar la modificación y cerrar el modal -->
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        <!-- Botón disabled que se mostrará en caso de que cualquiera de los campos no sea válido -->
                         <button type="submit" class="btn btn-outline-light" disabled 
                                 *ngIf="!valido('email') || !valido('nombre') || !valido('apellidos') || !valido('telefono')">
                                 Guardar cambios
-                          </button>
+                        </button>
+                        <!-- Botón enabled que se mostrará en el caso de que todos los campos sean válidos, este botón realiza la función de modificar datos -->
                         <button type="submit" class="btn btn-outline-light" (click)="modificar()" 
                                 *ngIf="valido('email') && valido('nombre') && valido('apellidos') && valido('telefono')">
                                 Guardar cambios
@@ -152,57 +175,6 @@
                   </div>
                 </div>
               </div>
-              <!-- Modal para cambiar la contraseña 
-              <button type="button" class=" ml-md-3 ml-2 btn btn-outline-dark SombraCaja" data-toggle="modal" data-target="#cambiar_pass">
-                Cambiar contraseña
-              </button>
-              <div class="modal fade" id="cambiar_pass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document" >
-                  <div class="modal-content" id="modificarDatos">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModal3Label">Cambiar contraseña</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="cerrarModal">&times;</span>
-                      </button>
-                    </div>
-                    <form autocomplete="off" (keyup.enter)="modificarPass()" (ngSubmit)="modificarPass()" [formGroup]="forma_modificar_pass">
-                      <div class="p-2">
-                        <div class="form-group offset-md-3 col-md-6 col-12">
-                            <label for="disabledSelect">Contraseña antigua</label>
-                            <input type="password" 
-                                class="form-control" 
-                                placeholder="Contraseña nueva"
-                                formControlName="pass_antigua"
-                                >
-                           
-                        </div>
-                        <div class="form-group offset-md-3 col-md-6 col-12">
-                            <label for="disabledSelect">Contraseña nueva</label>
-                            <input type="password" 
-                                class="form-control" 
-                                placeholder="Contraseña nueva"
-                                formControlName="pass_nueva"
-                                >
-                           
-                        </div>
-                        <div class="form-group offset-md-3 col-md-6 col-12">
-                            <label for="disabledSelect">Repetir contraseña nueva</label>
-                            <input type="password" 
-                                class="form-control" 
-                                placeholder="Repetir contraseña"
-                                formControlName="pass_nueva_2"
-                                >
-                            
-                        </div>
-                      </div>
-                      <div class="modal-footer">
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                          <button type="submit" class="btn btn-outline-light">Guardar cambios</button>
-                      </div>
-                    </form>
-                </div>
-              </div>
-            </div>-->
           </div>
         </div>
       </div>
