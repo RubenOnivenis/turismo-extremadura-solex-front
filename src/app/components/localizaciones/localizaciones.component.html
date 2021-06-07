@@ -1,9 +1,9 @@
 <!--Buscador principal-->
 <div class="container">
 	<div class="row">
-        <div class="col-6 mx-auto" id="localizaciones">
-    		<h2 class="text-uppercase">Buscar poblaciones</h2>
-            <form class="form-inline buscador">
+        <div class="col-12 mx-auto" id="localizaciones">
+    		<h2 class="text-uppercase text-center">Buscar poblaciones</h2>
+            <form class="form-inline buscador row">
                 <div class="input-group col-12">
                     <!--Formulario del Buscador-->
                     <input type="text" class="form-control input-lg" placeholder="Buscar" (keyup.enter)="buscar(buscarTexto.value)" #buscarTexto/>
@@ -27,7 +27,7 @@
         <div class="card-columns">
             <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizacionesEncontradas">
                 <div> 
-                    <img class="card-img-top mt-3 p-3"  width="480px" height="320px" [src]="localizacion.imagen | noImagePipe">
+                    <img class="card-img-top p-3"  width="480" height="320" [src]="localizacion.imagen | noImagePipe">
                     <div class="card-body">
                         <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>
                     </div>
@@ -41,11 +41,11 @@
 </div>
 <!-- Lista de localizaciones -->
 <div *ngIf="!ver">
-    <h2>Estas son algunas de las poblaciones extremeñas</h2>
+    <h2>Algunas poblaciones de Extremadura</h2>
     <div class="card-columns">
         <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizaciones">
             <div> 
-                <img class="card-img-top mt-3 p-3"  width="480px" height="320px" [src]="localizacion.imagen | noImagePipe">
+                <img class="card-img-top p-3" width="480" height="320" [src]="localizacion.imagen | noImagePipe">
                 <div class="card-body">
                     <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>
                 </div>

@@ -1,0 +1,16 @@
+<form [formGroup]="forma" (ngSubmit)="dejarComentario()">
+    <div class="form-group">
+        <div class="input-group">
+        <textarea name="comentarioTema" 
+            type="text" 
+            class="form-control" 
+            id="comentarioTema" 
+            placeholder="Añade tu comentario al Tema" 
+            required="required"
+            formControlName="comentarioTema"
+            maxlength="2000"
+            rows="2"></textarea>
+        <input class="btn btn-light input-group-btn" type="submit" value="Guardar"/>
+        </div>
+    </div>
+</form>

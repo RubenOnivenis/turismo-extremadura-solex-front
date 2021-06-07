@@ -15,8 +15,8 @@ export interface temasDatos{
 export interface comentariosDatos{
   id_comentario_foro?:number,
   comentario:string,
-  id_usuario?:number,
-  id_tema?:number,
+  id_usuario:number,
+  id_tema:number,
   fch_hora_comentario:Date
 }
 
