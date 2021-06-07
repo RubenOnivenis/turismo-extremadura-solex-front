@@ -1,49 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+/* ESTILOS CSS PARA TODA LA APLICACIÓN */
+
+/* Para los campos que tengan la clase título  */
 .titulo{
     font-size: x-large;
 }
 
+/* Para los campos que tengan la clase navegacion  */
 .navegacion{
     background-color: #00AB39;
     font-size: large;
 }
 
+
+/* Para los campos que tengan la clase negro, pondra la letra de color negro */
 .negro{
     color:black;
 }
 
+/* Para los campos que tengan la clase negro, se pondra de color negro al pasar por encima  */
 .negro:hover{
     color:black;
 }
 
+/* Estilos para el footer de la página */
 .footer{
     background-color: rgb(36, 34, 34);
     color: white;
 }
 
+/* Para los campos que tengan la clase blanco, pondra la letra de color blanco */
 .blanco{
     color:white;
 }
 
+/* Para los campos que tengan la clase blanco, se pondra de color blanco al pasar por encima  */
 .blanco:hover{
     color:white;
 }
 
+/* Estilos para el carousel de la página */
 .carousel-inner{
     max-height: 450px; 
     overflow: hidden;
 }
 
+/* Se le añade un sombreado a las etiquetas que tengan esta clase */
 .SombraCaja{
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
+/* Clase para los footers de los modales */
 .modal-footer{
     background-color: #343A40;
 }
+
+/* Clase para los headers de los modales */
 .modal-header{
     background-color: #00AB39;
 }
 
+/* Clase el buscador de las poblaciones */
 .buscador{
     padding: 3px;
     border: solid 1px #E4E4E4;
@@ -51,16 +67,19 @@
     background-color: #fff;
 }
 
+/* Clase para el input del buscador */
 .buscador input{
     border: 0;
     box-shadow: none;
     font-size: la;
 }
 
+/* Clase pera el foco de los input y el buscador */
 .buscador input:focus{
     box-shadow: none;
 }
 
+/* Clase para el botón del buscador */ 
 .buscador button{
     margin: 2px 0 0 0;
     background: none;
@@ -71,10 +90,12 @@
     border: none
 }
 
+/* Clase para el foco del botón del buscador */
 .buscador button:focus{
     box-shadow: none;
 }
 
+/* Clase para el buscador de temas */
 .buscadorTema {
     position:relative;
     float:right;
@@ -83,6 +104,7 @@
     z-index:300;
 }
 
+/* Clase para buscar tema */
 .buscarTema {
     position:absolute;
     z-index: 300;
@@ -90,6 +112,8 @@
 }
 
 /*COOKIES*/
+
+/* Clase para el recuadro de cookies */
 .cuadro_cookies{
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     position: fixed;
@@ -102,10 +126,20 @@
     text-align: justify;
     background-color: white;
 }
+
+/* Clase para las cookies */
 .cookies{
     height: 100%;
     top: 0px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.459);
     position: fixed;
+}
+
+
+/* MEDIAS QUERIES */
+@media (max-width:375px) {
+    #crearUsuario {
+      width: 100%;
+    }
 }
