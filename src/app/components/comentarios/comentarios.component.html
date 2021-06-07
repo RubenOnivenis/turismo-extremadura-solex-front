@@ -1,17 +1,21 @@
+<!--Contenedor del tema-->
 <div class="container-fluid mt-100">
   <div class="row">
     <div class="col-md-12">
       <div class="card my-4">
+        <!--Cabecera con datos del tema-->
         <div class="card-header">
           <div class="ml-2 text-center">
             <h3>{{tema.nombre_tema}}</h3>
             <span class="text-muted small">{{tema.nombre_usuario}} / {{tema.fch_hora_tema}}</span>
           </div>
         </div>
+        <!--Cuerpo con datos del tema-->
         <div class="card-body ml-5">
           <p style="font-size: larger;">{{tema.comentario_tema}}</p>
           <div *ngIf="comentarios!=0">
             <h5 class="mt-5">Comentarios</h5>
+            <!--"ngFor" de los comentarios que tiene el tema-->
             <div class="px-4 pt-3" *ngFor="let comentario of comentarios; let i = index"> 
               <span class="badge badge-secondary">{{comentario.nombreUsuario}}</span>
               <span class="badge badge-secondary ml-2">{{comentario.fchHoraComentario}}</span>
@@ -21,13 +25,33 @@
               <p>
                 {{comentario.comentario}}
               </p>
-              <hr />
+              <hr/>
             </div>
           </div>
+          <!--Desplegable con el formulario para comentar-->
+          <div class="collapse multi-collapse" id="dejarcomentario">
+            <form [formGroup]="forma" (ngSubmit)="dejarComentario()">
+              <div class="form-group">
+                <div class="input-group">
+                  <textarea name="comentarioTema" 
+                      type="text" 
+                      class="form-control" 
+                      id="comentarioTema" 
+                      placeholder="Añade tu comentario al Tema" 
+                      required="required"
+                      formControlName="comentarioTema"
+                      maxlength="2000"
+                      rows="2"></textarea>
+                  <input class="btn btn-light input-group-btn" type="submit" value="Guardar"/>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
+        <!--Botones para volver al foro o para activar el desplegable para comentar-->
         <div class="card-footer">
           <button type="button" class="btn btn-outline-dark float-left" routerLink="/foro"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver al Foro</button>
-          <button type="button" class="btn btn-outline-dark float-right" *ngIf="isLogged" [routerLink]="['/nuevo-comentario', tema.id_tema]">¡Deja tu comentario!</button>
+          <button type="button" class="btn btn-outline-dark float-right" *ngIf="isLogged"  data-toggle="collapse" data-target="#dejarcomentario" aria-expanded="false" aria-controls="multiCollapseExample2">¡Deja tu comentario!</button>
         </div>
       </div>
     </div>

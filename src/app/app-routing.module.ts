@@ -13,7 +13,6 @@ import { ComentariosComponent } from './components/comentarios/comentarios.compo
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { AlojamientosListaComponent } from './Components/alojamientos-lista/alojamientos-lista.component';
 import { RutasListaComponent } from './Components/rutas-lista/rutas-lista.component';
-import { NuevoComentarioComponent } from './components/nuevo-comentario/nuevo-comentario.component';
 
 const routes: Routes = [
   // Ruta principal del index
@@ -32,7 +31,6 @@ const routes: Routes = [
   { path: 'foro', component: ForoComponent},
   { path: 'nuevo-post', component: NuevoTemaComponent},
   { path: 'comentarios/:id_tema', component: ComentariosComponent},
-  { path: 'nuevo-comentario/:id_tema', component: NuevoComentarioComponent},
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
