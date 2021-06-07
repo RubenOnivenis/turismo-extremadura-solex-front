@@ -38,7 +38,8 @@ export class ComentariosComponent implements OnInit {
     private activateRoute: ActivatedRoute,
     private _usuariosService: UsuariosService,
     private formBuilder:FormBuilder
-  ) { }
+  ) { this.crearFormulario();
+  }
 
   // Inicio de la página
   ngOnInit(){
@@ -84,6 +85,39 @@ export class ComentariosComponent implements OnInit {
         this.comentarios = respuesta;
         console.log(respuesta);
       });
+  }
+
+  // Instanciar el formulario del comentario
+  crearFormulario() {
+    this.forma = this.formBuilder.group({
+      comentarioTema : ['']
+    });
+  }
+
+  // Función para añadir comentario
+  dejarComentario(){
+    //Función que se encarga de rellenar los datos de los comentarios
+    this.rellenarComentario();
+    // Traemos la llamada a la consulta de la API que se encarga de añadir un comentario
+    this._temaService.comentar(this.comentario)
+      .subscribe(respuesta => {
+       
+      });
+  }
+
+  // Rellenar los datos del comentario con los valores del formulario
+  rellenarComentario() {
+    // Función que trae los datos del usuario
+    this.getUsuario();
+    // Función que trae los datos del tema
+    this.cargarTema();
+    // Obj del comentario rellenando los datos del comentario
+    this.comentario={
+      comentario:this.forma.value.comentarioTema,
+      id_usuario:this.usuario.id,
+      id_tema:this.tema.id_tema,
+      fch_hora_comentario:new Date
+    }
   }
 
   // Método para borrar un comentario
