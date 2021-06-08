@@ -1,3 +1,4 @@
+<!--Buscador para los temas del foro-->
 <div class="buscadorTema">
     <div class="buscarTema">
         <form class="form-inline buscador">
@@ -12,12 +13,15 @@
         </form>
     </div>
 </div>
+<!--Título del Foro-->
 <div class="text-center">
     <h4 class="mb-0">Foro SOLEX</h4>
     <p class="text-muted">¡Consulta temas creados por otros usuarios o crea los tuyos propios!</p>
 </div>
+<!--Contenedor de los temas del foro-->
 <div class="container-fluid mt-100">
     <div class="row">
+        <!--Botón para añadir un nuevo tema-->
         <div class="col-md-12">
             <button *ngIf="isLogged" class="btn btn-block btn-outline-dark mb-5" routerLink="/nuevo-post" type="button">
                 Nuevo Tema
@@ -25,13 +29,16 @@
         </div>
         <div class="col-md-12">
             <div *ngIf="ver">
+                <!--Comprobaciones necesarias para las búsquedas-->
                 <div *ngIf="temasEncontrados == 0">
                     <h3>No se han encontrado Temas</h3>
                 </div>
                 <div *ngIf="temasEncontrados != 0">
                     <h3>Temas Encontrados</h3>
                 </div>
+                <!--"ngFor" para los temas encotrados al ejecutar el buscador-->
                 <div class="card my-4" *ngFor="let temaEncontrado of temasEncontrados">
+                    <!--Cabezera del tema con el creador y la fecha de creación-->
                     <div class="card-header">
                         <div class="media flex-wrap w-100 align-items-center"> 
                             <div class="ml-2">{{temaEncontrado.nombre_usuario}}
@@ -39,10 +46,12 @@
                             </div>
                         </div>
                     </div>
+                    <!--Cuerpo del tema con el nombre y la descripción del tema-->
                     <div class="card-body ml-5">
                         <h3>{{temaEncontrado.nombre_tema}}</h3>
                         <p>{{temaEncontrado.comentario_tema}}</p>
                     </div>
+                    <!--Botón para ir al tema y ver sus comentarios-->
                     <div class="card-footer px-0 pt-0 pb-3">
                         <div class="px-4 pt-3"> 
                             <button type="button" class="btn btn-outline-dark float-right" [routerLink]="['/comentarios', temaEncontrado.id_tema]">Comentarios</button> 
@@ -51,8 +60,10 @@
                 </div>
             </div>
             <div *ngIf="!ver">
+                <!--"ngFor" para los temas destacados en el foro-->
                 <h3>Temas Populares</h3>
                 <div class="card my-4" *ngFor="let tema of temas">
+                    <!--Cabezera del tema con el creador y la fecha de creación-->
                     <div class="card-header">
                         <div class="media flex-wrap w-100 align-items-center"> 
                             <div class="ml-2">{{tema.nombre_usuario}}
@@ -60,10 +71,12 @@
                             </div>
                         </div>
                     </div>
+                    <!--Cuerpo del tema con el nombre y la descripción del tema-->
                     <div class="card-body ml-5">
                         <h3>{{tema.nombre_tema}}</h3>
                         <p>{{tema.comentario_tema}}</p>
                     </div>
+                    <!--Botón para ir al tema y ver sus comentarios-->
                     <div class="card-footer px-0 pt-0 pb-3">
                         <div class="px-4 pt-3"> 
                             <button type="button" class="btn btn-outline-dark float-right" [routerLink]="['/comentarios', tema.id_tema]">Comentarios</button> 

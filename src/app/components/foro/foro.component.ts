@@ -10,14 +10,17 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class ForoComponent implements OnInit {
 
-  // Variables necesarias ambas a false
+  // Variables necesarias para comprobar el rol del usuario, ambas a false
   isLogged = false;
   isAdmin = false;
   
+  // Variable para los temas asignada a un any de obj y igualada a un obj
   temas: any[] = [];
 
+  // Variable para los temas encontrados asignada a un any y igualada a un obj
   temasEncontrados: any = [];
 
+  // Varaible para mostrar una parte u otra del foro
   ver: boolean = false;
 
   // Inyectamos en el constructor el servicio de Token

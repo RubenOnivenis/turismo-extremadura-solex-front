@@ -12,10 +12,7 @@ export class ProdGuardService implements CanActivate {
   realRol: string;
 
   // Se inyectan los servicios necesarios
-  constructor(
-    private tokenService: TokenService,
-    private router: Router
-  ) { }
+  constructor(private tokenService: TokenService, private router: Router) { }
 
   // Funcion del canActivate para poder permitir el paso a la navegación si todo es correcto
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {

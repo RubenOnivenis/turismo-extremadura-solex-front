@@ -8,6 +8,8 @@ import { TokenService } from 'src/app/services/token.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
+//Implementa OnInit que sirve para que se una vez abres la página por primera vez
 export class NavbarComponent implements OnInit {
 
   // Variables necesarias ambas a false

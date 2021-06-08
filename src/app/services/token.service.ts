@@ -1,4 +1,3 @@
-import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 
 const TOKEN_KEY = 'AuthToken';
@@ -11,9 +10,7 @@ export class TokenService {
   // Array con los roles
   roles: Array<string> = [];
 
-  constructor(
-    private router: Router
-  ) { }
+  constructor() { }
 
   // Función setToken
   public setToken(token: string): void {
@@ -37,7 +34,7 @@ export class TokenService {
     return false;
   }
 
-  // Funcion para el usuario no el admin
+  // Funcion para el usuario no el admin. Recoge el token y lo divide para comprobarlo
   public getUserName(): string {
     if (!this.isLogged()) {
       return null;
@@ -50,7 +47,7 @@ export class TokenService {
     return username;
   }
 
-  // Función para comprobar si es admin
+  // Función para comprobar si es admin. Recoge el token y lo divide para comprobarlo
   public isAdmin(): boolean {
     if (!this.isLogged()) {
       return false;
@@ -66,7 +63,7 @@ export class TokenService {
     return true;
   }
 
-  // Función de cerrar sesión
+  // Función de cerrar sesión. Elimina el token y recarga la pagina.
   public logOut(): void {
     window.localStorage.clear();
     location.reload();

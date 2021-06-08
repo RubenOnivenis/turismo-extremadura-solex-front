@@ -1,9 +1,10 @@
-<!--FORMULARIO DEL NUEVO TEMA-->
+<!--Formulario con los datos para añadir un nuevo tema-->
 <form [formGroup]="forma" (ngSubmit)="anadirTema()">
     <div class="text-center">
         <h4 class="mb-0">Crea un Tema para nuestro Foro</h4>
     </div>
     <div>
+        <!--Input para el nombre del tema-->
         <div class="form-group">
             <label for="nombreTema">Nombre del Tema</label>
             <input name="nombreTema" 
@@ -15,8 +16,10 @@
             autofocus="" 
             formControlName="nombreTema"
             [class.is-invalid]="!valido('nombreTema')">
+            <!--Texto que aparece si no es válido el input-->
             <small class="form-text text-danger" *ngIf="!valido('nombreTema')">Debe tener al menos 5 carácteres</small>
         </div>
+        <!--Input para la descripción del tema-->
         <div class="form-group">
             <label for="descr">Descripción del Tema</label>
             <textarea name="comentarioTema" 
@@ -27,10 +30,12 @@
             required="required"
             formControlName="comentarioTema"
             [class.is-invalid]="!valido('comentarioTema')"></textarea>
+            <!--Texto que aparece si no es válido el input-->
             <small class="form-text text-danger" *ngIf="!valido('comentarioTema')">Debe tener al menos 10 carácteres</small>
         </div>
     </div>
     <div>
+        <!--Botones para añadir el tema, validados si los input son o no válidos-->
         <input class="btn btn-light btn-block" type="submit" value="Crear" disabled 
         *ngIf="!valido('nombreTema') || !valido('comentarioTema')"/>
         <input class="btn btn-light btn-block" type="submit" value="Crear" 

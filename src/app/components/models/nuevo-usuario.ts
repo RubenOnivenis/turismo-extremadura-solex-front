@@ -1,4 +1,5 @@
 // Clase exportable de nuevo usuario con sus datos
+// Datos que se necesitan del usuario y su constructor para el registro
 export class NuevoUsuario {
     nombre: string;
     nombreUsuario: string;

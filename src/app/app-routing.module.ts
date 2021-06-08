@@ -4,8 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { MenuComponent } from './components/menu/menu.component';
 import { LoginComponent } from './components/auth/login.component';
 import { RegistroComponent } from './components/auth/registro.component';
-import { AlojamientosComponent } from './components/alojamientos/alojamientos.component';
-import { RutasComponent } from './components/rutas/rutas.component';
 import { LocalizacionesComponent } from './components/localizaciones/localizaciones.component';
 import { NuevoTemaComponent } from './components/nuevo-tema/nuevo-tema.component';
 import { ForoComponent } from './components/foro/foro.component';
@@ -23,14 +21,13 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent, canActivate: [LoginGuard] },
   // Rutas del navbar
   { path: 'localizaciones', component: LocalizacionesComponent},
-  //{ path: 'alojamientos', component: AlojamientosComponent},
   { path: 'alojamientos-lista', component: AlojamientosListaComponent},
-  //{ path: 'rutas', component: RutasComponent},
   { path: 'rutas-lista', component: RutasListaComponent},
   { path: 'perfil', component: PerfilComponent},
   { path: 'foro', component: ForoComponent},
   { path: 'nuevo-post', component: NuevoTemaComponent},
   { path: 'comentarios/:id_tema', component: ComentariosComponent},
+  // Ruta para cuando no se ponga ninguna de las anteriores, lleva al home
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

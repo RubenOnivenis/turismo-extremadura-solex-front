@@ -1,4 +1,5 @@
-// Clase exportable del login del usuario
+// Clase exportable del login del usuario. 
+// Datos que se necesitan del usuario y su constructor para el login
 export class LoginUsuario {
     nombreUsuario: string;
     password: string;

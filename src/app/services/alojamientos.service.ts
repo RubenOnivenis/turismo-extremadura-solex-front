@@ -20,9 +20,8 @@ export class AlojamientosService {
   //URL por defecto para acceder al back
   API_URI = 'http://localhost:8081/api';
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  // Implementación que se usa para poder usar rutas http
+  constructor(private http: HttpClient) { }
 
   //Función para enlazar con el listado de alojamientos
   getAlojamientos(){

@@ -1,3 +1,4 @@
+<!--Contenido de la cookie-->
 <div class="cookies" [hidden]="!visible" *ngIf="cookieExist==false">
     <div class="alert alert-warning cuadro_cookies" role="alert" >
       <p>
@@ -8,6 +9,7 @@
           Pulse el botón ACEPTAR, para confirmar que ha leído y aceptado la información presentada. Después de aceptar no volveremos a 
           mostrar mensaje.
       </p>
+      <!--Botón para aceptar la cookie y que no vuelva a aparecer-->
       <button type="button" class="btn btn-dark boton_aceptar" (click)="aceptarCookies()">Aceptar</button>
     </div>
   </div>

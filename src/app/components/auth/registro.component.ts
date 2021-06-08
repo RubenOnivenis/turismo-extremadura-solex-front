@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NuevoUsuario } from '../models/nuevo-usuario';
 import { ToastrService } from 'ngx-toastr';
-import { TokenService } from 'src/app/services/token.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -29,9 +28,11 @@ export class RegistroComponent implements OnInit {
 
   // Inyectamos los servicios en el constructor
   constructor(
-    private tokenService: TokenService,
+    // Implementación del servicio de autenticación
     private authService: AuthService,
+    // Implementación para poder redireccionar a otra URL
     private router: Router,
+    // Implementación del servicio de Toastr
     private toastr: ToastrService
   ) { }
 

@@ -30,7 +30,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { AlojamientosListaComponent } from './Components/alojamientos-lista/alojamientos-lista.component';
 import { RutasListaComponent } from './Components/rutas-lista/rutas-lista.component';
 
-
+//Declaración de los módulos necesarios en la aplicación
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +51,7 @@ import { RutasListaComponent } from './Components/rutas-lista/rutas-lista.compon
     AlojamientosListaComponent,
     RutasListaComponent
   ],
+  //Importaciones necesarias en la aplicación
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -61,6 +62,7 @@ import { RutasListaComponent } from './Components/rutas-lista/rutas-lista.compon
     HttpClientModule,
     RouterModule
   ],
+  //Proveedores necesarias en la aplicación
   providers: [
     interceptorProvider,
     CookieService

@@ -1,15 +1,15 @@
-<!--Buscador principal-->
+<!--Buscador principal de las poblaciones-->
 <div class="container">
 	<div class="row">
-        <div class="col-12 mx-auto" id="localizaciones">
+        <div class="col-12 mx-auto p-5">
     		<h2 class="text-uppercase text-center">Buscar poblaciones</h2>
+            <!--Formulario del Buscador-->
             <form class="form-inline buscador row">
                 <div class="input-group col-12">
-                    <!--Formulario del Buscador-->
                     <input type="text" class="form-control input-lg" placeholder="Buscar" (keyup.enter)="buscar(buscarTexto.value)" #buscarTexto/>
                     <span class="input-group-btn">
                         <button class="btn btn-lg" type="button" (click)="buscar(buscarTexto.value)">
-                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <i class="fa fa-search" aria-hidden="true" style="font-size: 23px;"></i>
                         </button>
                     </span>
                 </div>
@@ -24,14 +24,18 @@
     </div>
     <div *ngIf="localizacionesEncontradas != 0">
         <h2>Poblaciones encontradas</h2>
+        <!--"ngFor" para la lista de localizaciones encontradas en el buscador-->
         <div class="card-columns">
             <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizacionesEncontradas">
+                <!--Cuerpo de la localización con sus datos-->
                 <div> 
+                    <!--Imagen de la localización-->
                     <img class="card-img-top p-3"  width="480" height="320" [src]="localizacion.imagen | noImagePipe">
                     <div class="card-body">
                         <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>
                     </div>
                 </div>
+                <!--Botón para ir a la página de reserva de la localización-->
                 <a class="btn btn-dark btn-block informacionBoton" href="{{localizacion.url}}" style="cursor: pointer;" target="_blank">
                     Información
                 </a>
@@ -42,14 +46,18 @@
 <!-- Lista de localizaciones -->
 <div *ngIf="!ver">
     <h2>Algunas poblaciones de Extremadura</h2>
+     <!--"ngFor" para la lista de localizaciones-->
     <div class="card-columns">
         <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizaciones">
+            <!--Cuerpo de la localización con sus datos-->
             <div> 
+                <!--Imagen de la localización-->
                 <img class="card-img-top p-3" width="480" height="320" [src]="localizacion.imagen | noImagePipe">
                 <div class="card-body">
                     <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>
                 </div>
             </div>
+            <!--Botón para ir a la página de reserva de la localización-->
             <a class="btn btn-dark btn-block informacionBoton" href="{{localizacion.url}}" style="cursor: pointer;" target="_blank">
                 Información
             </a>

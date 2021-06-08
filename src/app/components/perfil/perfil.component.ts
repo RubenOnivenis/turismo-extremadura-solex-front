@@ -130,7 +130,7 @@ export class PerfilComponent implements OnInit {
       )
   }
 
-  // Función para validar los campos en el html
+  //Función que comprueba si los campos del formulario son válidos
   valido(texto:string){
     let elemento:any = this.forma_modificar.get(texto);
     if(elemento==null){

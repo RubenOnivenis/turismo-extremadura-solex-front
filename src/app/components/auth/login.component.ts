@@ -23,9 +23,13 @@ export class LoginComponent implements OnInit {
 
   // Inyectamos en el constructor los servicios necesarios y Router
   constructor(
+    // Implementación del servicio del token
     private tokenService: TokenService,
+    // Implementación del servicio de autenticación
     private authService: AuthService,
+    // Implementación para poder redireccionar a otra URL
     private router: Router,
+    // Implementación del servicio de Toastr
     private toastr: ToastrService
   ) { }
 
@@ -51,6 +55,7 @@ export class LoginComponent implements OnInit {
     );
   }
 
+  //Función que recarga la pagina
   recargar(){
     location.reload();
   }

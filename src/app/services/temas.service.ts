@@ -28,9 +28,8 @@ export class TemasService {
   // URL de la api (solex_back_inf)
   API_URI = 'http://localhost:8081/api';
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  // Implementación que se usa para poder usar rutas http
+  constructor(private http: HttpClient) { }
 
   // Función para mostrar todos los temas del foro
   cargarTemas(){
@@ -72,6 +71,7 @@ export class TemasService {
     return this.http.post(this.API_URI + '/comentario_foro', comentario);
   }
 
+  // Función para que el administrador elimine comentarios
   eliminarComentario(id_comentario_foro: number){
     return this.http.delete(this.API_URI + `/comentario_foro/${id_comentario_foro}`);
   }

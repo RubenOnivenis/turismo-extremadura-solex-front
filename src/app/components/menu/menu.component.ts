@@ -8,11 +8,13 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class MenuComponent implements OnInit {
 
+  // Variable donde se guarda el nombre de usuario asignada a una cadena
   nombreUsuario: string;
 
+  //Inyectado el servcio del token
   constructor(private tokenService: TokenService) { }
 
-  //Coger el token del usuario
+  //Coger el token con el nombre de usuario
   ngOnInit() {
     this.nombreUsuario = this.tokenService.getUserName();
   }

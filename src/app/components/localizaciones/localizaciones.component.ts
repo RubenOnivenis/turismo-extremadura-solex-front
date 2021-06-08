@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { LocalizacionesService } from 'src/app/services/localizaciones.service';
 
 @Component({
@@ -10,13 +9,16 @@ import { LocalizacionesService } from 'src/app/services/localizaciones.service';
 })
 export class LocalizacionesComponent implements OnInit {
 
-  //Variables para guardar los datos traidos de la bbdd
+  // Variable para las localizaciones asignada a un any de obj y igualada a un obj
   localizaciones: any[] = [];
-
+  
+  // Variable para las localizaciones encontrados asignada a un any y igualada a un obj
   localizacionesEncontradas: any = [];
-
+  
+  // Varaible para mostrar una parte u otra
   ver: boolean = false;
 
+  // Servicios necesarios inyectados
   constructor(private activatedRoute:ActivatedRoute,private _localizacionesService:LocalizacionesService) { }
 
   ngOnInit(): void {
