@@ -51,6 +51,8 @@ export class ComentariosComponent implements OnInit {
     this.nombreUsuario = this.tokenService.getUserName();
     // La página inicia mostrando los temas
     this.cargarTema();
+    // Función para traer el usuario
+    this.getUsuario();
     // La página inicia mostrando los comentarios de cada tema
     this.cargarComentario();
   }
@@ -130,7 +132,7 @@ export class ComentariosComponent implements OnInit {
       })
   }
 
-  // 
+  // Método para comprobar si cada campo de formulario esta valido según las validaciones puestas
   valido(texto:string){
     let elemento:any = this.forma.get(texto);
     if(elemento==null){
