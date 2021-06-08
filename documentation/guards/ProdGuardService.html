@@ -195,8 +195,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/app/components/guards/prod-guard.service.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/components/guards/prod-guard.service.ts:18</a></div>
                 </td>
             </tr>
 
@@ -274,10 +274,7 @@ export class ProdGuardService implements CanActivate {
   realRol: string;
 
   // Se inyectan los servicios necesarios
-  constructor(
-    private tokenService: TokenService,
-    private router: Router
-  ) { }
+  constructor(private tokenService: TokenService, private router: Router) { }
 
   // Funcion del canActivate para poder permitir el paso a la navegación si todo es correcto
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {

@@ -75,7 +75,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#localizacionesURL">localizacionesURL</a>
+                                <a href="#API_URI">API_URI</a>
                             </li>
                         </ul>
                     </td>
@@ -118,7 +118,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/localizaciones.service.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/services/localizaciones.service.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -183,8 +183,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/services/localizaciones.service.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/services/localizaciones.service.ts:31</a></div>
                 </td>
             </tr>
 
@@ -253,8 +253,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/services/localizaciones.service.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/services/localizaciones.service.ts:26</a></div>
                 </td>
             </tr>
 
@@ -280,11 +280,11 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="localizacionesURL"></a>
+                        <a name="API_URI"></a>
                         <span class="name">
                             <b>
-                            localizacionesURL</b>
-                            <a href="#localizacionesURL"><span class="icon ion-ios-link"></span></a>
+                            API_URI</b>
+                            <a href="#API_URI"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -301,7 +301,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/localizaciones.service.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/services/localizaciones.service.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -317,6 +317,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 
+//Interfaz de los datos de alojamientos
 export interface localizacionesDatos{
   id?: number,
   nombre: string,
@@ -331,16 +332,20 @@ export interface localizacionesDatos{
 })
 export class LocalizacionesService {
 
-  localizacionesURL &#x3D; &#x27;http://localhost:8081/api&#x27;;
+  //URL por defecto para acceder al back
+  API_URI &#x3D; &#x27;http://localhost:8081/api&#x27;;
 
+  //Implementación que se usa para poder usar rutas http
   constructor(private http: HttpClient) {}
 
+  //Función para enlazar con el listado de localizaciones
   getLocalizaciones(){
-    return this.http.get(this.localizacionesURL+&#x60;/localizaciones&#x60;);
+    return this.http.get(this.API_URI+&#x60;/localizaciones&#x60;);
   }
 
+  //Función para enlazar con la búsqueda de localizaciones
   buscarLocalizaciones(nombre:string){
-    return this.http.get(this.localizacionesURL + &#x60;/localizaciones/nombre/${nombre}&#x60;);
+    return this.http.get(this.API_URI + &#x60;/localizaciones/nombre/${nombre}&#x60;);
   }
 }
 </code></pre>

@@ -464,8 +464,7 @@ import { CookieService } from &#x27;ngx-cookie-service&#x27;;
 import { AlojamientosListaComponent } from &#x27;./Components/alojamientos-lista/alojamientos-lista.component&#x27;;
 import { RutasListaComponent } from &#x27;./Components/rutas-lista/rutas-lista.component&#x27;;
 
-
-
+//Declaración de los módulos necesarios en la aplicación
 @NgModule({
   declarations: [
     AppComponent,
@@ -486,20 +485,18 @@ import { RutasListaComponent } from &#x27;./Components/rutas-lista/rutas-lista.c
     AlojamientosListaComponent,
     RutasListaComponent
   ],
+  //Importaciones necesarias en la aplicación
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,
-    BrowserModule,
     RouterModule
   ],
+  //Proveedores necesarias en la aplicación
   providers: [
     interceptorProvider,
     CookieService

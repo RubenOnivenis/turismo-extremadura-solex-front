@@ -163,7 +163,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/rutas-lista/rutas-lista.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/rutas-lista/rutas-lista.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -232,8 +232,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/components/rutas-lista/rutas-lista.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/components/rutas-lista/rutas-lista.component.ts:19</a></div>
                 </td>
             </tr>
 
@@ -280,7 +280,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/rutas-lista/rutas-lista.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/rutas-lista/rutas-lista.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -303,13 +303,16 @@ import { RutasService } from &#x27;src/app/services/rutas.service&#x27;;
 })
 export class RutasListaComponent implements OnInit {
 
+  //Variable que se iguala a un obj
   rutasArray: any [] &#x3D; [];
 
   constructor(
+    //Servicio de las rutas
     private _rutasService:RutasService
   ) { }
 
   ngOnInit() {
+    //Función para que traiga todos los datos de las rutas de la BBDD
     this._rutasService.getRutas()
       .subscribe((rutas: any)&#x3D;&gt;{
         this.rutasArray &#x3D; rutas;
@@ -321,10 +324,14 @@ export class RutasListaComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;!--&quot;ngFor&quot; para mostrar todas las rutas con su contenido--&gt;
+&lt;div&gt;
+    &lt;!--Título de las rutas--&gt;
     &lt;h2 class&#x3D;&quot;animated-fast&quot; style&#x3D;&quot;text-align: center;&quot;&gt;RUTAS&lt;/h2&gt;
     &lt;hr /&gt;
+    &lt;!--Columnas de &quot;cards&quot; donde se muestran todos las rutas--&gt;
     &lt;div class&#x3D;&quot;card-columns&quot;&gt;
+        &lt;!--Llamada al componente donde se encuentran los datos de cada ruta--&gt;
         &lt;app-rutas *ngFor&#x3D;&quot;let ruta of rutasArray; let i &#x3D; index&quot; [ruta]&#x3D;&quot;ruta&quot;&gt;&lt;/app-rutas&gt;
     &lt;/div&gt;
 &lt;/div&gt;
@@ -357,7 +364,7 @@ export class RutasListaComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div>    <h2 class="animated-fast" style="text-align: center;">RUTAS</h2>    <hr />    <div class="card-columns">        <app-rutas *ngFor="let ruta of rutasArray; let i = index" [ruta]="ruta"></app-rutas>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><!--"ngFor" para mostrar todas las rutas con su contenido--><div>    <!--Título de las rutas-->    <h2 class="animated-fast" style="text-align: center;">RUTAS</h2>    <hr />    <!--Columnas de "cards" donde se muestran todos las rutas-->    <div class="card-columns">        <!--Llamada al componente donde se encuentran los datos de cada ruta-->        <app-rutas *ngFor="let ruta of rutasArray; let i = index" [ruta]="ruta"></app-rutas>    </div></div></div>'
     var COMPONENTS = [{'name': 'AlojamientosComponent', 'selector': 'app-alojamientos'},{'name': 'AlojamientosListaComponent', 'selector': 'app-alojamientos-lista'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ComentariosComponent', 'selector': 'app-comentarios'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForoComponent', 'selector': 'app-foro'},{'name': 'LocalizacionesComponent', 'selector': 'app-localizaciones'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NuevoTemaComponent', 'selector': 'app-nuevo-tema'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RutasComponent', 'selector': 'app-rutas'},{'name': 'RutasListaComponent', 'selector': 'app-rutas-lista'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'RutasListaComponent'};

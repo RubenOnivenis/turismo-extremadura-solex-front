@@ -381,26 +381,25 @@ export interface usuariosDatos{
 })
 export class UsuariosService {
 
+  //URL por defecto para acceder al back
   API_URI &#x3D; &#x27;http://localhost:8081/api&#x27;;
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  // Implementación que se usa para poder usar rutas http
+  constructor(private http: HttpClient) { }
 
+  //Función para enlazar con el listado de usuarios
   getUsuarios(){
     return this.http.get(&#x60;${this.API_URI}/usuarios&#x60;);
   }
 
+  //Función para enlazar con los datos de un usuario
   getUsuario(nombre_usuario: string){
     return this.http.get(&#x60;${this.API_URI}/usuario/${nombre_usuario}&#x60;);
   }
 
+  //Función para enlazar con la modificación de los datos de un usuario
   updateUsuario(nombre_usuario: string, usuario: usuariosDatos){
     return this.http.put(&#x60;${this.API_URI}/usuarios/${nombre_usuario}&#x60;, usuario);
-  }
-
-  updatePassUsuario(id: number, usuario: usuariosDatos){
-    return this.http.put(&#x60;${this.API_URI}/usuarios/pass/${id}&#x60;, usuario);
   }
 
 }

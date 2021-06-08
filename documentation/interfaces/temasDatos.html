@@ -301,6 +301,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 
+// Interfaz de los campos de los temas del foro
 export interface temasDatos{
   id_tema?:number,
   nombreTema:string,
@@ -310,11 +311,12 @@ export interface temasDatos{
   nombre_usuario?:string,
 }
 
+// Interfaz de los campos de los comentarios del foro
 export interface comentariosDatos{
   id_comentario_foro?:number,
   comentario:string,
-  id_usuario?:number,
-  id_tema?:number,
+  id_usuario:number,
+  id_tema:number,
   fch_hora_comentario:Date
 }
 
@@ -323,34 +325,55 @@ export interface comentariosDatos{
 })
 export class TemasService {
 
+  // URL de la api (solex_back_inf)
   API_URI &#x3D; &#x27;http://localhost:8081/api&#x27;;
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  // Implementación que se usa para poder usar rutas http
+  constructor(private http: HttpClient) { }
 
+  // Función para mostrar todos los temas del foro
   cargarTemas(){
     return this.http.get&lt;any&gt;(this.API_URI + &#x60;/foro_temas_datos/&#x60;);
   }
 
+  // Función para mostrar un solo tema del foro
   cargarTema(id_tema: number){
     return this.http.get(this.API_URI + &#x60;/foro_temas_datos/${id_tema}&#x60;);
   }
 
-  cargarComentarios(id_tema: Number){
-    return this.http.get&lt;any&gt;(this.API_URI + &#x60;/comentarios_foro/${id_tema}&#x60;);
+  // Función para enlazar con la búsqueda de temas
+  buscarTema(nombre: string) {
+    return this.http.get(this.API_URI + &#x60;/foro_temas_datos/nombre/${nombre}&#x60;);
   }
 
-  guardar(){
-    
+  // Función para borrar un tema
+  eliminiarTema(id_tema:number){
+    return this.http.delete(this.API_URI + &#x60;/temas_foro/${id_tema}&#x60;);
+  }
+  
+  // Función para mostrar todos los comentarios del foro
+  cargarComentarios(){
+    return this.http.get&lt;any&gt;(this.API_URI + &#x60;/comentarios_foro_datos/&#x60;);
   }
 
+  // Función para mostrar los comentarios de cada tema en el foro
+  cargarComentario(id_comentario_foro: Number){
+    return this.http.get&lt;any&gt;(this.API_URI + &#x60;/comentarios_foro_datos/${id_comentario_foro}&#x60;);
+  }
+
+  // Función para añadir un tema
   anadirTema(tema: temasDatos){
     return this.http.post(this.API_URI + &#x27;/temas_foro&#x27;, tema);
   }
 
+  // Función para añadir comentarios a un tema
   comentar(comentario: comentariosDatos){
-    return this.http.post(this.API_URI + &#x27;/comentario_foro/&#x27;, comentario);
+    return this.http.post(this.API_URI + &#x27;/comentario_foro&#x27;, comentario);
+  }
+
+  // Función para que el administrador elimine comentarios
+  eliminarComentario(id_comentario_foro: number){
+    return this.http.delete(this.API_URI + &#x60;/comentario_foro/${id_comentario_foro}&#x60;);
   }
   
 }

@@ -290,8 +290,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/components/auth/login.component.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/components/auth/login.component.ts:36</a></div>
                 </td>
             </tr>
 
@@ -329,8 +329,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/components/auth/login.component.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/components/auth/login.component.ts:38</a></div>
                 </td>
             </tr>
 
@@ -368,8 +368,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">src/app/components/auth/login.component.ts:54</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/components/auth/login.component.ts:59</a></div>
                 </td>
             </tr>
 
@@ -530,9 +530,13 @@ export class LoginComponent implements OnInit {
 
   // Inyectamos en el constructor los servicios necesarios y Router
   constructor(
+    // Implementación del servicio del token
     private tokenService: TokenService,
+    // Implementación del servicio de autenticación
     private authService: AuthService,
+    // Implementación para poder redireccionar a otra URL
     private router: Router,
+    // Implementación del servicio de Toastr
     private toastr: ToastrService
   ) { }
 
@@ -558,6 +562,7 @@ export class LoginComponent implements OnInit {
     );
   }
 
+  //Función que recarga la pagina
   recargar(){
     location.reload();
   }
@@ -579,9 +584,9 @@ export class LoginComponent implements OnInit {
                 &lt;li class&#x3D;&quot;nav-item&quot;&gt;
                     &lt;a class&#x3D;&quot;nav-link negro&quot; routerLink&#x3D;&quot;/registro&quot;&gt;Crear Cuenta&lt;/a&gt;
                 &lt;/li&gt;
-
             &lt;/ul&gt;
         &lt;/div&gt;
+        &lt;!--Formulario con los campos que hay que rellenar para iniciar sesion--&gt;
         &lt;div class&#x3D;&quot;card-body&quot;&gt;
             &lt;form #f&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;onLogin()&quot; novalidate&gt;
                 &lt;div class&#x3D;&quot;form-group&quot;&gt;
@@ -637,7 +642,7 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Apartados de inicio de sesión y crear cuenta de usuario para poder elegir --><div class="container d-flex justify-content-center">    <div class="card">        <div class="card-header">            <ul class="nav nav-tabs">                <li class="nav-item">                    <a class="nav-link active negro" routerLink="/login">Iniciar Sesión</a>                </li>                <li class="nav-item">                    <a class="nav-link negro" routerLink="/registro">Crear Cuenta</a>                </li>            </ul>        </div>        <div class="card-body">            <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>                <div class="form-group">                    <label for="nombreUsuario">Nombre de Usuario</label>                    <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control"                        [(ngModel)]="nombreUsuario" required>                </div>                <div class="form-group">                    <label for="password">Contraseña</label>                    <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password"                        required>                </div>                <div class="form-group">                    <button class="btn btn-outline-dark btn-block" [disabled]="!f.valid" type="submit">                        <i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>                </div>            </form>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- Apartados de inicio de sesión y crear cuenta de usuario para poder elegir --><div class="container d-flex justify-content-center">    <div class="card">        <div class="card-header">            <ul class="nav nav-tabs">                <li class="nav-item">                    <a class="nav-link active negro" routerLink="/login">Iniciar Sesión</a>                </li>                <li class="nav-item">                    <a class="nav-link negro" routerLink="/registro">Crear Cuenta</a>                </li>            </ul>        </div>        <!--Formulario con los campos que hay que rellenar para iniciar sesion-->        <div class="card-body">            <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>                <div class="form-group">                    <label for="nombreUsuario">Nombre de Usuario</label>                    <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control"                        [(ngModel)]="nombreUsuario" required>                </div>                <div class="form-group">                    <label for="password">Contraseña</label>                    <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password"                        required>                </div>                <div class="form-group">                    <button class="btn btn-outline-dark btn-block" [disabled]="!f.valid" type="submit">                        <i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>                </div>            </form>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AlojamientosComponent', 'selector': 'app-alojamientos'},{'name': 'AlojamientosListaComponent', 'selector': 'app-alojamientos-lista'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ComentariosComponent', 'selector': 'app-comentarios'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForoComponent', 'selector': 'app-foro'},{'name': 'LocalizacionesComponent', 'selector': 'app-localizaciones'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NuevoTemaComponent', 'selector': 'app-nuevo-tema'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RutasComponent', 'selector': 'app-rutas'},{'name': 'RutasListaComponent', 'selector': 'app-rutas-lista'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};

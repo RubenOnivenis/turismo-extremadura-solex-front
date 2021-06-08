@@ -105,7 +105,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/interceptors/prod-interceptor.service.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/interceptors/prod-interceptor.service.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -184,8 +184,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/components/interceptors/prod-interceptor.service.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/components/interceptors/prod-interceptor.service.ts:59</a></div>
                 </td>
             </tr>
 
@@ -266,8 +266,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/app/components/interceptors/prod-interceptor.service.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/components/interceptors/prod-interceptor.service.ts:27</a></div>
                 </td>
             </tr>
 
@@ -340,27 +340,37 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HTTP_INTERCEPTORS
 import { Observable, throwError } from &#x27;rxjs&#x27;;
 import { TokenService } from &#x27;src/app/services/token.service&#x27;;
 
+// Constante de autorización
 const AUTHORIZATION &#x3D; &#x27;Authorization&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+
+// Implementa un transformador de Http
 export class ProdInterceptorService implements HttpInterceptor {
 
   constructor(
+    // Implementación del servicio del token
     private tokenService: TokenService,
+    // Implementación del servicio de autenticación
     private authService: AuthService
   ) { }
 
+  // Interceptador de Http
   intercept(req: HttpRequest&lt;any&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;any&gt;&gt; {
 
+    // Comprobación para saber si el usuario ha iniciado sesión
     if (!this.tokenService.isLogged()) {
       return next.handle(req);
     }
 
+    // Variables necesarias
     let intReq &#x3D; req;
+    // Variable que guarda el token del usuario
     const token &#x3D; this.tokenService.getToken();
 
+    // Variable que se iguala al token
     intReq &#x3D; this.addToken(req, token);
 
     return next.handle(intReq).pipe(catchError((err: HttpErrorResponse) &#x3D;&gt; {
@@ -379,6 +389,7 @@ export class ProdInterceptorService implements HttpInterceptor {
     }));
   }
 
+  // Función que retorna el token del usuario para la autorización
   private addToken(req: HttpRequest&lt;any&gt;, token: string): HttpRequest&lt;any&gt; {
     return req.clone({ headers: req.headers.set(&#x27;Authorization&#x27;, &#x27;Bearer &#x27; + token) });
   }

@@ -295,6 +295,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 
+//Interfaz de los datos de alojamientos
 export interface localizacionesDatos{
   id?: number,
   nombre: string,
@@ -309,16 +310,20 @@ export interface localizacionesDatos{
 })
 export class LocalizacionesService {
 
-  localizacionesURL &#x3D; &#x27;http://localhost:8081/api&#x27;;
+  //URL por defecto para acceder al back
+  API_URI &#x3D; &#x27;http://localhost:8081/api&#x27;;
 
+  //Implementación que se usa para poder usar rutas http
   constructor(private http: HttpClient) {}
 
+  //Función para enlazar con el listado de localizaciones
   getLocalizaciones(){
-    return this.http.get(this.localizacionesURL+&#x60;/localizaciones&#x60;);
+    return this.http.get(this.API_URI+&#x60;/localizaciones&#x60;);
   }
 
+  //Función para enlazar con la búsqueda de localizaciones
   buscarLocalizaciones(nombre:string){
-    return this.http.get(this.localizacionesURL + &#x60;/localizaciones/nombre/${nombre}&#x60;);
+    return this.http.get(this.API_URI + &#x60;/localizaciones/nombre/${nombre}&#x60;);
   }
 }
 </code></pre>

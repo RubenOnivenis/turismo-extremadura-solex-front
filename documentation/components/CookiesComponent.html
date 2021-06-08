@@ -186,7 +186,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/shared/cookies/cookies.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/shared/cookies/cookies.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -243,7 +243,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/shared/cookies/cookies.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/shared/cookies/cookies.component.ts:16</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -278,8 +278,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/components/shared/cookies/cookies.component.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/components/shared/cookies/cookies.component.ts:33</a></div>
                 </td>
             </tr>
 
@@ -317,8 +317,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/components/shared/cookies/cookies.component.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/components/shared/cookies/cookies.component.ts:27</a></div>
                 </td>
             </tr>
 
@@ -356,8 +356,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/components/shared/cookies/cookies.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/components/shared/cookies/cookies.component.ts:22</a></div>
                 </td>
             </tr>
 
@@ -399,7 +399,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/shared/cookies/cookies.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/shared/cookies/cookies.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -431,7 +431,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/shared/cookies/cookies.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/shared/cookies/cookies.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -447,31 +447,35 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Output, EventEmitter } from &#x27;@angular/core&#x27;;
 import { CookieService } from &#x27;ngx-cookie-service&#x27;;
 
-
 @Component({
   selector: &#x27;app-cookies&#x27;,
   templateUrl: &#x27;./cookies.component.html&#x27;,
   styles: []
 })
+
+//Implementa OnInit que sirve para que se una vez abres la página por primera vez
 export class CookiesComponent implements OnInit {
 
+  //Variables para que se vea la cookie o no
   visible: boolean &#x3D; true;
   cookieExist!:boolean;
   @Output() close: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
 
-  constructor(
-    private _cookieService: CookieService
-  ) { }
+  //Servicio de la cookie
+  constructor(private _cookieService: CookieService) { }
 
+  //Comprobación de la cookie
   ngOnInit(): void {
-    this.cookieExist &#x3D; this._cookieService.check(&#x27;CookieRuben&#x27;);
+    this.cookieExist &#x3D; this._cookieService.check(&#x27;CookieSolex&#x27;);
   }
 
+  //Función para gestionar la cookie
   gestionarCookie(){
-    this._cookieService.set(&#x27;CookieRuben&#x27;, &#x27;Valor de la cookie&#x27;);
-    this._cookieService.get(&#x27;CookieRuben&#x27;);
+    this._cookieService.set(&#x27;CookieSolex&#x27;, &#x27;Valor de la cookie&#x27;);
+    this._cookieService.get(&#x27;CookieSolex&#x27;);
   }
 
+  //Función para aceptar la cookie y que no vuelva a aparecer
   aceptarCookies(){
     this.gestionarCookie();
     this.visible &#x3D; !this.visible;
@@ -484,16 +488,18 @@ export class CookiesComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;cookies&quot; [hidden]&#x3D;&quot;!visible&quot; *ngIf&#x3D;&quot;cookieExist&#x3D;&#x3D;false&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;!--Contenido de la cookie--&gt;
+&lt;div class&#x3D;&quot;cookies&quot; [hidden]&#x3D;&quot;!visible&quot; *ngIf&#x3D;&quot;cookieExist&#x3D;&#x3D;false&quot;&gt;
     &lt;div class&#x3D;&quot;alert alert-warning cuadro_cookies&quot; role&#x3D;&quot;alert&quot; &gt;
       &lt;p&gt;
         &lt;b&gt;GDPR (General Data Protection Regulation - Reglamento General Protección de Datos)&lt;/b&gt;&lt;br&gt;
           Utilizamos cookies propias y de terceros para mejorar nuestros servicios y mostrarte publicidad relacionada con tus 
           preferencias mediante el análisis de tus hábitos de navegación.
-          Puede obtener más información en nuestra &lt;a href&#x3D;&quot;&quot;&gt;Política de Cookies.&lt;/a&gt;
+          Puede obtener más información en nuestra &lt;a href&#x3D;&quot;assets/pdfs/politica_cookies.pdf&quot; download&#x3D;&quot;Política de cookies&quot;&gt;Política de Cookies.&lt;/a&gt;
           Pulse el botón ACEPTAR, para confirmar que ha leído y aceptado la información presentada. Después de aceptar no volveremos a 
           mostrar mensaje.
       &lt;/p&gt;
+      &lt;!--Botón para aceptar la cookie y que no vuelva a aparecer--&gt;
       &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-dark boton_aceptar&quot; (click)&#x3D;&quot;aceptarCookies()&quot;&gt;Aceptar&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -526,7 +532,7 @@ export class CookiesComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="cookies" [hidden]="!visible" *ngIf="cookieExist==false">    <div class="alert alert-warning cuadro_cookies" role="alert" >      <p>        <b>GDPR (General Data Protection Regulation - Reglamento General Protección de Datos)</b><br>          Utilizamos cookies propias y de terceros para mejorar nuestros servicios y mostrarte publicidad relacionada con tus           preferencias mediante el análisis de tus hábitos de navegación.          Puede obtener más información en nuestra <a href="">Política de Cookies.</a>          Pulse el botón ACEPTAR, para confirmar que ha leído y aceptado la información presentada. Después de aceptar no volveremos a           mostrar mensaje.      </p>      <button type="button" class="btn btn-dark boton_aceptar" (click)="aceptarCookies()">Aceptar</button>    </div>  </div></div>'
+        var COMPONENT_TEMPLATE = '<div><!--Contenido de la cookie--><div class="cookies" [hidden]="!visible" *ngIf="cookieExist==false">    <div class="alert alert-warning cuadro_cookies" role="alert" >      <p>        <b>GDPR (General Data Protection Regulation - Reglamento General Protección de Datos)</b><br>          Utilizamos cookies propias y de terceros para mejorar nuestros servicios y mostrarte publicidad relacionada con tus           preferencias mediante el análisis de tus hábitos de navegación.          Puede obtener más información en nuestra <a href="assets/pdfs/politica_cookies.pdf" download="Política de cookies">Política de Cookies.</a>          Pulse el botón ACEPTAR, para confirmar que ha leído y aceptado la información presentada. Después de aceptar no volveremos a           mostrar mensaje.      </p>      <!--Botón para aceptar la cookie y que no vuelva a aparecer-->      <button type="button" class="btn btn-dark boton_aceptar" (click)="aceptarCookies()">Aceptar</button>    </div>  </div></div>'
     var COMPONENTS = [{'name': 'AlojamientosComponent', 'selector': 'app-alojamientos'},{'name': 'AlojamientosListaComponent', 'selector': 'app-alojamientos-lista'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ComentariosComponent', 'selector': 'app-comentarios'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForoComponent', 'selector': 'app-foro'},{'name': 'LocalizacionesComponent', 'selector': 'app-localizaciones'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NuevoTemaComponent', 'selector': 'app-nuevo-tema'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RutasComponent', 'selector': 'app-rutas'},{'name': 'RutasListaComponent', 'selector': 'app-rutas-lista'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CookiesComponent'};

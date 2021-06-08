@@ -104,7 +104,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/components/guards/login.guard.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/components/guards/login.guard.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -181,8 +181,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/components/guards/login.guard.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/components/guards/login.guard.ts:19</a></div>
                 </td>
             </tr>
 
@@ -254,14 +254,16 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+// Clase la cual se implementa CanActivate, interfaz la cual se encarga de ser un guardia, si es true la navegación continua
 export class LoginGuard implements CanActivate {
 
-
+  // Se inyectan los servicios necesarios
   constructor(
     private tokenService: TokenService,
     private router: Router
   ) { }
 
+  // Función para comprobar si el usuario está logeado, si no lo está se recarga la página y envia al actor al home
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if (this.tokenService.isLogged()) {
       this.router.navigate([&#x27;/&#x27;]);

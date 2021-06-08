@@ -170,7 +170,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/menu/menu.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/menu/menu.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -239,8 +239,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/components/menu/menu.component.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/components/menu/menu.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -282,7 +282,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/menu/menu.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/menu/menu.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -305,11 +305,13 @@ import { TokenService } from &#x27;src/app/services/token.service&#x27;;
 })
 export class MenuComponent implements OnInit {
 
+  // Variable donde se guarda el nombre de usuario asignada a una cadena
   nombreUsuario: string;
 
+  //Inyectado el servcio del token
   constructor(private tokenService: TokenService) { }
 
-  //Coger el token del usuario
+  //Coger el token con el nombre de usuario
   ngOnInit() {
     this.nombreUsuario &#x3D; this.tokenService.getUserName();
   }
@@ -330,7 +332,7 @@ export class MenuComponent implements OnInit {
     &lt;/p&gt;
     &lt;div&gt;&lt;img src&#x3D;&quot;assets/img/teatro_romano.jpg&quot; class&#x3D;&quot;img-fluid&quot;/&gt;&lt;/div&gt;
   &lt;hr/&gt;
-  &lt;!--Video elaboración--&gt;
+  &lt;!--Video--&gt;
   &lt;h3&gt;Paisajes de Extremadura&lt;/h3&gt;
   &lt;div class&#x3D;&quot;embed-responsive embed-responsive-16by9 col-md-6 col-12 offset-md-3 mt-3 mb-3&quot; id&#x3D;&quot;videoYT&quot;&gt;
     &lt;iframe width&#x3D;&quot;1280&quot; height&#x3D;&quot;720&quot; src&#x3D;&quot;https://www.youtube.com/embed/0hA25yIVjHk&quot; title&#x3D;&quot;YouTube video player&quot; frameborder&#x3D;&quot;0&quot; allow&#x3D;&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
@@ -372,7 +374,7 @@ export class MenuComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--Conetenedor Principal--><div class="container">    <h2 class="text-center">Turismo por Extremadura</h2>    <h5 class="text-center">Descubre qué visitar, ver y hacer para aprovechar tu viaje. ¡Siente la experiencia, vive Extremadura!</h5>    <p class="text-center">      Un destino cercano, tranquilo y seguro donde reencontrarse con la naturaleza, pasear por las dehesas y descubrir espacios protegidos. <br/>      Donde disfrutar de cielos limpios para ver estrellas y aves que sobrevuelan paisajes excepcionales y donde zambullirse en aguas cristalinas. <br/>      Déjate sorprender por el patrimonio, la cultura y la gastronomía de nuestros pueblos y ciudades y practica tu deporte favorito al aire libre. <br/><br/>    </p>    <div><img src="assets/img/teatro_romano.jpg" class="img-fluid"/></div>  <hr/>  <!--Video elaboración-->  <h3>Paisajes de Extremadura</h3>  <div class="embed-responsive embed-responsive-16by9 col-md-6 col-12 offset-md-3 mt-3 mb-3" id="videoYT">    <iframe width="1280" height="720" src="https://www.youtube.com/embed/0hA25yIVjHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  </div>  </div></div>'
+        var COMPONENT_TEMPLATE = '<div><!--Conetenedor Principal--><div class="container">    <h2 class="text-center">Turismo por Extremadura</h2>    <h5 class="text-center">Descubre qué visitar, ver y hacer para aprovechar tu viaje. ¡Siente la experiencia, vive Extremadura!</h5>    <p class="text-center">      Un destino cercano, tranquilo y seguro donde reencontrarse con la naturaleza, pasear por las dehesas y descubrir espacios protegidos. <br/>      Donde disfrutar de cielos limpios para ver estrellas y aves que sobrevuelan paisajes excepcionales y donde zambullirse en aguas cristalinas. <br/>      Déjate sorprender por el patrimonio, la cultura y la gastronomía de nuestros pueblos y ciudades y practica tu deporte favorito al aire libre. <br/><br/>    </p>    <div><img src="assets/img/teatro_romano.jpg" class="img-fluid"/></div>  <hr/>  <!--Video-->  <h3>Paisajes de Extremadura</h3>  <div class="embed-responsive embed-responsive-16by9 col-md-6 col-12 offset-md-3 mt-3 mb-3" id="videoYT">    <iframe width="1280" height="720" src="https://www.youtube.com/embed/0hA25yIVjHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  </div>  </div></div>'
     var COMPONENTS = [{'name': 'AlojamientosComponent', 'selector': 'app-alojamientos'},{'name': 'AlojamientosListaComponent', 'selector': 'app-alojamientos-lista'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ComentariosComponent', 'selector': 'app-comentarios'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForoComponent', 'selector': 'app-foro'},{'name': 'LocalizacionesComponent', 'selector': 'app-localizaciones'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NuevoTemaComponent', 'selector': 'app-nuevo-tema'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RutasComponent', 'selector': 'app-rutas'},{'name': 'RutasListaComponent', 'selector': 'app-rutas-lista'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MenuComponent'};

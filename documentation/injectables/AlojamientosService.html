@@ -118,7 +118,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/alojamientos.service.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/services/alojamientos.service.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -183,8 +183,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/services/alojamientos.service.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/services/alojamientos.service.ts:32</a></div>
                 </td>
             </tr>
 
@@ -253,8 +253,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/services/alojamientos.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/services/alojamientos.service.ts:27</a></div>
                 </td>
             </tr>
 
@@ -301,7 +301,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/alojamientos.service.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/services/alojamientos.service.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -317,6 +317,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 
+//Interfaz de los datos de alojamientos
 export interface alojamientosDatos{
   id_alojamiento?:number,
   id_localizacion?:number,
@@ -332,16 +333,18 @@ export interface alojamientosDatos{
 })
 export class AlojamientosService {
 
+  //URL por defecto para acceder al back
   API_URI &#x3D; &#x27;http://localhost:8081/api&#x27;;
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  // Implementación que se usa para poder usar rutas http
+  constructor(private http: HttpClient) { }
 
+  //Función para enlazar con el listado de alojamientos
   getAlojamientos(){
     return this.http.get(&#x60;${this.API_URI}/alojamientos&#x60;);
   }
 
+  //Función para enlazar con los datos de un alojamiento
   getAlojamiento(id_alojamiento: number){
     return this.http.get(&#x60;${this.API_URI}/alojamiento/${id_alojamiento}&#x60;);
   }

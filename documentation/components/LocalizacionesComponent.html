@@ -177,12 +177,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, _localizacionesService: <a href="../injectables/LocalizacionesService.html">LocalizacionesService</a>, toastr: ToastrService)</code>
+<code>constructor(activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, _localizacionesService: <a href="../injectables/LocalizacionesService.html">LocalizacionesService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -216,18 +216,6 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/LocalizacionesService.html" target="_self" >LocalizacionesService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>toastr</td>
-                                                  
-                                                        <td>
-                                                                    <code>ToastrService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -275,8 +263,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:39</a></div>
                 </td>
             </tr>
 
@@ -345,8 +333,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:30</a></div>
                 </td>
             </tr>
 
@@ -384,8 +372,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:24</a></div>
                 </td>
             </tr>
 
@@ -432,7 +420,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -464,7 +452,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -496,7 +484,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -511,11 +499,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
-import { ToastrService } from &#x27;ngx-toastr&#x27;;
 import { LocalizacionesService } from &#x27;src/app/services/localizaciones.service&#x27;;
-import { TokenService } from &#x27;src/app/services/token.service&#x27;;
-
-const TOKEN_KEY &#x3D; &#x27;AuthToken&#x27;;
 
 @Component({
   selector: &#x27;app-localizaciones&#x27;,
@@ -524,14 +508,17 @@ const TOKEN_KEY &#x3D; &#x27;AuthToken&#x27;;
 })
 export class LocalizacionesComponent implements OnInit {
 
-  //Variables para guardar los datos traidos de la bbdd
+  // Variable para las localizaciones asignada a un any de obj y igualada a un obj
   localizaciones: any[] &#x3D; [];
-
+  
+  // Variable para las localizaciones encontrados asignada a un any y igualada a un obj
   localizacionesEncontradas: any &#x3D; [];
-
+  
+  // Varaible para mostrar una parte u otra
   ver: boolean &#x3D; false;
 
-  constructor(private activatedRoute:ActivatedRoute,private _localizacionesService:LocalizacionesService, private toastr: ToastrService) { }
+  // Servicios necesarios inyectados
+  constructor(private activatedRoute:ActivatedRoute,private _localizacionesService:LocalizacionesService) { }
 
   ngOnInit(): void {
     //Al inicio de la página se ejecuta la funcion
@@ -563,18 +550,18 @@ export class LocalizacionesComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!--Buscador principal--&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;!--Buscador principal de las poblaciones--&gt;
 &lt;div class&#x3D;&quot;container&quot;&gt;
 	&lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;div class&#x3D;&quot;col-6 mx-auto&quot; id&#x3D;&quot;localizaciones&quot;&gt;
-    		&lt;h2 class&#x3D;&quot;text-uppercase&quot;&gt;Buscar poblaciones&lt;/h2&gt;
-            &lt;form id&#x3D;&quot;buscador&quot; class&#x3D;&quot;form-inline&quot;&gt;
+        &lt;div class&#x3D;&quot;col-12 mx-auto p-5&quot;&gt;
+    		&lt;h2 class&#x3D;&quot;text-uppercase text-center&quot;&gt;Buscar poblaciones&lt;/h2&gt;
+            &lt;!--Formulario del Buscador--&gt;
+            &lt;form class&#x3D;&quot;form-inline buscador row&quot;&gt;
                 &lt;div class&#x3D;&quot;input-group col-12&quot;&gt;
-                    &lt;!--Formulario del Buscador--&gt;
                     &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control input-lg&quot; placeholder&#x3D;&quot;Buscar&quot; (keyup.enter)&#x3D;&quot;buscar(buscarTexto.value)&quot; #buscarTexto/&gt;
                     &lt;span class&#x3D;&quot;input-group-btn&quot;&gt;
-                        &lt;button class&#x3D;&quot;btn btn-info btn-lg&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;buscar(buscarTexto.value)&quot;&gt;
-                            &lt;i class&#x3D;&quot;fa fa-search&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+                        &lt;button class&#x3D;&quot;btn btn-lg&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;buscar(buscarTexto.value)&quot;&gt;
+                            &lt;i class&#x3D;&quot;fa fa-search&quot; aria-hidden&#x3D;&quot;true&quot; style&#x3D;&quot;font-size: 23px;&quot;&gt;&lt;/i&gt;
                         &lt;/button&gt;
                     &lt;/span&gt;
                 &lt;/div&gt;
@@ -584,33 +571,46 @@ export class LocalizacionesComponent implements OnInit {
 &lt;/div&gt;
 &lt;!-- Localizaciones del buscador --&gt;
 &lt;div *ngIf&#x3D;&quot;ver&quot;&gt;
-    &lt;h2&gt;Poblaciones encontradas&lt;/h2&gt;
-    &lt;div class&#x3D;&quot;card-columns&quot;&gt;
-        &lt;div class&#x3D;&quot;card bg-light mb-3 p-md-0&quot; *ngFor&#x3D;&quot;let localizacion of localizacionesEncontradas&quot;&gt;
-            &lt;div&gt; 
-                &lt;img class&#x3D;&quot;card-img-top mt-3 p-3&quot;  width&#x3D;&quot;480px&quot; height&#x3D;&quot;320px&quot; [src]&#x3D;&quot;localizacion.imagen | noImagePipe&quot;&gt;
-                &lt;div class&#x3D;&quot;card-body&quot;&gt;
-                    &lt;h5 class&#x3D;&quot;card-title&quot;&gt;{{localizacion.nombre}} | {{localizacion.comarca}}&lt;/h5&gt;
+    &lt;div *ngIf&#x3D;&quot;localizacionesEncontradas &#x3D;&#x3D; 0&quot;&gt;
+        &lt;h2&gt;No se han encontrado Poblaciones&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;localizacionesEncontradas !&#x3D; 0&quot;&gt;
+        &lt;h2&gt;Poblaciones encontradas&lt;/h2&gt;
+        &lt;!--&quot;ngFor&quot; para la lista de localizaciones encontradas en el buscador--&gt;
+        &lt;div class&#x3D;&quot;card-columns&quot;&gt;
+            &lt;div class&#x3D;&quot;card bg-light mb-3 p-md-0&quot; *ngFor&#x3D;&quot;let localizacion of localizacionesEncontradas&quot;&gt;
+                &lt;!--Cuerpo de la localización con sus datos--&gt;
+                &lt;div&gt; 
+                    &lt;!--Imagen de la localización--&gt;
+                    &lt;img class&#x3D;&quot;card-img-top p-3&quot;  width&#x3D;&quot;480&quot; height&#x3D;&quot;320&quot; [src]&#x3D;&quot;localizacion.imagen | noImagePipe&quot;&gt;
+                    &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                        &lt;h5 class&#x3D;&quot;card-title&quot;&gt;{{localizacion.nombre}} | {{localizacion.comarca}}&lt;/h5&gt;
+                    &lt;/div&gt;
                 &lt;/div&gt;
+                &lt;!--Botón para ir a la página de reserva de la localización--&gt;
+                &lt;a class&#x3D;&quot;btn btn-dark btn-block informacionBoton&quot; href&#x3D;&quot;{{localizacion.url}}&quot; style&#x3D;&quot;cursor: pointer;&quot; target&#x3D;&quot;_blank&quot;&gt;
+                    Información
+                &lt;/a&gt;
             &lt;/div&gt;
-            &lt;a class&#x3D;&quot;btn btn-dark btn-block informacionBoton&quot; href&#x3D;&quot;{{localizaciones.url}}&quot; style&#x3D;&quot;cursor: pointer;&quot; target&#x3D;&quot;_blank&quot;&gt;
-                Información
-            &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;!-- Lista de localizaciones --&gt;
 &lt;div *ngIf&#x3D;&quot;!ver&quot;&gt;
-    &lt;h2&gt;Estas son algunas de las poblaciones extremeñas&lt;/h2&gt;
+    &lt;h2&gt;Algunas poblaciones de Extremadura&lt;/h2&gt;
+     &lt;!--&quot;ngFor&quot; para la lista de localizaciones--&gt;
     &lt;div class&#x3D;&quot;card-columns&quot;&gt;
         &lt;div class&#x3D;&quot;card bg-light mb-3 p-md-0&quot; *ngFor&#x3D;&quot;let localizacion of localizaciones&quot;&gt;
+            &lt;!--Cuerpo de la localización con sus datos--&gt;
             &lt;div&gt; 
-                &lt;img class&#x3D;&quot;card-img-top mt-3 p-3&quot;  width&#x3D;&quot;480px&quot; height&#x3D;&quot;320px&quot; [src]&#x3D;&quot;localizacion.imagen | noImagePipe&quot;&gt;
+                &lt;!--Imagen de la localización--&gt;
+                &lt;img class&#x3D;&quot;card-img-top p-3&quot; width&#x3D;&quot;480&quot; height&#x3D;&quot;320&quot; [src]&#x3D;&quot;localizacion.imagen | noImagePipe&quot;&gt;
                 &lt;div class&#x3D;&quot;card-body&quot;&gt;
                     &lt;h5 class&#x3D;&quot;card-title&quot;&gt;{{localizacion.nombre}} | {{localizacion.comarca}}&lt;/h5&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            &lt;a class&#x3D;&quot;btn btn-dark btn-block informacionBoton&quot; href&#x3D;&quot;{{localizaciones.url}}&quot; style&#x3D;&quot;cursor: pointer;&quot; target&#x3D;&quot;_blank&quot;&gt;
+            &lt;!--Botón para ir a la página de reserva de la localización--&gt;
+            &lt;a class&#x3D;&quot;btn btn-dark btn-block informacionBoton&quot; href&#x3D;&quot;{{localizacion.url}}&quot; style&#x3D;&quot;cursor: pointer;&quot; target&#x3D;&quot;_blank&quot;&gt;
                 Información
             &lt;/a&gt;
         &lt;/div&gt;
@@ -622,41 +622,7 @@ export class LocalizacionesComponent implements OnInit {
                 <p class="comment">
                     <code>./localizaciones.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">
-#localizaciones{
-    margin: 120px;
-}
-
-#localizaciones h2{
-    margin-left: 26px;
-}
-
-#buscador{
-    padding: 3px;
-    border: solid 1px #E4E4E4;
-    border-radius: 6px;
-    background-color: #fff;
-}
-
-#buscador input{
-    border: 0;
-    box-shadow: none;
-    font-size: la;
-}
-
-#buscador button{
-    margin: 2px 0 0 0;
-    background: none;
-    box-shadow: none;
-    border: 0;
-    color: black;
-    padding: 0 10px 0 10px;
-    border: none
-}
-
-.fa-search{
-    font-size: 23px;
-}</code></pre>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -684,7 +650,7 @@ export class LocalizacionesComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--Buscador principal--><div class="container">	<div class="row">        <div class="col-6 mx-auto" id="localizaciones">    		<h2 class="text-uppercase">Buscar poblaciones</h2>            <form id="buscador" class="form-inline">                <div class="input-group col-12">                    <!--Formulario del Buscador-->                    <input type="text" class="form-control input-lg" placeholder="Buscar" (keyup.enter)="buscar(buscarTexto.value)" #buscarTexto/>                    <span class="input-group-btn">                        <button class="btn btn-info btn-lg" type="button" (click)="buscar(buscarTexto.value)">                            <i class="fa fa-search" aria-hidden="true"></i>                        </button>                    </span>                </div>            </form>        </div>	</div></div><!-- Localizaciones del buscador --><div *ngIf="ver">    <h2>Poblaciones encontradas</h2>    <div class="card-columns">        <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizacionesEncontradas">            <div>                 <img class="card-img-top mt-3 p-3"  width="480px" height="320px" [src]="localizacion.imagen | noImagePipe">                <div class="card-body">                    <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>                </div>            </div>            <a class="btn btn-dark btn-block informacionBoton" href="{{localizaciones.url}}" style="cursor: pointer;" target="_blank">                Información            </a>        </div>    </div></div><!-- Lista de localizaciones --><div *ngIf="!ver">    <h2>Estas son algunas de las poblaciones extremeñas</h2>    <div class="card-columns">        <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizaciones">            <div>                 <img class="card-img-top mt-3 p-3"  width="480px" height="320px" [src]="localizacion.imagen | noImagePipe">                <div class="card-body">                    <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>                </div>            </div>            <a class="btn btn-dark btn-block informacionBoton" href="{{localizaciones.url}}" style="cursor: pointer;" target="_blank">                Información            </a>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><!--Buscador principal de las poblaciones--><div class="container">	<div class="row">        <div class="col-12 mx-auto p-5">    		<h2 class="text-uppercase text-center">Buscar poblaciones</h2>            <!--Formulario del Buscador-->            <form class="form-inline buscador row">                <div class="input-group col-12">                    <input type="text" class="form-control input-lg" placeholder="Buscar" (keyup.enter)="buscar(buscarTexto.value)" #buscarTexto/>                    <span class="input-group-btn">                        <button class="btn btn-lg" type="button" (click)="buscar(buscarTexto.value)">                            <i class="fa fa-search" aria-hidden="true" style="font-size: 23px;"></i>                        </button>                    </span>                </div>            </form>        </div>	</div></div><!-- Localizaciones del buscador --><div *ngIf="ver">    <div *ngIf="localizacionesEncontradas == 0">        <h2>No se han encontrado Poblaciones</h2>    </div>    <div *ngIf="localizacionesEncontradas != 0">        <h2>Poblaciones encontradas</h2>        <!--"ngFor" para la lista de localizaciones encontradas en el buscador-->        <div class="card-columns">            <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizacionesEncontradas">                <!--Cuerpo de la localización con sus datos-->                <div>                     <!--Imagen de la localización-->                    <img class="card-img-top p-3"  width="480" height="320" [src]="localizacion.imagen | noImagePipe">                    <div class="card-body">                        <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>                    </div>                </div>                <!--Botón para ir a la página de reserva de la localización-->                <a class="btn btn-dark btn-block informacionBoton" href="{{localizacion.url}}" style="cursor: pointer;" target="_blank">                    Información                </a>            </div>        </div>    </div></div><!-- Lista de localizaciones --><div *ngIf="!ver">    <h2>Algunas poblaciones de Extremadura</h2>     <!--"ngFor" para la lista de localizaciones-->    <div class="card-columns">        <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizaciones">            <!--Cuerpo de la localización con sus datos-->            <div>                 <!--Imagen de la localización-->                <img class="card-img-top p-3" width="480" height="320" [src]="localizacion.imagen | noImagePipe">                <div class="card-body">                    <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>                </div>            </div>            <!--Botón para ir a la página de reserva de la localización-->            <a class="btn btn-dark btn-block informacionBoton" href="{{localizacion.url}}" style="cursor: pointer;" target="_blank">                Información            </a>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AlojamientosComponent', 'selector': 'app-alojamientos'},{'name': 'AlojamientosListaComponent', 'selector': 'app-alojamientos-lista'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ComentariosComponent', 'selector': 'app-comentarios'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForoComponent', 'selector': 'app-foro'},{'name': 'LocalizacionesComponent', 'selector': 'app-localizaciones'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NuevoTemaComponent', 'selector': 'app-nuevo-tema'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RutasComponent', 'selector': 'app-rutas'},{'name': 'RutasListaComponent', 'selector': 'app-rutas-lista'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LocalizacionesComponent'};

@@ -333,6 +333,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 
+//Interfaz de los datos de alojamientos
 export interface alojamientosDatos{
   id_alojamiento?:number,
   id_localizacion?:number,
@@ -348,16 +349,18 @@ export interface alojamientosDatos{
 })
 export class AlojamientosService {
 
+  //URL por defecto para acceder al back
   API_URI &#x3D; &#x27;http://localhost:8081/api&#x27;;
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  // Implementación que se usa para poder usar rutas http
+  constructor(private http: HttpClient) { }
 
+  //Función para enlazar con el listado de alojamientos
   getAlojamientos(){
     return this.http.get(&#x60;${this.API_URI}/alojamientos&#x60;);
   }
 
+  //Función para enlazar con los datos de un alojamiento
   getAlojamiento(id_alojamiento: number){
     return this.http.get(&#x60;${this.API_URI}/alojamiento/${id_alojamiento}&#x60;);
   }

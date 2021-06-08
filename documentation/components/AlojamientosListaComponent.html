@@ -163,7 +163,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/alojamientos-lista/alojamientos-lista.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/alojamientos-lista/alojamientos-lista.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -232,8 +232,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/components/alojamientos-lista/alojamientos-lista.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/components/alojamientos-lista/alojamientos-lista.component.ts:19</a></div>
                 </td>
             </tr>
 
@@ -280,7 +280,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/alojamientos-lista/alojamientos-lista.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/alojamientos-lista/alojamientos-lista.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -303,13 +303,16 @@ import { AlojamientosService } from &#x27;src/app/services/alojamientos.service&
 })
 export class AlojamientosListaComponent implements OnInit {
 
+  //Variable que se iguala a un obj
   alojamientosArray: any [] &#x3D; [];
 
   constructor(
+    //Servicio de los alojamientos
     private _alojamientosService:AlojamientosService
   ) { }
 
   ngOnInit() {
+    //Función para que traiga todos los datos de los alojamientos de la BBDD
     this._alojamientosService.getAlojamientos()
       .subscribe((alojamientos: any)&#x3D;&gt;{
         this.alojamientosArray &#x3D; alojamientos;
@@ -321,10 +324,14 @@ export class AlojamientosListaComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;!--&quot;ngFor&quot; para mostrar todas los alojamientos con su contenido--&gt;
+&lt;div&gt;
+    &lt;!--Título de los alojamientos--&gt;
     &lt;h2 class&#x3D;&quot;animated-fast&quot; style&#x3D;&quot;text-align: center;&quot;&gt;ALOJAMIENTOS&lt;/h2&gt;
     &lt;hr /&gt;
+    &lt;!--Columnas de &quot;cards&quot; donde se muestran todos los alojamientos--&gt;
     &lt;div class&#x3D;&quot;card-columns&quot;&gt;
+        &lt;!--Llamada al componente donde se encuentran los datos de cada alojamiento--&gt;
         &lt;app-alojamientos *ngFor&#x3D;&quot;let alojamiento of alojamientosArray; let i &#x3D; index&quot; [alojamiento]&#x3D;&quot;alojamiento&quot;&gt;&lt;/app-alojamientos&gt;
     &lt;/div&gt;
 &lt;/div&gt;
@@ -357,7 +364,7 @@ export class AlojamientosListaComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div>    <h2 class="animated-fast" style="text-align: center;">ALOJAMIENTOS</h2>    <hr />    <div class="card-columns">        <app-alojamientos *ngFor="let alojamiento of alojamientosArray; let i = index" [alojamiento]="alojamiento"></app-alojamientos>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><!--"ngFor" para mostrar todas los alojamientos con su contenido--><div>    <!--Título de los alojamientos-->    <h2 class="animated-fast" style="text-align: center;">ALOJAMIENTOS</h2>    <hr />    <!--Columnas de "cards" donde se muestran todos los alojamientos-->    <div class="card-columns">        <!--Llamada al componente donde se encuentran los datos de cada alojamiento-->        <app-alojamientos *ngFor="let alojamiento of alojamientosArray; let i = index" [alojamiento]="alojamiento"></app-alojamientos>    </div></div></div>'
     var COMPONENTS = [{'name': 'AlojamientosComponent', 'selector': 'app-alojamientos'},{'name': 'AlojamientosListaComponent', 'selector': 'app-alojamientos-lista'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ComentariosComponent', 'selector': 'app-comentarios'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForoComponent', 'selector': 'app-foro'},{'name': 'LocalizacionesComponent', 'selector': 'app-localizaciones'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NuevoTemaComponent', 'selector': 'app-nuevo-tema'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RutasComponent', 'selector': 'app-rutas'},{'name': 'RutasListaComponent', 'selector': 'app-rutas-lista'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AlojamientosListaComponent'};

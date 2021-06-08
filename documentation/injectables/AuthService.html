@@ -336,8 +336,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/services/auth.service.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/services/auth.service.ts:41</a></div>
                 </td>
             </tr>
 
@@ -420,8 +420,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/services/auth.service.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/services/auth.service.ts:36</a></div>
                 </td>
             </tr>
 
@@ -540,10 +540,12 @@ export class AuthService {
     return this.httpClient.post&lt;JwtDTO&gt;(this.authURL + &#x27;login&#x27;, loginUsuario);
   }
 
+  //Método para refrescar
   public refresh(dto: JwtDTO): Observable&lt;JwtDTO&gt; {
     return this.httpClient.post&lt;JwtDTO&gt;(this.authURL + &#x27;refresh&#x27;, dto);
   }
 
+  //Método para comprobar que las contraseñas introducidas son iguales
   passwordsIguales(password:string, passwordRepetir:string){
     return (formGroup:FormGroup) &#x3D;&gt;{
       const pass1control &#x3D; formGroup.controls[password];
