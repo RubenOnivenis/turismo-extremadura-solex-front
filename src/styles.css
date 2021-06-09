@@ -99,8 +99,8 @@
 .buscadorTema {
     position:relative;
     float:right;
-    top:0;
-    right:0;
+    top:-80px;
+    right:15px;
     z-index:300;
 }
 
@@ -138,6 +138,51 @@
 
 
 /* MEDIAS QUERIES */
+
+@media only screen and (max-width: 1280px) {
+
+}
+
+@media only screen and (max-width: 1024px) {
+    
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+  
+@media only screen and (max-width: 576px) {
+    .buscadorTema{
+        position: unset;
+        float:unset;
+    }
+
+    .buscarTema{
+        position: unset;
+    }
+
+    h3{
+        font-size: 1.5rem;
+    }
+
+    .card-footer .btn{
+        float:unset !important;
+        width: 100%;
+    }
+}
+  
+@media only screen and (max-width: 375px) {
+    .nav-tabs{
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+
+}
+
+
+/*
 @media (width:375px) and (height:810px)  {
     html, body, head{
         width: 375px;
@@ -171,4 +216,4 @@
         width: 414px;
         height: 736px;
     }
-}
+}*/

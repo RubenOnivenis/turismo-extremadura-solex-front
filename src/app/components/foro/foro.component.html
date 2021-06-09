@@ -1,3 +1,8 @@
+<!--Título del Foro-->
+<div class="text-center">
+    <h4>Foro SOLEX</h4>
+    <p class="text-muted">¡Consulta temas creados por otros usuarios o crea los tuyos propios!</p>
+</div>
 <!--Buscador para los temas del foro-->
 <div class="buscadorTema">
     <div class="buscarTema">
@@ -13,17 +18,12 @@
         </form>
     </div>
 </div>
-<!--Título del Foro-->
-<div class="text-center">
-    <h4 class="mb-0">Foro SOLEX</h4>
-    <p class="text-muted">¡Consulta temas creados por otros usuarios o crea los tuyos propios!</p>
-</div>
 <!--Contenedor de los temas del foro-->
 <div class="container-fluid mt-100">
     <div class="row">
         <!--Botón para añadir un nuevo tema-->
         <div class="col-md-12">
-            <button *ngIf="isLogged" class="btn btn-block btn-outline-dark mb-5" routerLink="/nuevo-post" type="button">
+            <button *ngIf="isLogged" class="btn btn-block btn-outline-dark my-3" routerLink="/nuevo-post" type="button">
                 Nuevo Tema
             </button>
         </div>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <!--Cuerpo del tema con el nombre y la descripción del tema-->
-                    <div class="card-body ml-5">
+                    <div class="card-body">
                         <h3>{{temaEncontrado.nombre_tema}}</h3>
                         <p>{{temaEncontrado.comentario_tema}}</p>
                     </div>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <!--Cuerpo del tema con el nombre y la descripción del tema-->
-                    <div class="card-body ml-5">
+                    <div class="card-body">
                         <h3>{{tema.nombre_tema}}</h3>
                         <p>{{tema.comentario_tema}}</p>
                     </div>

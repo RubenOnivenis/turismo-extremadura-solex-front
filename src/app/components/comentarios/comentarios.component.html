@@ -11,7 +11,7 @@
           </div>
         </div>
         <!--Cuerpo con datos del tema-->
-        <div class="card-body ml-5">
+        <div class="card-body">
           <p style="font-size: larger;">{{tema.comentario_tema}}</p>
           <div *ngIf="comentarios!=0">
             <h5 class="mt-5">Comentarios</h5>
@@ -19,12 +19,12 @@
             <div class="px-4 pt-3" *ngFor="let comentario of comentarios; let i = index"> 
               <span class="badge badge-secondary">{{comentario.nombreUsuario}}</span>
               <span class="badge badge-secondary ml-2">{{comentario.fchHoraComentario}}</span>
-              <button type="button" class="btn btn-danger float-right ml-2 mt-4" *ngIf="isAdmin" (click)="borrarComentario(comentarios[i].idComentarioForo)">
-                <i class="fa fa-trash" aria-hidden="true"></i>
-              </button>
               <p>
                 {{comentario.comentario}}
               </p>
+              <button type="button" class="btn btn-danger btn-block" *ngIf="isAdmin" (click)="borrarComentario(comentarios[i].idComentarioForo)">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
               <hr/>
             </div>
           </div>

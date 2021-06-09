@@ -51,8 +51,6 @@ export class ComentariosComponent implements OnInit {
     this.nombreUsuario = this.tokenService.getUserName();
     // La página inicia mostrando los temas
     this.cargarTema();
-    // Función para traer el usuario
-    this.getUsuario();
     // La página inicia mostrando los comentarios de cada tema
     this.cargarComentario();
   }
