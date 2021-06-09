@@ -1051,7 +1051,6 @@ export class ComentariosComponent implements OnInit {
     this._temaService.cargarComentario(this.activateRoute.snapshot.params.id_tema)
       .subscribe((respuesta : any)&#x3D;&gt; {
         this.comentarios &#x3D; respuesta;
-        console.log(respuesta);
       });
   }
 

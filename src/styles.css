@@ -138,8 +138,37 @@
 
 
 /* MEDIAS QUERIES */
-@media (max-width:375px) {
-    #crearUsuario {
-      width: 100%;
+@media (width:375px) and (height:810px)  {
+    html{
+        width: 375px;
+        height: 810px;
+    }
+}
+
+@media (width:1024px) and (height:1366px)  {
+    html{
+        width: 1024px;
+        height: 1366px;
+    }
+}
+
+@media (width:280px) and (height:653px)  {
+    html{
+        width: 280px;
+        height: 653px;
+    }
+}
+
+@media (width:1280px) and (height:950px)  {
+    html{
+        width: 1280px;
+        height: 950px;
+    }
+}
+
+@media (width:414px) and (height:736px)  {
+    html{
+        width: 414px;
+        height: 736px;
     }
 }

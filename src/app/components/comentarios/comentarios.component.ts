@@ -63,10 +63,6 @@ export class ComentariosComponent implements OnInit {
     this._usuariosService.getUsuario(this.nombreUsuario)
       .subscribe(respuesta => {
         this.usuario = respuesta;
-      },
-      (err) => {
-        err="ERROR";
-        console.log(err);
       })
   }
 
@@ -85,7 +81,6 @@ export class ComentariosComponent implements OnInit {
     this._temaService.cargarComentario(this.activateRoute.snapshot.params.id_tema)
       .subscribe((respuesta : any)=> {
         this.comentarios = respuesta;
-        console.log(respuesta);
       });
   }
 
