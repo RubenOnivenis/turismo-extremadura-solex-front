@@ -139,35 +139,35 @@
 
 /* MEDIAS QUERIES */
 @media (width:375px) and (height:810px)  {
-    html{
+    html, body, head{
         width: 375px;
         height: 810px;
     }
 }
 
 @media (width:1024px) and (height:1366px)  {
-    html{
+    html, body, head{
         width: 1024px;
         height: 1366px;
     }
 }
 
 @media (width:280px) and (height:653px)  {
-    html{
+    html, body, head{
         width: 280px;
         height: 653px;
     }
 }
 
 @media (width:1280px) and (height:950px)  {
-    html{
+    html, body, head{
         width: 1280px;
         height: 950px;
     }
 }
 
 @media (width:414px) and (height:736px)  {
-    html{
+    html, body, head{
         width: 414px;
         height: 736px;
     }
