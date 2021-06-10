@@ -159,6 +159,9 @@
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
+                            <li>
+                                <a href="#recargar">recargar</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -263,8 +266,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:38</a></div>
                 </td>
             </tr>
 
@@ -374,6 +377,45 @@
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="24"
                             class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:24</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="recargar"></a>
+                    <span class="name">
+                        <b>
+                            recargar
+                        </b>
+                        <a href="#recargar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>recargar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/components/localizaciones/localizaciones.component.ts:49</a></div>
                 </td>
             </tr>
 
@@ -543,7 +585,11 @@ export class LocalizacionesComponent implements OnInit {
     })
     this.ver&#x3D;true;
   }
-
+  
+  //Funcion para recargar la pagina
+  recargar(){
+    location.reload();
+  }
 }
 </code></pre>
     </div>
@@ -570,8 +616,10 @@ export class LocalizacionesComponent implements OnInit {
 &lt;/div&gt;
 &lt;!-- Localizaciones del buscador --&gt;
 &lt;div *ngIf&#x3D;&quot;ver&quot;&gt;
+    &lt;!--Comprobaciones para ver si encuentra o no resultados--&gt;
     &lt;div *ngIf&#x3D;&quot;localizacionesEncontradas &#x3D;&#x3D; 0&quot;&gt;
         &lt;h2&gt;No se han encontrado Poblaciones&lt;/h2&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-light btn-block&quot; (click)&#x3D;&quot;recargar()&quot;&gt;&lt;i class&#x3D;&quot;fa fa-arrow-left&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; Volver&lt;/button&gt;
     &lt;/div&gt;
     &lt;div *ngIf&#x3D;&quot;localizacionesEncontradas !&#x3D; 0&quot;&gt;
         &lt;h2&gt;Poblaciones encontradas&lt;/h2&gt;
@@ -649,7 +697,7 @@ export class LocalizacionesComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--Buscador principal de las poblaciones--><div class="container">	<div class="row">        <div class="col-12 mx-auto p-5">    		<h2 class="text-uppercase text-center">Buscar poblaciones</h2>            <!--Formulario del Buscador-->            <form class="form-inline buscador row">                <div class="input-group col-12">                    <input type="text" class="form-control input-lg" placeholder="Buscar" (keyup.enter)="buscar(buscarTexto.value)" #buscarTexto/>                    <span class="input-group-btn">                        <button class="btn btn-lg" type="button" (click)="buscar(buscarTexto.value)">                            <i class="fa fa-search" aria-hidden="true" style="font-size: 23px;"></i>                        </button>                    </span>                </div>            </form>        </div>	</div></div><!-- Localizaciones del buscador --><div *ngIf="ver">    <div *ngIf="localizacionesEncontradas == 0">        <h2>No se han encontrado Poblaciones</h2>    </div>    <div *ngIf="localizacionesEncontradas != 0">        <h2>Poblaciones encontradas</h2>        <!--"ngFor" para la lista de localizaciones encontradas en el buscador-->        <div class="card-columns">            <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizacionesEncontradas">                <!--Cuerpo de la localización con sus datos-->                <div>                     <!--Imagen de la localización-->                    <img class="card-img-top p-3"  width="480" height="320" [src]="localizacion.imagen | noImagePipe">                    <div class="card-body">                        <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>                    </div>                </div>                <!--Botón para ir a la página de reserva de la localización-->                <a class="btn btn-dark btn-block informacionBoton" href="{{localizacion.url}}" style="cursor: pointer;" target="_blank">                    Información                </a>            </div>        </div>    </div></div><!-- Lista de localizaciones --><div *ngIf="!ver">    <h2>Algunas poblaciones de Extremadura</h2>     <!--"ngFor" para la lista de localizaciones-->    <div class="card-columns">        <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizaciones">            <!--Cuerpo de la localización con sus datos-->            <div>                 <!--Imagen de la localización-->                <img class="card-img-top p-3" width="480" height="320" [src]="localizacion.imagen | noImagePipe">                <div class="card-body">                    <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>                </div>            </div>            <!--Botón para ir a la página de reserva de la localización-->            <a class="btn btn-dark btn-block informacionBoton" href="{{localizacion.url}}" style="cursor: pointer;" target="_blank">                Información            </a>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><!--Buscador principal de las poblaciones--><div class="container">	<div class="row">        <div class="col-12 mx-auto p-5">    		<h2 class="text-uppercase text-center">Buscar poblaciones</h2>            <!--Formulario del Buscador-->            <form class="form-inline buscador row">                <div class="input-group col-12">                    <input type="text" class="form-control input-lg" placeholder="Buscar" (keyup.enter)="buscar(buscarTexto.value)" #buscarTexto/>                    <span class="input-group-btn">                        <button class="btn btn-lg" type="button" (click)="buscar(buscarTexto.value)">                            <i class="fa fa-search" aria-hidden="true" style="font-size: 23px;"></i>                        </button>                    </span>                </div>            </form>        </div>	</div></div><!-- Localizaciones del buscador --><div *ngIf="ver">    <!--Comprobaciones para ver si encuentra o no resultados-->    <div *ngIf="localizacionesEncontradas == 0">        <h2>No se han encontrado Poblaciones</h2>        <button type="button" class="btn btn-light btn-block" (click)="recargar()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver</button>    </div>    <div *ngIf="localizacionesEncontradas != 0">        <h2>Poblaciones encontradas</h2>        <!--"ngFor" para la lista de localizaciones encontradas en el buscador-->        <div class="card-columns">            <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizacionesEncontradas">                <!--Cuerpo de la localización con sus datos-->                <div>                     <!--Imagen de la localización-->                    <img class="card-img-top p-3"  width="480" height="320" [src]="localizacion.imagen | noImagePipe">                    <div class="card-body">                        <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>                    </div>                </div>                <!--Botón para ir a la página de reserva de la localización-->                <a class="btn btn-dark btn-block informacionBoton" href="{{localizacion.url}}" style="cursor: pointer;" target="_blank">                    Información                </a>            </div>        </div>    </div></div><!-- Lista de localizaciones --><div *ngIf="!ver">    <h2>Algunas poblaciones de Extremadura</h2>     <!--"ngFor" para la lista de localizaciones-->    <div class="card-columns">        <div class="card bg-light mb-3 p-md-0" *ngFor="let localizacion of localizaciones">            <!--Cuerpo de la localización con sus datos-->            <div>                 <!--Imagen de la localización-->                <img class="card-img-top p-3" width="480" height="320" [src]="localizacion.imagen | noImagePipe">                <div class="card-body">                    <h5 class="card-title">{{localizacion.nombre}} | {{localizacion.comarca}}</h5>                </div>            </div>            <!--Botón para ir a la página de reserva de la localización-->            <a class="btn btn-dark btn-block informacionBoton" href="{{localizacion.url}}" style="cursor: pointer;" target="_blank">                Información            </a>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AlojamientosComponent', 'selector': 'app-alojamientos'},{'name': 'AlojamientosListaComponent', 'selector': 'app-alojamientos-lista'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ComentariosComponent', 'selector': 'app-comentarios'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForoComponent', 'selector': 'app-foro'},{'name': 'LocalizacionesComponent', 'selector': 'app-localizaciones'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NuevoTemaComponent', 'selector': 'app-nuevo-tema'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RutasComponent', 'selector': 'app-rutas'},{'name': 'RutasListaComponent', 'selector': 'app-rutas-lista'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LocalizacionesComponent'};

@@ -55,4 +55,9 @@ export class ForoComponent implements OnInit {
     this.ver=true;
   }
 
+  //Funcion para recargar la pagina
+  recargar(){
+    location.reload();
+  }
+
 }

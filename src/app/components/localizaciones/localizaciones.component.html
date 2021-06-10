@@ -19,8 +19,10 @@
 </div>
 <!-- Localizaciones del buscador -->
 <div *ngIf="ver">
+    <!--Comprobaciones para ver si encuentra o no resultados-->
     <div *ngIf="localizacionesEncontradas == 0">
         <h2>No se han encontrado Poblaciones</h2>
+        <button type="button" class="btn btn-light btn-block" (click)="recargar()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver</button>
     </div>
     <div *ngIf="localizacionesEncontradas != 0">
         <h2>Poblaciones encontradas</h2>

@@ -23,15 +23,18 @@
     <div class="row">
         <!--Botón para añadir un nuevo tema-->
         <div class="col-md-12">
+            <!--Boton de nuevo Tema en el caso de tener iniciada sesion-->
             <button *ngIf="isLogged" class="btn btn-block btn-outline-dark my-3" routerLink="/nuevo-post" type="button">
                 Nuevo Tema
             </button>
         </div>
         <div class="col-md-12">
+            <!--Comprobaciones para ver si encuentra o no resultados-->
             <div *ngIf="ver">
                 <!--Comprobaciones necesarias para las búsquedas-->
                 <div *ngIf="temasEncontrados == 0">
                     <h3>No se han encontrado Temas</h3>
+                    <button type="button" class="btn btn-light btn-block" (click)="recargar()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver</button>
                 </div>
                 <div *ngIf="temasEncontrados != 0">
                     <h3>Temas Encontrados</h3>

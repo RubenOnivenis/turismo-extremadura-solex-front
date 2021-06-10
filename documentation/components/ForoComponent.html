@@ -165,6 +165,9 @@
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
+                            <li>
+                                <a href="#recargar">recargar</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -407,6 +410,45 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="recargar"></a>
+                    <span class="name">
+                        <b>
+                            recargar
+                        </b>
+                        <a href="#recargar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>recargar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/components/foro/foro.component.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
     <section>
     
@@ -624,12 +666,22 @@ export class ForoComponent implements OnInit {
     this.ver&#x3D;true;
   }
 
+  //Funcion para recargar la pagina
+  recargar(){
+    location.reload();
+  }
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!--Buscador para los temas del foro--&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;!--Título del Foro--&gt;
+&lt;div class&#x3D;&quot;text-center&quot;&gt;
+    &lt;h4&gt;Foro SOLEX&lt;/h4&gt;
+    &lt;p class&#x3D;&quot;text-muted&quot;&gt;¡Consulta temas creados por otros usuarios o crea los tuyos propios!&lt;/p&gt;
+&lt;/div&gt;
+&lt;!--Buscador para los temas del foro--&gt;
 &lt;div class&#x3D;&quot;buscadorTema&quot;&gt;
     &lt;div class&#x3D;&quot;buscarTema&quot;&gt;
         &lt;form class&#x3D;&quot;form-inline buscador&quot;&gt;
@@ -644,25 +696,23 @@ export class ForoComponent implements OnInit {
         &lt;/form&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-&lt;!--Título del Foro--&gt;
-&lt;div class&#x3D;&quot;text-center&quot;&gt;
-    &lt;h4 class&#x3D;&quot;mb-0&quot;&gt;Foro SOLEX&lt;/h4&gt;
-    &lt;p class&#x3D;&quot;text-muted&quot;&gt;¡Consulta temas creados por otros usuarios o crea los tuyos propios!&lt;/p&gt;
-&lt;/div&gt;
 &lt;!--Contenedor de los temas del foro--&gt;
 &lt;div class&#x3D;&quot;container-fluid mt-100&quot;&gt;
     &lt;div class&#x3D;&quot;row&quot;&gt;
         &lt;!--Botón para añadir un nuevo tema--&gt;
         &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
-            &lt;button *ngIf&#x3D;&quot;isLogged&quot; class&#x3D;&quot;btn btn-block btn-outline-dark mb-5&quot; routerLink&#x3D;&quot;/nuevo-post&quot; type&#x3D;&quot;button&quot;&gt;
+            &lt;!--Boton de nuevo Tema en el caso de tener iniciada sesion--&gt;
+            &lt;button *ngIf&#x3D;&quot;isLogged&quot; class&#x3D;&quot;btn btn-block btn-outline-dark my-3&quot; routerLink&#x3D;&quot;/nuevo-post&quot; type&#x3D;&quot;button&quot;&gt;
                 Nuevo Tema
             &lt;/button&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+            &lt;!--Comprobaciones para ver si encuentra o no resultados--&gt;
             &lt;div *ngIf&#x3D;&quot;ver&quot;&gt;
                 &lt;!--Comprobaciones necesarias para las búsquedas--&gt;
                 &lt;div *ngIf&#x3D;&quot;temasEncontrados &#x3D;&#x3D; 0&quot;&gt;
                     &lt;h3&gt;No se han encontrado Temas&lt;/h3&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-light btn-block&quot; (click)&#x3D;&quot;recargar()&quot;&gt;&lt;i class&#x3D;&quot;fa fa-arrow-left&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; Volver&lt;/button&gt;
                 &lt;/div&gt;
                 &lt;div *ngIf&#x3D;&quot;temasEncontrados !&#x3D; 0&quot;&gt;
                     &lt;h3&gt;Temas Encontrados&lt;/h3&gt;
@@ -678,7 +728,7 @@ export class ForoComponent implements OnInit {
                         &lt;/div&gt;
                     &lt;/div&gt;
                     &lt;!--Cuerpo del tema con el nombre y la descripción del tema--&gt;
-                    &lt;div class&#x3D;&quot;card-body ml-5&quot;&gt;
+                    &lt;div class&#x3D;&quot;card-body&quot;&gt;
                         &lt;h3&gt;{{temaEncontrado.nombre_tema}}&lt;/h3&gt;
                         &lt;p&gt;{{temaEncontrado.comentario_tema}}&lt;/p&gt;
                     &lt;/div&gt;
@@ -703,7 +753,7 @@ export class ForoComponent implements OnInit {
                         &lt;/div&gt;
                     &lt;/div&gt;
                     &lt;!--Cuerpo del tema con el nombre y la descripción del tema--&gt;
-                    &lt;div class&#x3D;&quot;card-body ml-5&quot;&gt;
+                    &lt;div class&#x3D;&quot;card-body&quot;&gt;
                         &lt;h3&gt;{{tema.nombre_tema}}&lt;/h3&gt;
                         &lt;p&gt;{{tema.comentario_tema}}&lt;/p&gt;
                     &lt;/div&gt;
@@ -752,7 +802,7 @@ export class ForoComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--Buscador para los temas del foro--><div class="buscadorTema">    <div class="buscarTema">        <form class="form-inline buscador">            <div class="input-group">                <input type="text" class="form-control" placeholder="Buscar Tema" (keyup.enter)="buscarTema(buscarTexto.value)" #buscarTexto/>                <span class="input-group-btn">                    <button class="btn btn-lg" type="button" (click)="buscarTema(buscarTexto.value)">                        <i class="fa fa-search" aria-hidden="true"></i>                    </button>                </span>            </div>        </form>    </div></div><!--Título del Foro--><div class="text-center">    <h4 class="mb-0">Foro SOLEX</h4>    <p class="text-muted">¡Consulta temas creados por otros usuarios o crea los tuyos propios!</p></div><!--Contenedor de los temas del foro--><div class="container-fluid mt-100">    <div class="row">        <!--Botón para añadir un nuevo tema-->        <div class="col-md-12">            <button *ngIf="isLogged" class="btn btn-block btn-outline-dark mb-5" routerLink="/nuevo-post" type="button">                Nuevo Tema            </button>        </div>        <div class="col-md-12">            <div *ngIf="ver">                <!--Comprobaciones necesarias para las búsquedas-->                <div *ngIf="temasEncontrados == 0">                    <h3>No se han encontrado Temas</h3>                </div>                <div *ngIf="temasEncontrados != 0">                    <h3>Temas Encontrados</h3>                </div>                <!--"ngFor" para los temas encotrados al ejecutar el buscador-->                <div class="card my-4" *ngFor="let temaEncontrado of temasEncontrados">                    <!--Cabezera del tema con el creador y la fecha de creación-->                    <div class="card-header">                        <div class="media flex-wrap w-100 align-items-center">                             <div class="ml-2">{{temaEncontrado.nombre_usuario}}                                <div class="text-muted small">{{temaEncontrado.fch_hora_tema}}</div>                            </div>                        </div>                    </div>                    <!--Cuerpo del tema con el nombre y la descripción del tema-->                    <div class="card-body ml-5">                        <h3>{{temaEncontrado.nombre_tema}}</h3>                        <p>{{temaEncontrado.comentario_tema}}</p>                    </div>                    <!--Botón para ir al tema y ver sus comentarios-->                    <div class="card-footer px-0 pt-0 pb-3">                        <div class="px-4 pt-3">                             <button type="button" class="btn btn-outline-dark float-right" [routerLink]="[\'/comentarios\', temaEncontrado.id_tema]">Comentarios</button>                         </div>                    </div>                </div>            </div>            <div *ngIf="!ver">                <!--"ngFor" para los temas destacados en el foro-->                <h3>Temas Populares</h3>                <div class="card my-4" *ngFor="let tema of temas">                    <!--Cabezera del tema con el creador y la fecha de creación-->                    <div class="card-header">                        <div class="media flex-wrap w-100 align-items-center">                             <div class="ml-2">{{tema.nombre_usuario}}                                <div class="text-muted small">{{tema.fch_hora_tema}}</div>                            </div>                        </div>                    </div>                    <!--Cuerpo del tema con el nombre y la descripción del tema-->                    <div class="card-body ml-5">                        <h3>{{tema.nombre_tema}}</h3>                        <p>{{tema.comentario_tema}}</p>                    </div>                    <!--Botón para ir al tema y ver sus comentarios-->                    <div class="card-footer px-0 pt-0 pb-3">                        <div class="px-4 pt-3">                             <button type="button" class="btn btn-outline-dark float-right" [routerLink]="[\'/comentarios\', tema.id_tema]">Comentarios</button>                         </div>                    </div>                </div>            </div>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><!--Título del Foro--><div class="text-center">    <h4>Foro SOLEX</h4>    <p class="text-muted">¡Consulta temas creados por otros usuarios o crea los tuyos propios!</p></div><!--Buscador para los temas del foro--><div class="buscadorTema">    <div class="buscarTema">        <form class="form-inline buscador">            <div class="input-group">                <input type="text" class="form-control" placeholder="Buscar Tema" (keyup.enter)="buscarTema(buscarTexto.value)" #buscarTexto/>                <span class="input-group-btn">                    <button class="btn btn-lg" type="button" (click)="buscarTema(buscarTexto.value)">                        <i class="fa fa-search" aria-hidden="true"></i>                    </button>                </span>            </div>        </form>    </div></div><!--Contenedor de los temas del foro--><div class="container-fluid mt-100">    <div class="row">        <!--Botón para añadir un nuevo tema-->        <div class="col-md-12">            <!--Boton de nuevo Tema en el caso de tener iniciada sesion-->            <button *ngIf="isLogged" class="btn btn-block btn-outline-dark my-3" routerLink="/nuevo-post" type="button">                Nuevo Tema            </button>        </div>        <div class="col-md-12">            <!--Comprobaciones para ver si encuentra o no resultados-->            <div *ngIf="ver">                <!--Comprobaciones necesarias para las búsquedas-->                <div *ngIf="temasEncontrados == 0">                    <h3>No se han encontrado Temas</h3>                    <button type="button" class="btn btn-light btn-block" (click)="recargar()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver</button>                </div>                <div *ngIf="temasEncontrados != 0">                    <h3>Temas Encontrados</h3>                </div>                <!--"ngFor" para los temas encotrados al ejecutar el buscador-->                <div class="card my-4" *ngFor="let temaEncontrado of temasEncontrados">                    <!--Cabezera del tema con el creador y la fecha de creación-->                    <div class="card-header">                        <div class="media flex-wrap w-100 align-items-center">                             <div class="ml-2">{{temaEncontrado.nombre_usuario}}                                <div class="text-muted small">{{temaEncontrado.fch_hora_tema}}</div>                            </div>                        </div>                    </div>                    <!--Cuerpo del tema con el nombre y la descripción del tema-->                    <div class="card-body">                        <h3>{{temaEncontrado.nombre_tema}}</h3>                        <p>{{temaEncontrado.comentario_tema}}</p>                    </div>                    <!--Botón para ir al tema y ver sus comentarios-->                    <div class="card-footer px-0 pt-0 pb-3">                        <div class="px-4 pt-3">                             <button type="button" class="btn btn-outline-dark float-right" [routerLink]="[\'/comentarios\', temaEncontrado.id_tema]">Comentarios</button>                         </div>                    </div>                </div>            </div>            <div *ngIf="!ver">                <!--"ngFor" para los temas destacados en el foro-->                <h3>Temas Populares</h3>                <div class="card my-4" *ngFor="let tema of temas">                    <!--Cabezera del tema con el creador y la fecha de creación-->                    <div class="card-header">                        <div class="media flex-wrap w-100 align-items-center">                             <div class="ml-2">{{tema.nombre_usuario}}                                <div class="text-muted small">{{tema.fch_hora_tema}}</div>                            </div>                        </div>                    </div>                    <!--Cuerpo del tema con el nombre y la descripción del tema-->                    <div class="card-body">                        <h3>{{tema.nombre_tema}}</h3>                        <p>{{tema.comentario_tema}}</p>                    </div>                    <!--Botón para ir al tema y ver sus comentarios-->                    <div class="card-footer px-0 pt-0 pb-3">                        <div class="px-4 pt-3">                             <button type="button" class="btn btn-outline-dark float-right" [routerLink]="[\'/comentarios\', tema.id_tema]">Comentarios</button>                         </div>                    </div>                </div>            </div>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AlojamientosComponent', 'selector': 'app-alojamientos'},{'name': 'AlojamientosListaComponent', 'selector': 'app-alojamientos-lista'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ComentariosComponent', 'selector': 'app-comentarios'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForoComponent', 'selector': 'app-foro'},{'name': 'LocalizacionesComponent', 'selector': 'app-localizaciones'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NuevoTemaComponent', 'selector': 'app-nuevo-tema'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RutasComponent', 'selector': 'app-rutas'},{'name': 'RutasListaComponent', 'selector': 'app-rutas-lista'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ForoComponent'};

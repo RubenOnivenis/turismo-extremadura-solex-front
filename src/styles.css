@@ -1,5 +1,27 @@
 /* ESTILOS CSS PARA TODA LA APLICACIÓN */
 
+/* Tipografías */
+/* Para los modales, navbar y footer Verdana*/
+.modal-content, nav, footer{
+    font-family: 'Verdana', sans-serif;
+}
+
+/* Para los titulos y subtitulos Monstserrat*/
+h1, h2, h3, h4 ,h5, h6{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Para los parrafos Helvetica Neue*/
+p{
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+
+.btn{
+    font-family: 'Roboto', sans-serif;
+}
+
+
 /* Para los campos que tengan la clase título  */
 .titulo{
     font-size: x-large;
@@ -180,40 +202,3 @@
 @media only screen and (max-width: 280px) {
 
 }
-
-
-/*
-@media (width:375px) and (height:810px)  {
-    html, body, head{
-        width: 375px;
-        height: 810px;
-    }
-}
-
-@media (width:1024px) and (height:1366px)  {
-    html, body, head{
-        width: 1024px;
-        height: 1366px;
-    }
-}
-
-@media (width:280px) and (height:653px)  {
-    html, body, head{
-        width: 280px;
-        height: 653px;
-    }
-}
-
-@media (width:1280px) and (height:950px)  {
-    html, body, head{
-        width: 1280px;
-        height: 950px;
-    }
-}
-
-@media (width:414px) and (height:736px)  {
-    html, body, head{
-        width: 414px;
-        height: 736px;
-    }
-}*/

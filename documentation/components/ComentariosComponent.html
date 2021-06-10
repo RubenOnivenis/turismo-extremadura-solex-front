@@ -332,8 +332,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="126"
-                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:126</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:119</a></div>
                 </td>
             </tr>
 
@@ -402,8 +402,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="83"
-                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:83</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:77</a></div>
                 </td>
             </tr>
 
@@ -441,8 +441,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="74"
-                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:74</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:68</a></div>
                 </td>
             </tr>
 
@@ -480,8 +480,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="93"
-                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:93</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:86</a></div>
                 </td>
             </tr>
 
@@ -519,8 +519,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="100"
-                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:100</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:93</a></div>
                 </td>
             </tr>
 
@@ -558,8 +558,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:59</a></div>
                 </td>
             </tr>
 
@@ -636,8 +636,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="111"
-                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:111</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:104</a></div>
                 </td>
             </tr>
 
@@ -675,8 +675,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="136"
-                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:136</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="129"
+                            class="link-to-prism">src/app/components/comentarios/comentarios.component.ts:129</a></div>
                 </td>
             </tr>
 
@@ -1017,8 +1017,6 @@ export class ComentariosComponent implements OnInit {
     this.nombreUsuario &#x3D; this.tokenService.getUserName();
     // La página inicia mostrando los temas
     this.cargarTema();
-    // Función para traer el usuario
-    this.getUsuario();
     // La página inicia mostrando los comentarios de cada tema
     this.cargarComentario();
   }
@@ -1029,10 +1027,6 @@ export class ComentariosComponent implements OnInit {
     this._usuariosService.getUsuario(this.nombreUsuario)
       .subscribe(respuesta &#x3D;&gt; {
         this.usuario &#x3D; respuesta;
-      },
-      (err) &#x3D;&gt; {
-        err&#x3D;&quot;ERROR&quot;;
-        console.log(err);
       })
   }
 
@@ -1126,7 +1120,7 @@ export class ComentariosComponent implements OnInit {
           &lt;/div&gt;
         &lt;/div&gt;
         &lt;!--Cuerpo con datos del tema--&gt;
-        &lt;div class&#x3D;&quot;card-body ml-5&quot;&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
           &lt;p style&#x3D;&quot;font-size: larger;&quot;&gt;{{tema.comentario_tema}}&lt;/p&gt;
           &lt;div *ngIf&#x3D;&quot;comentarios!&#x3D;0&quot;&gt;
             &lt;h5 class&#x3D;&quot;mt-5&quot;&gt;Comentarios&lt;/h5&gt;
@@ -1134,12 +1128,12 @@ export class ComentariosComponent implements OnInit {
             &lt;div class&#x3D;&quot;px-4 pt-3&quot; *ngFor&#x3D;&quot;let comentario of comentarios; let i &#x3D; index&quot;&gt; 
               &lt;span class&#x3D;&quot;badge badge-secondary&quot;&gt;{{comentario.nombreUsuario}}&lt;/span&gt;
               &lt;span class&#x3D;&quot;badge badge-secondary ml-2&quot;&gt;{{comentario.fchHoraComentario}}&lt;/span&gt;
-              &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger float-right ml-2 mt-4&quot; *ngIf&#x3D;&quot;isAdmin&quot; (click)&#x3D;&quot;borrarComentario(comentarios[i].idComentarioForo)&quot;&gt;
-                &lt;i class&#x3D;&quot;fa fa-trash&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
-              &lt;/button&gt;
               &lt;p&gt;
                 {{comentario.comentario}}
               &lt;/p&gt;
+              &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger btn-block&quot; *ngIf&#x3D;&quot;isAdmin&quot; (click)&#x3D;&quot;borrarComentario(comentarios[i].idComentarioForo)&quot;&gt;
+                &lt;i class&#x3D;&quot;fa fa-trash&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+              &lt;/button&gt;
               &lt;hr/&gt;
             &lt;/div&gt;
           &lt;/div&gt;
@@ -1210,7 +1204,7 @@ export class ComentariosComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--Contenedor del tema--><div class="container-fluid mt-100">  <div class="row">    <div class="col-md-12">      <div class="card my-4">        <!--Cabecera con datos del tema-->        <div class="card-header">          <div class="ml-2 text-center">            <h3>{{tema.nombre_tema}}</h3>            <span class="text-muted small">{{tema.nombre_usuario}} / {{tema.fch_hora_tema}}</span>          </div>        </div>        <!--Cuerpo con datos del tema-->        <div class="card-body ml-5">          <p style="font-size: larger;">{{tema.comentario_tema}}</p>          <div *ngIf="comentarios!=0">            <h5 class="mt-5">Comentarios</h5>            <!--"ngFor" de los comentarios que tiene el tema-->            <div class="px-4 pt-3" *ngFor="let comentario of comentarios; let i = index">               <span class="badge badge-secondary">{{comentario.nombreUsuario}}</span>              <span class="badge badge-secondary ml-2">{{comentario.fchHoraComentario}}</span>              <button type="button" class="btn btn-danger float-right ml-2 mt-4" *ngIf="isAdmin" (click)="borrarComentario(comentarios[i].idComentarioForo)">                <i class="fa fa-trash" aria-hidden="true"></i>              </button>              <p>                {{comentario.comentario}}              </p>              <hr/>            </div>          </div>          <!--Desplegable con el formulario para comentar-->          <div class="collapse multi-collapse" id="dejarcomentario" row>            <form [formGroup]="forma" (ngSubmit)="dejarComentario()">              <div class="form-group">                <textarea name="comentarioTema"                     type="text"                     class="form-control col-12"                     id="comentarioTema"                     placeholder="Añade tu comentario al Tema"                     required="required"                    formControlName="comentarioTema"                    maxlength="2000"                    rows="2"                    [class.is-invalid]="!valido(\'comentarioTema\')"></textarea>                <small class="form-text text-danger col-12" *ngIf="!valido(\'comentarioTema\')">Debe tener al menos 7 carácteres</small>                <input class="btn btn-light input-group-btn col-12" type="button" value="Guardar" disabled *ngIf="!valido(\'comentarioTema\')"/>                <input class="btn btn-light input-group-btn col-12" type="submit" value="Guardar" *ngIf="valido(\'comentarioTema\')"/>              </div>            </form>          </div>        </div>        <!--Botones para volver al foro o para activar el desplegable para comentar-->        <div class="card-footer">          <button type="button" class="btn btn-outline-dark float-left" routerLink="/foro"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver al Foro</button>          <button type="button" class="btn btn-outline-dark float-right" *ngIf="isLogged"  data-toggle="collapse" data-target="#dejarcomentario" aria-expanded="false" aria-controls="multiCollapseExample2">            ¡Deja tu comentario!          </button>        </div>      </div>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><!--Contenedor del tema--><div class="container-fluid mt-100">  <div class="row">    <div class="col-md-12">      <div class="card my-4">        <!--Cabecera con datos del tema-->        <div class="card-header">          <div class="ml-2 text-center">            <h3>{{tema.nombre_tema}}</h3>            <span class="text-muted small">{{tema.nombre_usuario}} / {{tema.fch_hora_tema}}</span>          </div>        </div>        <!--Cuerpo con datos del tema-->        <div class="card-body">          <p style="font-size: larger;">{{tema.comentario_tema}}</p>          <div *ngIf="comentarios!=0">            <h5 class="mt-5">Comentarios</h5>            <!--"ngFor" de los comentarios que tiene el tema-->            <div class="px-4 pt-3" *ngFor="let comentario of comentarios; let i = index">               <span class="badge badge-secondary">{{comentario.nombreUsuario}}</span>              <span class="badge badge-secondary ml-2">{{comentario.fchHoraComentario}}</span>              <p>                {{comentario.comentario}}              </p>              <button type="button" class="btn btn-danger btn-block" *ngIf="isAdmin" (click)="borrarComentario(comentarios[i].idComentarioForo)">                <i class="fa fa-trash" aria-hidden="true"></i>              </button>              <hr/>            </div>          </div>          <!--Desplegable con el formulario para comentar-->          <div class="collapse multi-collapse" id="dejarcomentario" row>            <form [formGroup]="forma" (ngSubmit)="dejarComentario()">              <div class="form-group">                <textarea name="comentarioTema"                     type="text"                     class="form-control col-12"                     id="comentarioTema"                     placeholder="Añade tu comentario al Tema"                     required="required"                    formControlName="comentarioTema"                    maxlength="2000"                    rows="2"                    [class.is-invalid]="!valido(\'comentarioTema\')"></textarea>                <small class="form-text text-danger col-12" *ngIf="!valido(\'comentarioTema\')">Debe tener al menos 7 carácteres</small>                <input class="btn btn-light input-group-btn col-12" type="button" value="Guardar" disabled *ngIf="!valido(\'comentarioTema\')"/>                <input class="btn btn-light input-group-btn col-12" type="submit" value="Guardar" *ngIf="valido(\'comentarioTema\')"/>              </div>            </form>          </div>        </div>        <!--Botones para volver al foro o para activar el desplegable para comentar-->        <div class="card-footer">          <button type="button" class="btn btn-outline-dark float-left" routerLink="/foro"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver al Foro</button>          <button type="button" class="btn btn-outline-dark float-right" *ngIf="isLogged"  data-toggle="collapse" data-target="#dejarcomentario" aria-expanded="false" aria-controls="multiCollapseExample2">            ¡Deja tu comentario!          </button>        </div>      </div>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AlojamientosComponent', 'selector': 'app-alojamientos'},{'name': 'AlojamientosListaComponent', 'selector': 'app-alojamientos-lista'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ComentariosComponent', 'selector': 'app-comentarios'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForoComponent', 'selector': 'app-foro'},{'name': 'LocalizacionesComponent', 'selector': 'app-localizaciones'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NuevoTemaComponent', 'selector': 'app-nuevo-tema'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'RutasComponent', 'selector': 'app-rutas'},{'name': 'RutasListaComponent', 'selector': 'app-rutas-lista'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ComentariosComponent'};

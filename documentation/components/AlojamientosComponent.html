@@ -357,14 +357,14 @@ import { alojamientosDatos, AlojamientosService } from &#x27;src/app/services/al
 })
 export class AlojamientosComponent implements OnInit {
 
-  /* Comunica este componente con su interfaz */
+  //Comunica este componente con su interfaz
   @Input() alojamiento!:alojamientosDatos;
   
-  /* Variable con el numero de caracteres que se van a mostrar */
+  //Variable con el numero de caracteres que se van a mostrar
   NUM_CARACTERES:number;
 
   constructor() { 
-    /* Inicialización de la variable de los caracteres que se van a mostrar */
+    //Inicialización de la variable de los caracteres que se van a mostrar
     this.NUM_CARACTERES &#x3D; 120;
   }
 
@@ -372,7 +372,7 @@ export class AlojamientosComponent implements OnInit {
     
   }
 
-  /* Función para añadir puntos suspensivos cuando la descripción es demasiado larga */
+  //Función para añadir puntos suspensivos cuando la descripción es demasiado larga
   public puntos_suspensivos():string{
     if(this.alojamiento.descripcion.length &gt; this.NUM_CARACTERES) return &quot;...&quot;;
     return &quot;&quot;;

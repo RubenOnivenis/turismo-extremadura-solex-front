@@ -44,5 +44,9 @@ export class LocalizacionesComponent implements OnInit {
     })
     this.ver=true;
   }
-
+  
+  //Funcion para recargar la pagina
+  recargar(){
+    location.reload();
+  }
 }
