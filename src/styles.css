@@ -159,20 +159,7 @@ p{
 }
 
 
-/* MEDIAS QUERIES */
-
-@media only screen and (max-width: 1280px) {
-
-}
-
-@media only screen and (max-width: 1024px) {
-    
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-  
+/* MEDIAS QUERIES */  
 @media only screen and (max-width: 576px) {
     .buscadorTema{
         position: unset;
@@ -197,8 +184,4 @@ p{
     .nav-tabs{
         justify-content: center;
     }
-}
-
-@media only screen and (max-width: 280px) {
-
 }
