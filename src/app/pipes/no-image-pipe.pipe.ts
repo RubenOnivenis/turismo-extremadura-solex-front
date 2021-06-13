@@ -14,7 +14,7 @@ export class NoImagePipePipe implements PipeTransform {
     if(optionalImage){
         return "assets/img/perfil.jpg";
       }
-      return "assets/img/noimage.png";
+      return "assets/img/nofoto.jpeg";
     }
     return urlImagen;
   }
