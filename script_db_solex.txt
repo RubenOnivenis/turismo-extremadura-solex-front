@@ -1,0 +1,164 @@
+-- PROYECTO SOLEX
+
+-- Jaime Ávila 
+-- Rubén Onivenis
+
+-- Tutora: Isabel Muñoz
+
+-- Crear BBDD
+CREATE DATABASE db_solex;
+
+-- TABLA rol
+CREATE TABLE rol (
+  id TINYINT PRIMARY KEY NOT NULL,
+  rol_nombre VARCHAR(255) NOT NULL
+); 
+
+-- Datos tabla rol
+INSERT INTO `rol` (`id`, `rol_nombre`) VALUES
+(1, 'ROLE_ADMIN'),
+(2, 'ROLE_USER');
+
+-- TABLA usuarios
+CREATE TABLE usuario(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    nombre_usuario VARCHAR(50) UNIQUE NOT NULL,
+    nombre VARCHAR(50) NOT NULL, 
+    apellidos VARCHAR(30) NOT NULL, 
+    fch_nacimiento DATE NULL, 
+    email VARCHAR(60) UNIQUE NOT NULL, 
+    password VARCHAR(120) NOT NULL,
+    telefono CHAR(9) NULL
+);
+
+-- Datos tabla usuarios
+INSERT INTO `usuario` (`id`, `nombre_usuario`, `nombre`, `apellidos`, `fch_nacimiento`, `email`, `password`, `telefono`) VALUES
+(1, 'Jaime', 'Jaime', 'Avila', NULL, 'j@j.j', '$2a$10$yapn3ypiBE.ytLq3wNDdiOajA.kXrkdrIVOSI8mcQOSQCyD2ZYLEK', NULL),
+(2, 'Ruben', 'Ruben', 'Onivenis', NULL, 'r@r.r', '$2a$10$yapn3ypiBE.ytLq3wNDdiOajA.kXrkdrIVOSI8mcQOSQCyD2ZYLEK', NULL),
+(3, 'pedrito', 'Pedro', 'Reyes Muñoz', NULL, 'pedropedrito@gmail.com', '$2a$10$p9vRjMYjDQdhEag0Pq/EruQgC2aKsnEAOin37J6sbblTObjdai/9m', NULL),
+(4, 'mmagdalena', 'María Magdalena', 'Pérez Oliva', NULL, 'mmagdalena@gmail.com', '$2a$10$uleCNPi6.nvLjWR/XVojLOfdmEU.NQqj4LR2cUpWNRns74KbbyA1y', NULL);
+
+-- TABLA usuario_rol
+CREATE TABLE usuario_rol (
+  usuario_id INT NOT NULL,
+  rol_id TINYINT NOT NULL,
+  CONSTRAINT FK_id_rol FOREIGN KEY (rol_id) REFERENCES rol(id)
+);
+
+-- Dos claves primarias en la tabla usuario_rol
+ALTER TABLE usuario_rol ADD PRIMARY KEY (usuario_id,rol_id) USING BTREE;
+
+-- Datos tabla usuario_rol
+INSERT INTO `usuario_rol` (`usuario_id`, `rol_id`) VALUES
+(1, 1),
+(2, 1);
+
+-- TABLA localizaciones
+CREATE TABLE localizaciones(
+    id_localizacion TINYINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(120) NOT NULL,
+    provincia VARCHAR(30) NOT NULL,
+    comarca VARCHAR(40) NOT NULL,
+    imagen VARCHAR (100) NULL,
+    url varchar(200) DEFAULT NULL
+);
+
+-- Datos tabla localizaciones
+INSERT INTO `localizaciones` (`id_localizacion`, `nombre`, `provincia`, `comarca`, `imagen`, `url` ) VALUES
+(1, 'Badajoz', 'Badajoz', 'Badajoz',  'assets/img/badajoz_carta.jpg',  'https://www.aytobadajoz.es/es/ayto/portada'),
+(2, 'Mérida', 'Badajoz', 'Mérida',  'assets/img/merida_carta.jpg',  'https://merida.es/'),
+(3, 'Cáceres', 'Cáceres', 'Cáceres',  'assets/img/caceres_carta.jpg',  'https://www.ayto-caceres.es/'),
+(4, 'Guadalupe', 'Cáceres', 'Villuerca-Ibores',  'assets/img/guadalupe_carta.jpg',  'https://www.turismoextremadura.com/es/explora/Guadalupe'),
+(5, 'Olivenza', 'Badajoz', 'Olivenza',  'assets/img/olivenza_carta.jpg',  'http://www.ayuntamientodeolivenza.com/'),
+(6, 'Almendralejo', 'Badajoz', 'Tierra de Barros',  'assets/img/almendralejo_carta.jpg',  'https://www.almendralejo.es/');
+
+
+-- TABLA alojamientos
+CREATE TABLE alojamientos(
+    id_alojamiento SMALLINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id_localizacion TINYINT UNSIGNED NOT NULL,
+    imagen VARCHAR (100) NULL,
+    nombre VARCHAR(120) NOT NULL,
+    descripcion VARCHAR(2000) NOT NULL,
+    url varchar(200) DEFAULT NULL,
+    CONSTRAINT FK_alojamiento_localizaciones FOREIGN KEY (id_localizacion) REFERENCES localizaciones(id_localizacion)
+);
+
+-- Datos tabla alojamientos
+INSERT INTO `alojamientos` (`id_alojamiento`, `id_localizacion`, `imagen`, `nombre`, `descripcion`, `url`) VALUES
+(1, 4, 'assets/img/paradorguadalupe.jpeg', 'Parador de Guadalupe', 'El Parador de Guadalupe combina historia, relax y buena gastronomía junto al Real Monasterio, catalogado por la Unesco como Patrimonio de la Humanidad.', 'https://www.parador.es/es/paradores/parador-de-guadalupe'),
+(2, 3, 'assets/img/casadonfernando.jpg', 'Soho Boutique Casa Don Fernando', 'Bienvenido a Hotel Casa Don Fernando, tu segundo hogar en Cáceres. Hotel Casa Don Fernando tiene como objetivo conseguir que estés lo más relajado posible.', 'https://www.sohohoteles.com/hotel-boutique-casa-don-fernando-en-caceres/'),
+(3, 1, 'assets/img/zurbaran.jpg', 'Sercotel Gran Hotel Zurbarán','Presentamos el emblemático Sercotel Gran Hotel Zurbarán en el centro de Badajoz, un hotel de 4 estrellas en Extremadura. ', 'https://www.sercotelhoteles.com/hotel-sercotel-gran-zurbaran/'),
+(4, 2, 'assets/img/ilunion.jpeg', 'Hotel Ilunion Mérida Palace','Descubre uno de los mejores hoteles en Mérida con piscina, nuestro Hotel de 5 estrellas, con todo tipo de lujos para que vivas una experiencia única.', 'https://www.ilunionmeridapalace.com/'),
+(5, 6, 'assets/img/acosta.jpg', 'Hotel Acosta Vetonia', 'El Acosta Vetonia está situado al sur de Mérida, en la localidad de Almendralejo, que está muy bien comunicada con la autovía A-66.', 'https://www.hotelacostavetonia.com/'),
+(6, 5, 'assets/img/heredero.jpg', 'Hotel Heredero', 'Se inaugura Hotel Heredero ***. Un hotel pequeño, en una ciudad pequeña, deseando lo mejor para su ciudad, se decide a dar un paso adelante en su vida y en sus negocios.', 'http://www.hotelheredero.net/');
+
+-- TABLA rutas
+CREATE TABLE rutas(
+    id_ruta SMALLINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id_localizacion TINYINT UNSIGNED NOT NULL,
+    nombre VARCHAR (150) NOT NULL,
+    imagen VARCHAR (100) NULL,
+    descripcion VARCHAR(2000) NOT NULL,
+    url varchar(200) DEFAULT NULL,
+    CONSTRAINT FK_rutas_localizaciones FOREIGN KEY (id_localizacion) REFERENCES localizaciones(id_localizacion) 
+);
+
+-- Datos tabla rutas
+INSERT INTO `rutas` (`id_ruta`, `id_localizacion`, `nombre`, `imagen`, `descripcion`, `url`) VALUES
+(1, 3, 'La Garganta de los Infiernos', 'assets/img/gargantainfiernos.jpg', 'Situada en el Valle del Jerte, esta reserva natural está comprendida entre la vertiente noroeste de la Sierra de Tormantos, la vertiente suroeste de la Sierra de Gredos y el río Jerte. En la zona se pueden contemplar numerosos saltos de agua y cascadas, así como las marmitas gigantes de la zona conocida como Los Pilones.
+
+La Reserva Natural de la Garganta de los Infiernos se encuentra en el Valle del Jerte, entre la Sierra de Tormantos, la vertiente sur de la Sierra de Gredos y el río Jerte.', 'https://www.viajarporextremadura.com/garganta-de-los-infiernos-7.htm'),
+(2, 3, 'El Castañar de Hervás', 'assets/img/hervas.jpeg', 'En la provincia de Cáceres encontramos un pequeño pueblo que parece estar anclado en el tiempo, Hervás. En él no sólo descubriremos sus rincones secretos si no lugares naturales como el castañar de Hervás que es lo que hoy nos atañe .
+
+Nos adentramos en el corazón del valle del Ambroz para recorrer este hermoso bosque. Ven a descubrir este maravilloso entorno natural.', 'https://www.buscarutas.com/el-castanar-de-hervas-caminado-entre-la-historia/'),
+(3, 3, 'Ruta de las Grullas de Brozas', 'assets/img/grullas.jpg', 'Brozas es una localidad cacereña perteneciente a la mancomunidad Tajo-Salor, vinculada a la Orden de Alcántara, aun son visibles sus construcciones palaciegas y eclesiásticas que muestran la importancia de este enclave. Hoy visitar Brozas es contemplar las muestras de su pasado histórico; el balneario, los restos de sus fábricas denotan la actividad de un pequeño pueblo en territorio de frontera y de grandes dehesas. De estas últimas disfrutarás en la Ruta de la Ribera, de 20 kms, muy bien señalizada y salpicada de hitos que adornan y enriquecen el camino. os recomiendo el otoño-invierno para realizarla porque añadirás a la belleza del entorno, la presencia de las grullas que os acompañarán durante todo el paseo.', 'https://es.wikiloc.com/rutas-senderismo/ruta-de-las-grullas-de-brozas-5758346');
+
+-- TABLA foro_temas
+CREATE TABLE foro_temas(
+    id_tema INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    nombre_tema VARCHAR(250) NOT NULL,
+    comentario_tema VARCHAR(2000) NOT NULL,
+    id_usuario INT NOT NULL,
+    fch_hora_tema DATETIME NOT NULL,
+    CONSTRAINT FK_foro_temas_usuarios FOREIGN KEY (id_usuario) REFERENCES usuario(id)
+);
+
+-- Datos tabla foro_temas
+INSERT INTO `foro_temas` (`id_tema`, `nombre_tema`, `comentario_tema`, `id_usuario`, `fch_hora_tema`) VALUES
+(1, 'Lugares a visitar en Guadalupe.', 'Hola viajeros. ¿Qué puedo visitar en Guadalupe? Muchísimas gracias. ¡Un saludo!', 4, '2020-11-17 18:41:24'),
+(2, 'Extremadura en Septiembre.', '¡Hola a todxs! Queríamos ir a principios de Septiembre a recorrer unos días Extremadura y nos surge la duda de la temperatura. Suele ser muy alta? Vamos con nuestra perrita que es la que más puede sufrirlo…Además quería preguntaros si en las piscinas naturales está permitido el baño a mascotas. ¡Gracias de antemano!', 3, '2020-08-05 10:24:24'),
+(3, 'PIRAGÜISMO EN LA VERA', 'Si os gusta disfrutar de la naturaleza haciendo deporte os recomiendo el piragüismo en la comarca de La Vera, en Cáceres (río Tiétar). Yo estuve este finde y fue genial. Es una zona preciosa que os recomiendo que visitéis. !Merece la pena!', 3, '2021-06-07 09:30:26'),
+(4, 'Alojamiento en Monfragüe: camping, bar, restaurantes', 'Nos gustaría algo de información sobre si en los alrededores del Parque de Monfragüe hay bares para desayunar. Tenemos intención de hospedarnos en la "Hospedería de Monfragüe", y preguntando por el desayuno resulta que nos sale a 24 € el día. Parece que el pueblo más cercano es Torrejón el Rubio, pero no encontramos información de nada. Agradeceríamos información al respecto. Un saludo y gracias.', 2, '2020-09-10 12:11:54'),
+(5, 'Festival de Teatro Clásico en el Teatro Romano de Mérida', 'El Festival Internacional de Teatro Clásico de Mérida es un festival de teatro clásico que se celebra cada año en Mérida, España, durante los meses de julio y agosto en el Teatro Romano de Mérida.', 1, '2021-05-28 14:28:16');
+
+
+-- TABLA comentarios_foro
+CREATE TABLE comentarios_foro(
+    id_comentario_foro INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    comentario VARCHAR(2000) NOT NULL,
+    id_usuario INT NOT NULL,
+    id_tema INT UNSIGNED NOT NULL,
+    fch_hora_comentario DATETIME NOT NULL,
+    CONSTRAINT FK_comentarios_foro_usuarios FOREIGN KEY (id_usuario) REFERENCES usuario(id),
+    CONSTRAINT FK_comentarios_foro_tema FOREIGN KEY (id_tema) REFERENCES foro_temas(id_tema)
+);
+
+-- Datos tabla comentarios_foro
+INSERT INTO `comentarios_foro` (`id_comentario_foro`, `comentario`, `id_usuario`, `id_tema`, `fch_hora_comentario`) VALUES
+(1, 'Hola , tienes el Monasterio de Guadalupe que es impresionante, haz la visita guiada, merece la pena, y si tienes tiempo vete al Monasterio de Yuste y a Garganta la Olla.', 3, 1, '2020-11-18 19:18:06'),
+(2, 'En la mayoría no se permite el acceso con perros en la zona habilitada para el baño, no recuerdo ahora mismo alguna en la que esté permitido...', 4, 2, '2020-08-08 14:11:06'),
+(3, 'En Internet aparece que la Hospedería está en Torrejón el Rubio, es un pueblo de más de 700 habitantes, así que me extrañaría que no hubiese un bar.
+Intenta llamar al Ayuntamiento, allí seguro que te informan: 927-45-50-04.
+Suerte.', 3, 4, '2020-09-10 14:22:5'),
+(4, 'A lo mejor en este link hayas algo de información.
+www.monfrague.com/ ', 4, 4, '2020-09-10 20:48:35'),
+(5, 'Yo también recomiendo ver obras teatrales en el Teatro Romano. Tiene una resonancia increíble. Yo vi el clásico: Sueño de una noche de verano hace ya varios años...', 2, 5, '2021-05-28 20:02:55'),
+(6, 'Ya he estado y fue increíble, es precioso. Vimos una obra de teatro en el teatro romano, también una cena romana que se llamaba soñando con roma y la verdad que estaba muy chulo todo', 3, 5, '2021-05-28 23:05:14');
+
+
+
+
+
+
+
